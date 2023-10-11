@@ -51,7 +51,7 @@ const ProfilReseaux = () => {
     event.preventDefault();
 
     if (inputs == "" || inputs !== "") {
-      navigate('/profil/entreprise');
+      navigate('/profil/fondation');
     }
   };
   
