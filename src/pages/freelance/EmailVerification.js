@@ -3,10 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
-// import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -16,28 +13,17 @@ import Paper from '@mui/material/Paper';
 
 
 
-// function Copyright(props) {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
+
 
 const defaultTheme = createTheme();
 
-const Resetpassword = () => {
+const EmailVerification = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      // email: data.get('email'),
-      password: data.get('password'),
+      text: data.get('text'),
+    //   password: data.get('password'),
     });
   };
 
@@ -57,24 +43,24 @@ const Resetpassword = () => {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5" className='sm-fs-6 my-3 fw-bold'>
-            Réinitialiser le mot de passe
+          <Typography component="h1" variant="h5" className='my-3 fw-bold'>
+            Vérifier votre email
           </Typography>
           <Typography component="h6" variant="h5" className='text-center fw-lighter fs-6 sm-mt-2'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id purus sodales, pulvinar purus 
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="password"
-              label="Nouveau"
-              name="passeord"
-              // autoComplete="email"
-              // autoFocus
-            />
-            <TextField
+          <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="text"
+                label="code"
+                name="text"
+                autoComplete="text"
+                autoFocus
+              />
+            {/* <TextField
               margin="normal"
               required
               fullWidth
@@ -82,8 +68,8 @@ const Resetpassword = () => {
               label="Password"
               type="password"
               id="password"
-              // autoComplete="current-password"
-            />
+              autoComplete="current-password"
+            /> */}
             {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -94,15 +80,20 @@ const Resetpassword = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-             Réinitialiser
+            Vérifier
             </Button>
            
           </Box>
+          <Link href="#" variant="body2" className='text-center'>
+              Renvoyer le code
+         </Link>
+        
         </Box>
+        
         {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
     </ThemeProvider>
   );
 }
 
-export default Resetpassword
+export default EmailVerification

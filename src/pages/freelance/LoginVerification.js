@@ -14,23 +14,23 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright(props) {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
+
+
+
 const defaultTheme = createTheme();
-
-
-// const defaultTheme = createTheme();
-const Login = () => {
+const LoginVerification = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -152,7 +152,7 @@ const Login = () => {
                     Creer un Compte
                     </Link>
                 </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              {/* <Copyright sx={{ mt: 5 }} /> */}
             </Box>
           </Box>
         </Grid>
@@ -162,4 +162,4 @@ const Login = () => {
 }
 
 
-export default Login;
+export default LoginVerification;
