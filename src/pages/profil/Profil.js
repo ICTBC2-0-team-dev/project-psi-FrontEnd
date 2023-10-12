@@ -111,7 +111,7 @@ const Profil = () => {
     </Componentprofil.Rectangle1362>
     <Componentprofil.Frame82>
         <Componentprofil.FirstCheckBox>
-            <a href='#' >
+            <a href='/#' >
                 {`Entreprise`}
             </a>
         </Componentprofil.FirstCheckBox>

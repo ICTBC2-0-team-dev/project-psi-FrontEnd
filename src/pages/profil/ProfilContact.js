@@ -30,7 +30,7 @@ const ProfilContact = () => {
      const handleReturn = (event) => {
       event.preventDefault();
   
-      if (name == "" || name !== "") {
+      if (name === "" || name !== "") {
         navigate('/profil/reseau-sociaux');
       }
     };

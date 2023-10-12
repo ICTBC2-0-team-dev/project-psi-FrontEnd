@@ -9,6 +9,7 @@ import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
 import ProfilReseaux from "./pages/profil/ProfilReseaux";
 import ProfilContact from "./pages/profil/ProfilContact";
 import EndProfil from "./pages/profil/EndProfil";
+import Account from "./pages/freelance/Account";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route index element={<Login />} />
           <Route path="/loginginVerification" element={<LoginginVerification />} />
+          <Route path="account" element={<Account />} />
           <Route path="/resetpassword" element={<Resetpassword />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="/homeScreen" element={<HomeScreen />} />

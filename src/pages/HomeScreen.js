@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import React from "react";
 //import Header from "../components/Header";
 //import { AkarIconsSearch } from "./AkarIconsSearch";
 import "./HomeScreen.css";

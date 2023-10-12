@@ -50,7 +50,7 @@ const ProfilReseaux = () => {
    const handleReturn = (event) => {
     event.preventDefault();
 
-    if (inputs == "" || inputs !== "") {
+    if (inputs === "" || inputs !== "") {
       navigate('/profil/fondation');
     }
   };
