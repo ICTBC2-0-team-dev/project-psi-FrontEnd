@@ -78,7 +78,7 @@ const Account = () => {
             }}
           >
             <img src={Logo}/>
-            <Typography component="h1" variant="h5" className='fw-bold'>
+            <Typography component="h1" variant="h5" className='fw-bold mb-2'>
             Créer Un Compte
             </Typography>
             <Grid container  columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
