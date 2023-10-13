@@ -102,7 +102,7 @@ const Login = () => {
               >
                 Se Connecter
               </Button>
-              <Typography component="h1" variant="h5" className='text-center fs-4 fw-bold'>
+              <Typography component="h1" variant="h5" className='text-center fs-6'>
                 OU
               </Typography>
               <Container maxWidth="xs" className='d-flex justify-content-between mt-2 gap-3 sm-w-50'>
