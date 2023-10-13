@@ -8,14 +8,14 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+import Logo from '../images/logoPSI.png';
+import * as Components from "./Components";
 
 
 
 
 
-const defaultTheme = createTheme();
+// const defaultTheme = createTheme();
 
 const EmailVerification = () => {
   const handleSubmit = (event) => {
@@ -28,8 +28,9 @@ const EmailVerification = () => {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme} component={Paper} >
-      <Container  component="main" maxWidth="xs" sx={{ height: '860px'}} >
+    <Components.Container  maxWidth="xs" className='m-auto mt-5'> 
+    {/* <ThemeProvider theme={defaultTheme} component={Paper}  className='d-flex' justifyContentCenter alignItemsCenter> */}
+      <Container  component="main" maxWidth="xs" sx={{ height: '800px'}} >
         <CssBaseline />
         <Box
           sx={{
@@ -40,9 +41,7 @@ const EmailVerification = () => {
             justifyContent: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <img src={Logo}/>
           <Typography component="h1" variant="h5" className='my-3 fw-bold'>
             Vérifier votre email
           </Typography>
@@ -92,7 +91,8 @@ const EmailVerification = () => {
         
         {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
-    </ThemeProvider>
+    {/* </ThemeProvider> */}
+    </Components.Container> 
   );
 }
 
