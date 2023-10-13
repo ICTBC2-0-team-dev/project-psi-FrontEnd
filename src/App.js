@@ -9,6 +9,9 @@ import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
 import ProfilReseaux from "./pages/profil/ProfilReseaux";
 import ProfilContact from "./pages/profil/ProfilContact";
 import EndProfil from "./pages/profil/EndProfil";
+import Accueil from "./components/dashbord/Accueil";
+import Projet from "./components/dashbord/Pojet"
+import AddProjet from "./components/dashbord/AddProjet";
 
 function App() {
   return (
@@ -24,6 +27,10 @@ function App() {
           <Route path="/profil/reseau-sociaux" element={<ProfilReseaux />} />
           <Route path="/profil/contact" element={<ProfilContact />} />
           <Route path="/endProfil" element={<EndProfil />} />
+          <Route path="/Dashbord/Accueil" element={<Accueil />} />
+          <Route path="/Dashbord/projet" element={<Projet />} />
+          <Route path="/Dashbord/Add-Projet" element={<AddProjet />} />
+
 
 
           <Route path="*" element={<Login />} />
