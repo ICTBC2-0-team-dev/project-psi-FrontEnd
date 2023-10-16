@@ -13,7 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import * as Components from "./Components";
 import Container from 'react-bootstrap/Container';
 import Logo from '../images/logoPSI.png';
-import { styled } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 
@@ -33,13 +33,13 @@ const Account = () => {
       password: data.get('password'),
     });
   };
-  const Item = styled(Paper)(({ theme }) => ({
-    // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    // ...theme.typography.body2,
-    // padding: theme.spacing(1),
-    // textAlign: 'center',
-    // color: theme.palette.text.secondary,
-  }));
+  // const Item = styled(Paper)(({ theme }) => ({
+  //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  //   ...theme.typography.body2,
+  //   padding: theme.spacing(1),
+  //   textAlign: 'center',
+  //   color: theme.palette.text.secondary,
+  // }));
 
   return (
     <Components.Container  maxWidth="xs" className='m-auto mt-5'> 
@@ -77,7 +77,7 @@ const Account = () => {
               justifyContent:'center'
             }}
           >
-            <img src={Logo}/>
+            <img src={Logo} alt=''/>
             <Typography component="h1" variant="h5" className='fw-bold mb-2'>
             Créer Un Compte
             </Typography>

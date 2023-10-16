@@ -64,7 +64,7 @@ const ForgetPassword = () => {
               alignItems: 'start',
             }}
           >
-            <img src={Logo}/>
+            <img src={Logo} alt=""/>
             <Typography component="h1" variant="h5">
               Mot de passe oublié
             </Typography>
