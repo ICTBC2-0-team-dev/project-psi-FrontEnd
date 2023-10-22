@@ -18,7 +18,7 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 
-const Pojet = () => {
+const Projet = () => {
   
   const top100Films = [
     { title: "All", year: 1994 },
@@ -247,4 +247,4 @@ const Pojet = () => {
   );
 };
 
-export default Pojet;
+export default Projet;

@@ -167,6 +167,17 @@
     top: 50px;
     width: 1800px;
 }
+@media screen and (min-width: 900px) {
+    .overlap-2 {
+        width: 900px;
+    }
+    .frame-12 {
+        width: 300px;
+    }
+    .frame-13 {
+        height: 20px;
+    }
+  }
 
 .element-homepage .rectangle-2 {
     background-color: #ffffff;
@@ -195,6 +206,11 @@
     top: 28px;
     width: 747px;
 }
+@media screen and (min-width: 900px) {
+    .frame-12 {
+        width: 300px;
+    }
+  }
 
 .element-homepage .frame-13 {
     align-items: center;
@@ -209,6 +225,11 @@
     padding: 8px 9px;
     position: relative;
 }
+@media screen and (min-width: 900px) {
+    .frame-13 {
+        height: 20px;
+    }
+  }
 
 .element-homepage .icon-instance-node {
     height: 16px !important;

@@ -3,6 +3,11 @@ import React from "react";
 //import Header from "../components/Header";
 //import { AkarIconsSearch } from "./AkarIconsSearch";
 import "./HomeScreen.css";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 //import { Carousel } from "react-bootstrap";
 import logoPSI from "./images/logoPSI.png";
 import person from "./images/person.svg";
@@ -69,41 +74,75 @@ const HomeScreen = () => {
   }));
 
   return (
-    <div className="element-homepage">
-      <div className="div-2">
-        <div className="overlap">
-          <div className="frame-11">
-            <div className="first-check-box">
-              <div className="text-wrapper-10" style={{ cursor: "pointer" }}>
-                Home
-              </div>
-            </div>
-            <div className="first-check-box-2">
-              <div className="text-wrapper-11" style={{ cursor: "pointer" }}>
-                Freelance
-              </div>
-            </div>
-            <div className="first-check-box-3">
-              <div className="text-wrapper-12" style={{ cursor: "pointer" }}>
-                Space Market
-              </div>
-            </div>
-            <div className="first-check-box-4">
-              <div className="text-wrapper-10" style={{ cursor: "pointer" }}>
-                Consultant
-              </div>
-            </div>
-            <div className="first-check-box-5">
-              <div className="text-wrapper-10" style={{ cursor: "pointer" }}>
-                Industrialisation
-              </div>
-            </div>
-          </div>
-          <img className="line" alt="Line" src="line-5.svg" />
-        </div>
-        <div className="overlap-2">
-          <div className="rectangle-2" />
-          <img className="logo-PSI" alt="Logo PSI" src={logoPSI} />
+    <Container fluid className="element-homepage">
+      <Container fluid className="div-2">
+        
+          <Navbar expand="lg" className="bg-body-tertiary">
+            <Container fluid className='mx-5'>
+              
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav variant="underline" defaultActiveKey="/freelance">
+                  <Nav.Item>
+                    <Nav.Link eventKey="hom">Home</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link href="/freelance">Freelance</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="con">Consultant</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="ind">Industrialisation</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Navbar.Collapse>
+            
+            </Container>
+         </Navbar>
+       
+        
+        <Container className="overlap-2">
+          <Container>
+            <Row>
+              <Col xs={3}><img className="logo-PSI" alt="Logo PSI" src={logoPSI} /></Col>
+              <Col xs={3}>
+                <Col className="frame-12">
+                  <Col className="frame-13">
+                    <Search>
+                      <SearchIconWrapper>
+                        <SearchIcon />
+                      </SearchIconWrapper>
+                      <StyledInputBase
+                        placeholder="RECHERCHER......"
+                        inputProps={{ "aria-label": "search" }}
+                      />
+                    </Search> 
+                  </Col>
+                </Col>
+              </Col>
+              <Col xs={3}>
+                <Row>
+                  <Col>
+                    <div className="frame-14">
+                      <div className="frame-15">
+                        <div className="text-wrapper-14">S’inscrire</div>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="frame-16">
+                      <div className="frame-17">
+                        <div className="text-wrapper-15">Se Connecter</div>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+          {/* <div className="rectangle-2" /> */}
+          {/* <img className="logo-PSI" alt="Logo PSI" src={logoPSI} />
           <div className="frame-12">
             <div className="frame-13">
               <Search>
@@ -126,8 +165,8 @@ const HomeScreen = () => {
             <div className="frame-17">
               <div className="text-wrapper-15">Se Connecter</div>
             </div>
-          </div>
-        </div>
+          </div> */}
+        </Container>
         <div className="overlap-3">
           <div className="text-wrapper-16">Comment nous travaillons</div>
           <div className="group">
@@ -269,7 +308,7 @@ const HomeScreen = () => {
         </div>
         {/** end footer */}
         {/** section after nav-header */}
-        <div className="overlap-wrapper">
+        <Container className="overlap-wrapper">
           <div className="overlap-6">
             <img
               className="psi"
@@ -353,10 +392,11 @@ const HomeScreen = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
          {/** end section after nav-header */}
 
           {/** section offre emploi */}
+        <Container></Container>
         <div className="offres-d-emploi">Offres d&#39;emploi</div>
         <div className="frame-29" style={{ cursor: "pointer" }}>
           <div className="text-wrapper-37">Tout Voir</div>
@@ -603,8 +643,8 @@ const HomeScreen = () => {
         
         {/**end section poste */}
         {/*<DigitalMarketing className="digital-marketing-instance" />*/}
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };
 

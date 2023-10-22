@@ -13,7 +13,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import * as Components from "./Components";
 import Container from 'react-bootstrap/Container';
 import Logo from '../images/logoPSI.png';
-// import { styled } from '@mui/material/styles';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 
@@ -33,13 +34,11 @@ const Account = () => {
       password: data.get('password'),
     });
   };
-  // const Item = styled(Paper)(({ theme }) => ({
-  //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  //   ...theme.typography.body2,
-  //   padding: theme.spacing(1),
-  //   textAlign: 'center',
-  //   color: theme.palette.text.secondary,
-  // }));
+  const [alignment, setAlignment] = React.useState('Freelance');
+
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
 
   return (
     <Components.Container  maxWidth="xs" className='m-auto mt-5'> 
@@ -81,29 +80,39 @@ const Account = () => {
             <Typography component="h1" variant="h5" className='fw-bold mb-2'>
             Créer Un Compte
             </Typography>
-            <Grid container  columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
+            <ToggleButtonGroup
+              color="primary"
+              value={alignment}
+              exclusive
+              onChange={handleChange}
+              aria-label="Platform"
+            >
+              <ToggleButton value="Freelance"><AccountCircleOutlinedIcon sx={{color: 'primary'}} className='mx-2'/>Freelance</ToggleButton>
+              <ToggleButton value="employeur"> <BusinessOutlinedIcon  className='mx-2' />Employeur</ToggleButton>
+            </ToggleButtonGroup>
+            {/* <Grid container  columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
               <Grid item xs={6}>
-                {/* <Item> */}
+               
                 <Grid  className='d-flex justify-content-center  p-2 rounded' >
                     <AccountCircleOutlinedIcon sx={{color: 'rgba(0, 0, 0, 0.7)'}}/>
                      <Typography component="h6" variant="h5" className='fw-lighter fs-5 ms-3'>
                      <a href="/#" class="text-decoration-none text-secondary">Freelance</a>
                      </Typography>
                   </Grid>
-                {/* </Item> */}
+               
               </Grid>
               <Grid item xs={6}>
-                {/* <Item>  */}
+               
                   <Grid  className='d-flex justify-content-center border p-2 px-5 rounded ' style={{background:'#042852'}}>
                     <BusinessOutlinedIcon sx={{color: 'white'}}/>
                      <Typography component="h6" variant="h5" className='fs-5 ms-3'>
                      <a href="/#" class="text-decoration-none text-white">Employeur</a>
                      </Typography>
                   </Grid>
-                  {/* </Item> */}
+                 
               </Grid>
               
-            </Grid>
+            </Grid> */}
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
