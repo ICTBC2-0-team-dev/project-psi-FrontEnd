@@ -27,6 +27,9 @@ import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import CarrouselProfil from "./Carrousel";
+import AddLocationAltRoundedIcon from '@mui/icons-material/AddLocationAltRounded';
+import TextField from '@mui/material/TextField';
+
 
 
 
@@ -44,7 +47,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function ResponsiveAppBar() {
   
-
  
 
   return (
@@ -464,6 +466,7 @@ function ResponsiveAppBar() {
         </Box>
       </Container>
 
+      {/* section etapes */}
       <Grid  fluid className='my-5'
         style={{
           backgroundColor:'#f1f2f4',
@@ -576,8 +579,9 @@ function ResponsiveAppBar() {
       <Grid  fluid className='mb-5'
         style={{
           backgroundColor:'#ffff',
+          height:'700px'
          }}
-      >
+       >
         <Container>
           <Typography  variant="h5" className='text-dark  fs-2 fw-bold text-center pt-5 fs-sm-5'>
             Les meilleurs profils
@@ -637,7 +641,7 @@ function ResponsiveAppBar() {
             </Grid>
           </Grid>
         </Grid>
-       </Grid>
+      </Grid>
 
 
 
@@ -653,136 +657,279 @@ function ResponsiveAppBar() {
         </Container>
 
         <Container className='my-5'>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} md={4}>
-              <Item>
-              <Card  className='shadow rounded'>
-                <CardHeader
-                  avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                      R
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <RemoveRedEyeRoundedIcon  />
-                    </IconButton>
-                  }
-                  title={
-                    <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                    Shrimp and Chorizo Paella
-                  </Typography>
-                  }
-                  subheader={
+          <Box sx={{ flexGrow: 1,marginBottom:2 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Item>
+                <Card  className='shadow rounded'>
+                  <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                        A
+                      </Avatar>
+                    }
+                    action={
+                      
+                      <button type="button" class="btn" style={{backgroundColor:'#FCEEEE', color:'#EB9292'}} >En vedette</button>
+                      
+                    }
+                    title={
+                      <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
+                      Adela Parkson
+                    </Typography>
+                    }
+                    subheader={
+                     <Typography variant="body2" color="text.secondary" className='text-start'>
+                       <AddLocationAltRoundedIcon/>This impressive
+                    </Typography>
+                    }
+                  />
+                  <CardContent>
+                  <button type="button" class="btn text-primary " style={{backgroundColor:'#E7F0FA'}}>Postes à pourvoir (1)</button>
+                  </CardContent>
+                  
+                </Card>
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Item>
+                <Card  className='shadow rounded'>
+                  <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: green[500] }} aria-label="recipe">
+                        s
+                      </Avatar>
+                    }
+                    action={
+                      <button type="button" class="btn" style={{backgroundColor:'#FCEEEE', color:'#EB9292'}} >En vedette</button>
+                    }
+                    title={
+                      <Typography  variant="h5" className='text-dark  fs-6 fw-bold text-start'>
+                      Shrimp and Ch
+                    </Typography>
+                    }
+                    subheader={
                     <Typography variant="body2" color="text.secondary" className='text-start'>
-                    This impressive
-                  </Typography>
-                  }
-                />
-                 <CardContent>
-                 <button type="button" class="btn btn-light">Light</button>
-                </CardContent>
-              
-              </Card>
-              </Item>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Item>
-              <Card  className='shadow rounded'>
-                <CardActions disableSpacing>
-                  <IconButton aria-label="calender">
-                    <CalendarMonthRoundedIcon/>
-                  </IconButton>
-                  <Typography>22 janvier 2022</Typography>
-                </CardActions>
+                     <AddLocationAltRoundedIcon/> This impressive
+                    </Typography>
+                    }
+                  />
                 <CardContent>
-                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-start'>
-                  Light energy capture in solar cells.
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
-                  </Typography>
-                </CardContent>
-                <CardHeader
-                  avatar={
-                    <Avatar sx={{ bgcolor: green[500] }} aria-label="recipe">
-                      s
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <RemoveRedEyeRoundedIcon  />
-                    </IconButton>
-                  }
-                  title={
+                  <button type="button" class="btn text-primary " style={{backgroundColor:'#E7F0FA'}}>Postes à pourvoir (1)</button>
+                  </CardContent>
+                
+                
+                </Card>
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={6}  md={4}>
+                <Item> 
+                <Card  className='shadow rounded'>
+                  <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
+                        S
+                      </Avatar>
+                    }
+                    action={
+                      <button type="button" class="btn" style={{backgroundColor:'#FCEEEE', color:'#EB9292'}} >En vedette</button>
+                    }
+                    title={
                     <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                    Shrimp and Chorizo Paella
-                  </Typography>
-                  }
-                  subheader={
-                    <Typography variant="body2" color="text.secondary" className='text-start'>
-                    This impressive
-                  </Typography>
-                  }
-                />
+                      Shrimp 
+                    </Typography>
+                    }
+                    subheader={
+                      <Typography variant="body2" color="text.secondary" className='text-start'>
+                       <AddLocationAltRoundedIcon/>This impressive
+                     </Typography>
+                    }
+                  />
+                  <CardContent>
+                  <button type="button" class="btn text-primary " style={{backgroundColor:'#E7F0FA'}}>Postes à pourvoir (1)</button>
+                  </CardContent>
+                  
+                
+                </Card>
+                </Item>
+              </Grid>
               
-              </Card>
-              </Item>
             </Grid>
-            <Grid item xs={12} sm={6}  md={4}>
-              <Item> 
-              <Card  className='shadow rounded'>
-                <CardActions disableSpacing>
-                  <IconButton aria-label="calender">
-                    <CalendarMonthRoundedIcon/>
-                  </IconButton>
-                  <Typography>22 janvier 2022</Typography>
-                </CardActions>
-                <CardContent>
-                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-start'>
-                  Light energy capture in solar cells.
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
-                  </Typography>
-                </CardContent>
-                <CardHeader
-                  avatar={
-                    <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
-                      R
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <RemoveRedEyeRoundedIcon  />
-                    </IconButton>
-                  }
-                  title={
-                    <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                    Shrimp and Chorizo Paella
-                  </Typography>
-                  }
-                  subheader={
-                    <Typography variant="body2" color="text.secondary" className='text-start'>
-                    This impressive
-                  </Typography>
-                  }
-                />
-              
-              </Card>
-              </Item>
-            </Grid>
-            
-          </Grid>
-        </Box>
-      </Container>
-      </Grid>
+          </Box>
 
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Item>
+                <Card  className='shadow rounded'>
+                  <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                        A
+                      </Avatar>
+                    }
+                    action={
+                      
+                      <button type="button" class="btn" style={{backgroundColor:'#FCEEEE', color:'#EB9292'}} >En vedette</button>
+                      
+                    }
+                    title={
+                      <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
+                      Adela Parkson
+                    </Typography>
+                    }
+                    subheader={
+                     <Typography variant="body2" color="text.secondary" className='text-start'>
+                       <AddLocationAltRoundedIcon/>This impressive
+                    </Typography>
+                    }
+                  />
+                  <CardContent>
+                  <button type="button" class="btn text-primary " style={{backgroundColor:'#E7F0FA'}}>Postes à pourvoir (1)</button>
+                  </CardContent>
+                  
+                </Card>
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Item>
+                <Card  className='shadow rounded'>
+                  <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: green[500] }} aria-label="recipe">
+                        s
+                      </Avatar>
+                    }
+                    action={
+                      <button type="button" class="btn" style={{backgroundColor:'#FCEEEE', color:'#EB9292'}} >En vedette</button>
+                    }
+                    title={
+                      <Typography  variant="h5" className='text-dark  fs-6 fw-bold text-start'>
+                      Shrimp and Ch
+                    </Typography>
+                    }
+                    subheader={
+                    <Typography variant="body2" color="text.secondary" className='text-start'>
+                     <AddLocationAltRoundedIcon/> This impressive
+                    </Typography>
+                    }
+                  />
+                <CardContent>
+                  <button type="button" class="btn text-primary " style={{backgroundColor:'#E7F0FA'}}>Postes à pourvoir (1)</button>
+                  </CardContent>
+                
+                
+                </Card>
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={6}  md={4}>
+                <Item> 
+                <Card  className='shadow rounded'>
+                  <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
+                        S
+                      </Avatar>
+                    }
+                    action={
+                      <button type="button" class="btn" style={{backgroundColor:'#FCEEEE', color:'#EB9292'}} >En vedette</button>
+                    }
+                    title={
+                    <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
+                      Shrimp 
+                    </Typography>
+                    }
+                    subheader={
+                      <Typography variant="body2" color="text.secondary" className='text-start'>
+                       <AddLocationAltRoundedIcon/>This impressive
+                     </Typography>
+                    }
+                  />
+                  <CardContent>
+                  <button type="button" class="btn text-primary " style={{backgroundColor:'#E7F0FA'}}>Postes à pourvoir (1)</button>
+                  </CardContent>
+                  
+                
+                </Card>
+                </Item>
+              </Grid>
+              
+            </Grid>
+          </Box>
+        </Container>
+      </Grid>
+      
+      {/* Temoignage */}
+      <Grid  fluid className='mt-5'
+        style={{
+          backgroundColor:'#f1f2f4',
+          height:'700px'
+         }}
+       >
+        <Container>
+          <Typography  variant="h5" className='text-dark  fs-2 fw-bold text-center pt-5 fs-sm-5'>
+            Témoignages
+          </Typography>
+        </Container>
+
+        <Container className='mb-5'>
+        <Grid className="my-5">
+          <CarrouselProfil />
+        </Grid>
+        </Container>
+      </Grid>
+      
+      {/* footer */}
+      <Grid  fluid className='mt-5'
+        style={{
+          backgroundColor:'#fff',
+         }}
+       >
+      
+        <Container className='mb-5'>
+         <Grid item xs={12} sm={6} md={4}>
+          <Item>
+         <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
+            Restez à jour
+          </Typography>
+          <Typography className='mb-3 fw-ligh lh-sm ' paragraph>
+            Joindre notre newletter pour des mises à jour régulières
+          </Typography>
+          <Box
+            component="form"
+            sx={{
+              '& > :not(style)': { width: '25ch' },
+              display:'flex',
+              // justifyContent:'space-between'
+            }}
+            noValidate
+            autoComplete="off"
+            
+          >
+            <Paper elevation={2} >
+             <TextField id="outlined-basic" label="email" variant="outlined" /> 
+            </Paper>
+          
+           <Button variant="outline-primary">S’inscrire</Button>{' '}
+            
+            
+            
+        
+          </Box>
+          </Item>
+         </Grid>
+         <Grid item xs={12} sm={6} md={4}>
+          <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
+              Restez à jour
+            </Typography>
+         </Grid>
+         <Grid item xs={12} sm={6} md={4}>
+          <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
+              Restez à jour
+            </Typography>
+         </Grid>
+        </Container>
+      </Grid>
       
   
 
