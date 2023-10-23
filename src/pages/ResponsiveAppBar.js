@@ -29,7 +29,9 @@ import { styled } from '@mui/material/styles';
 import CarrouselProfil from "./Carrousel";
 import AddLocationAltRoundedIcon from '@mui/icons-material/AddLocationAltRounded';
 import TextField from '@mui/material/TextField';
-
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
 
 
@@ -886,48 +888,111 @@ function ResponsiveAppBar() {
          }}
        >
       
-        <Container className='mb-5'>
-         <Grid item xs={12} sm={6} md={4}>
-          <Item>
-         <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
-            Restez à jour
-          </Typography>
-          <Typography className='mb-3 fw-ligh lh-sm ' paragraph>
-            Joindre notre newletter pour des mises à jour régulières
-          </Typography>
-          <Box
-            component="form"
-            sx={{
-              '& > :not(style)': { width: '25ch' },
-              display:'flex',
-              // justifyContent:'space-between'
-            }}
-            noValidate
-            autoComplete="off"
-            
-          >
-            <Paper elevation={2} >
-             <TextField id="outlined-basic" label="email" variant="outlined" /> 
-            </Paper>
+        <Container className='border-bottom'>
+         
+         <div class="row">
+          <div class="col-8 col-md-4 col-sm-12">
           
-           <Button variant="outline-primary">S’inscrire</Button>{' '}
+            <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
+              Restez à jour
+            </Typography>
+            <Typography className='mb-3 fw-ligh lh-sm ' paragraph>
+              Joindre notre newletter pour des mises à jour régulières
+            </Typography>
+            <Typography className='mt-4 fw-ligh lh-sm ' paragraph>
+              Enter votre email:
+            </Typography>
+            <Box
+              component="form"
+              sx={{
+                // '& > :not(style)': { width: '50ch',height:'50px' },
+                display:'flex',
+                // justifyContent:'space-between'
+              }}
+              noValidate
+              autoComplete="off"
+              
+            >
             
+              <Grid className='me-2'>
+                
+                <Paper elevation={2} >
+                <TextField  label="email" variant="outlined" /> 
+                </Paper>
+              </Grid>
             
+              <Button variant="outline-primary">Souscrire</Button>{' '}
             
+      
+            </Box>
+         
+          
+          </div>
+          <div class="col-2 col-md-4 col-sm-6" >
+         
+            <Grid item xs={12} md={6}>
+              <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                Compagnie
+              </Typography>
+            
+              <List sx={{ bgcolor: 'background.paper',textAlign:'end' }}>
+                  
+                <ListItem>
+                  <ListItemText primary="A propos"  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Vision"  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Carriere" />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Contact"  />
+                </ListItem>
+                  
+                </List>
+              
+            </Grid>
+          </div>
+          <div class="col-2 col-md-4 col-sm-6">
+            <Grid item xs={12} md={6}>
+                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                  Accès Rapide
+                </Typography>
+              
+                <List sx={{  bgcolor: 'background.paper',textAlign:'end' }}>
+                    
+                  <ListItem>
+                    <ListItemText primary="Acceuil"  />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Space Market"  />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Consultant" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Industrialisation"  />
+                  </ListItem>
+                    
+                  </List>
+                
+              </Grid>
+          </div>
+        </div>
         
-          </Box>
-          </Item>
-         </Grid>
-         <Grid item xs={12} sm={6} md={4}>
-          <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
-              Restez à jour
-            </Typography>
-         </Grid>
-         <Grid item xs={12} sm={6} md={4}>
-          <Typography  variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
-              Restez à jour
-            </Typography>
-         </Grid>
+        </Container>
+        <Container>
+          <div className='Row'>
+            <div className="col-6 col-md-4 col-sm-12 text-center">
+              
+              <Typography className='fw-ligh fs-6 ' paragraph>
+              <img src={Logo} alt='' style={{height:'80px'}}/>Copyright © 2023 PSI.
+              </Typography>
+            </div>
+           
+            
+          </div>
         </Container>
       </Grid>
       
