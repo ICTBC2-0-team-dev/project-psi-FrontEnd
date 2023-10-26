@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import * as Componentprofil from './Compomentprofil'
 import  './profil.css'
 import { useNavigate } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 
 
 const Profil = () => {
@@ -106,9 +107,12 @@ const Profil = () => {
     };
 
   return (
+    <Container>
     <Componentprofil.Employeur11>
-    <Componentprofil.Rectangle1362 >
-    </Componentprofil.Rectangle1362>
+    <div className="col align-self-end d-flex justify-content-end mt-5 d-sx-none">
+      <Componentprofil.Rectangle1362 ></Componentprofil.Rectangle1362>
+    </div>
+    
     <Componentprofil.Frame82>
         <Componentprofil.FirstCheckBox>
             <a href='/#' >
@@ -207,6 +211,7 @@ const Profil = () => {
     <Componentprofil.Line2>
     </Componentprofil.Line2>
 </Componentprofil.Employeur11>
+</Container>
   )
 }
 

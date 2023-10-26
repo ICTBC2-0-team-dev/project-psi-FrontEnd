@@ -6,27 +6,28 @@ import {
 export const  Employeur11 = styled("div")({
     backgroundColor: `rgba(255, 255, 255, 1)`,
     display: `flex`,
-    position: `relative`,
-    isolation: `isolate`,
+    // position: `relative`,
+    // isolation: `isolate`,
     flexDirection: `row`,
-    width: `1920px`,
-    height: `862px`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
+    // width: `1920px`,
+    // height: `862px`,
+    justifyContent: `center`,
+    alignItems: `center`,
+    // padding: `0px`,
     boxSizing: `border-box`,
-    overflow: `scroll`
+    // overflow: `scroll`
 });
 
 //progress bar
-export const Rectangle1362 = styled("div")({
+export const Rectangle1362 = styled("div") ({
     backgroundColor: `rgba(231, 240, 250, 0.5)`,
     borderRadius: `10px`,
     width: `508px`,
     height: `10px`,
-    position: `absolute`,
-    left: `1133px`,
-    top: `44px`,
+    // position: `absolute`,
+    // left: `1133px`,
+    // top: `44px`,
+
 });
 
 //tabs position
@@ -35,9 +36,9 @@ export const Frame82 = styled("div")({
     position: `absolute`,
     isolation: `isolate`,
     flexDirection: `row`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
+    justifyContent: `center`,
+    alignItems: ``,
+    // padding: `0px`,
     boxSizing: `border-box`,
     left: `504px`,
     top: `119px`,
@@ -88,7 +89,7 @@ export const BxUserCircle1 = styled("div")({
     width: `24px`,
     height: `24px`,
     margin: `0px`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 export const Fondation = styled("div")({
     textAlign: `left`,
@@ -133,7 +134,7 @@ export const BxGlobe1 = styled("div")({
     width: `24px`,
     height: `24px`,
     margin: `0px`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 
 export const RéseauxSociaux = styled("div")({
@@ -179,7 +180,7 @@ export const BxAt1 = styled("div")({
     width: `24px`,
     height: `24px`,
     margin: `0px`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 
 export const Contact = styled("div")({
@@ -323,7 +324,7 @@ export const BxCloudUpload1 = styled("div")({
     height: `60px`,
     left: `87px`,
     top: `58px`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 
 export const Frame84 = styled("div")({
@@ -385,7 +386,7 @@ export const BxCloudUpload11 = styled("div")({
     height: `60px`,
     left: `322px`,
     top: `58px`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 
 export const Frame85 = styled("div")({
@@ -512,7 +513,7 @@ export const  Employeur51 = styled("div")({
     alignItems: `flex-start`,
     padding: `0px`,
     boxSizing: `border-box`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 
 export const  Q100 = styled("div")({
@@ -646,7 +647,7 @@ export const  BxCheckDouble1 = styled("div")({
     height: `50px`,
     left: `935px`,
     top: `341px`,
-    overflow: `hidden`,
+    // overflow: `hidden`,
 });
 
 export const  Vector = styled("img")({

@@ -13,6 +13,7 @@ import EmailVerification from "./pages/freelance/EmailVerification";
 import Account from "./pages/freelance/Account";
 import ForgetPassword from "./pages/freelance/ForgetPassword";
 import ResponsiveAppBar from "./pages/ResponsiveAppBar";
+// import FloatingActionButtonZoom from "./pages/FloatingActionButtonZoom"
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
           <Route path="/endProfil" element={<EndProfil />} />
           <Route path="/home" element={<HomeScreen/>} />
           <Route path="/responsiveAppBar" element={<ResponsiveAppBar/>}/>
+
+          {/* <Route path="/floatingActionButtonZoom" element={<FloatingActionButtonZoom/>}/> */}
           {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />
           <Route path="/Dashbord/projet" element={<Projet />} />
           <Route path="/Dashbord/Add-Projet" element={<AddProjet />} /> */}
