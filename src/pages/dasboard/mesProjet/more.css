@@ -1,0 +1,896 @@
+.voir-projetr {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    overflow: scroll;
+}
+
+.voir-projetr .div {
+    background-color: #ffffff;
+    height: 920px;
+    position: relative;
+    width: 1920px;
+}
+
+.voir-projetr .overlap {
+    height: 1404px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1920px;
+}
+
+.voir-projetr .rectangle {
+    background-color: #f1f2f4;
+    height: 65px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1920px;
+}
+
+.voir-projetr .frame {
+    align-items: flex-start;
+    display: flex;
+    gap: 7px;
+    height: 47px;
+    left: 243px;
+    position: absolute;
+    top: 9px;
+    width: 552px;
+}
+
+.voir-projetr .first-check-box {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 36px;
+    justify-content: center;
+    padding: 6px 10px;
+    position: relative;
+    width: 60px;
+}
+
+.voir-projetr .text-wrapper-2 {
+    color: #00000080;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 15px;
+    margin-left: -4.5px;
+    margin-right: -4.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.voir-projetr .div-wrapper {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 36px;
+    justify-content: center;
+    padding: 6px 10px;
+    position: relative;
+    width: 101px;
+}
+
+.voir-projetr .text-wrapper-3 {
+    color: #0a65cccc;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 15px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.voir-projetr .first-check-box-2 {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 36px;
+    justify-content: center;
+    padding: 6px 10px;
+    position: relative;
+    width: 124px;
+}
+
+.voir-projetr .text-wrapper-4 {
+    color: #00000080;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 15px;
+    margin-left: -3.5px;
+    margin-right: -3.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.voir-projetr .first-check-box-3 {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 36px;
+    justify-content: center;
+    padding: 6px 10px;
+    position: relative;
+    width: 99px;
+}
+
+.voir-projetr .first-check-box-4 {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 36px;
+    justify-content: center;
+    padding: 5px 10px;
+    position: relative;
+    width: 140px;
+}
+
+.voir-projetr .line {
+    height: 2px;
+    left: 320px;
+    position: absolute;
+    top: 63px;
+    width: 79px;
+}
+
+.voir-projetr .rectangle-2 {
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #e4e5e8;
+    height: 117px;
+    left: 0;
+    position: absolute;
+    top: 65px;
+    width: 1920px;
+}
+
+.voir-projetr .logo-PSI {
+    height: 126px;
+    left: 225px;
+    object-fit: cover;
+    position: absolute;
+    top: 60px;
+    width: 206px;
+}
+
+.voir-projetr .informations {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    height: 59px;
+    justify-content: center;
+    left: 1411px;
+    position: absolute;
+    top: 94px;
+    width: 260px;
+}
+
+.voir-projetr .frame-wrapper {
+    height: 45px;
+    margin-left: -2px;
+    position: relative;
+    width: 164px;
+}
+
+.voir-projetr .frame-2 {
+    align-items: center;
+    border: 1px solid;
+    border-color: #0a65cc;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    left: -1px;
+    padding: 5px 18px;
+    position: relative;
+    width: 165px;
+}
+
+.voir-projetr .text-wrapper-5 {
+    color: #0a65cc;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.44px;
+    line-height: 35px;
+    margin-left: -146px;
+    margin-right: -116px;
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+    left: -50%;
+}
+
+.voir-projetr .vector {
+    height: 20px;
+    margin-left: -69px;
+    margin-right: -146px;
+    position: relative;
+    width: 20px;
+}
+
+.voir-projetr .img {
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.voir-projetr .overlap-group {
+    height: 16px;
+    left: 4px;
+    position: relative;
+    top: 2px;
+    width: 14px;
+}
+
+.voir-projetr .icon-2 {
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 13px;
+}
+
+.voir-projetr .ellipse {
+    background-color: var(--danger-500);
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 3.5px;
+    height: 7px;
+    left: 7px;
+    position: absolute;
+    top: 1px;
+    width: 7px;
+}
+
+.voir-projetr .profile {
+    background-color: var(--secondary-400);
+    border-radius: 100px;
+    height: 40px;
+    margin-right: -2px;
+    position: relative;
+    width: 40px;
+}
+
+.voir-projetr .ellipse-2 {
+    height: 32px;
+    left: 4px;
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    width: 32px;
+}
+
+.voir-projetr .line-2 {
+    height: 1223px;
+    left: 586px;
+    object-fit: cover;
+    position: absolute;
+    top: 181px;
+    width: 1px;
+}
+
+.voir-projetr .overlap-2 {
+    height: 212px;
+    left: 296px;
+    position: absolute;
+    top: 238px;
+    width: 290px;
+}
+
+.voir-projetr .sidebar-nav-tabs {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 12px;
+    height: 47px;
+    justify-content: center;
+    left: 0;
+    padding: 10px 24px;
+    position: absolute;
+    top: 126px;
+    width: 290px;
+}
+
+.voir-projetr .text-wrapper-6 {
+    color: #626c70;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: relative;
+    width: 200px;
+}
+
+.voir-projetr .sidebar-nav-tabs-2 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 12px;
+    height: 47px;
+    justify-content: center;
+    left: 0;
+    padding: 10px 24px;
+    position: absolute;
+    top: 0;
+    width: 290px;
+}
+
+.voir-projetr .text-wrapper-7 {
+    color: var(--gray-600);
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: relative;
+    width: 200px;
+}
+
+.voir-projetr .sidebar-nav-tabs-3 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 12px;
+    height: 47px;
+    justify-content: center;
+    left: 0;
+    padding: 10px 24px;
+    position: absolute;
+    top: 42px;
+    width: 290px;
+}
+
+.voir-projetr .sidebar-nav-tabs-4 {
+    align-items: center;
+    background-color: #eff5ff;
+    box-shadow: inset 3px 0px 0px #0e5fd9;
+    display: flex;
+    gap: 12px;
+    height: 47px;
+    justify-content: center;
+    left: 0;
+    padding: 10px 24px;
+    position: absolute;
+    top: 84px;
+    width: 290px;
+}
+
+.voir-projetr .text-wrapper-8 {
+    color: #0a65cc;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: relative;
+    width: 200px;
+}
+
+.voir-projetr .sidebar-nav-tabs-5 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 12px;
+    height: 47px;
+    justify-content: center;
+    left: 0;
+    padding: 10px 24px;
+    position: absolute;
+    top: 165px;
+    width: 290px;
+}
+
+.voir-projetr .sidebar-nav-tabs-6 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 12px;
+    height: 47px;
+    justify-content: center;
+    left: 296px;
+    padding: 10px 24px;
+    position: absolute;
+    top: 1217px;
+    width: 290px;
+}
+
+.voir-projetr .files {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    left: 620px;
+    position: absolute;
+    top: 194px;
+    width: 888px;
+}
+
+.voir-projetr .text-wrapper-9 {
+    color: var(--gray-900);
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-right: -228px;
+    margin-top: -1px;
+    position: relative;
+    width: 1116px;
+}
+
+.voir-projetr .folder-2 {
+    display: inline-flex;
+    gap: 27px;
+    position: relative;
+    left: -23%;
+    margin-top: -10%;
+}
+.floating-container {
+    position: relative;
+    margin-top: 18%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 4px 4px #FFFFFF;
+  }
+  
+  .image {
+    width: 10%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-left: 8%;
+  }
+  
+  .text-container {
+    text-align: center;
+  }
+  
+  .floating-container-2 {
+    position: relative;
+    margin-top: 18%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 4px 4px #FFFFFF;
+  }
+
+  .floating-container-3 {
+    position: relative;
+    margin-top: 18%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 4px 4px #FFFFFF;
+  }
+
+  .floating-container-4 {
+    position: relative;
+    margin-top: 18%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 4px 4px #FFFFFF;
+  }
+
+
+.voir-projetr .folder-instance {
+    flex: 0 0 auto !important;
+}
+
+.voir-projetr .folder-open {
+    height: 32px !important;
+    position: relative !important;
+    width: 32px !important;
+}
+
+.voir-projetr .biography {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 4px #00000040, 0px 4px 4px #00000040;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    left: 620px;
+    overflow: hidden;
+    padding: 0px 0px 24px;
+    position: absolute;
+    top: 393px;
+    width: 888px;
+}
+
+.voir-projetr .heading {
+    align-items: center;
+    background-color: var(--graywhite);
+    box-shadow: inset 0px -1px 0px #e5e7e8;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    padding: 12px 24px;
+    position: relative;
+    width: 886px;
+}
+
+.voir-projetr .text-wrapper-10 {
+    color: var(--gray-900);
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.voir-projetr .chart-instance {
+    opacity: 0 !important;
+}
+
+.voir-projetr .frame-3 {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 110px;
+    justify-content: center;
+    position: relative;
+    width: 781px;
+}
+
+.voir-projetr .frame-4 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    height: 311px;
+    justify-content: center;
+    position: relative;
+}
+
+.voir-projetr .about-me-wrapper {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    height: 308px;
+    justify-content: center;
+    position: relative;
+}
+
+.voir-projetr .about-me {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 171px;
+    position: relative;
+    width: 246px;
+}
+
+.voir-projetr .text-wrapper-11 {
+    color: var(--gray-900);
+    font-family: var(--body-regular-500-font-family);
+    font-size: var(--body-regular-500-font-size);
+    font-style: var(--body-regular-500-font-style);
+    font-weight: var(--body-regular-500-font-weight);
+    letter-spacing: var(--body-regular-500-letter-spacing);
+    line-height: var(--body-regular-500-line-height);
+    margin-top: -1px;
+    position: relative;
+    width: 246px;
+}
+
+.voir-projetr .p {
+    color: var(--gray-500);
+    font-family: var(--body-regular-400-font-family);
+    font-size: var(--body-regular-400-font-size);
+    font-style: var(--body-regular-400-font-style);
+    font-weight: var(--body-regular-400-font-weight);
+    height: 150px;
+    letter-spacing: var(--body-regular-400-letter-spacing);
+    line-height: var(--body-regular-400-line-height);
+    margin-bottom: -6px;
+    position: relative;
+    width: 246px;
+}
+
+.voir-projetr .info {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.voir-projetr .div-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 20px;
+    position: relative;
+}
+
+.voir-projetr .text-wrapper-12 {
+    color: var(--gray-400);
+    font-family: var(--body-regular-400-font-family);
+    font-size: var(--body-regular-400-font-size);
+    font-style: var(--body-regular-400-font-style);
+    font-weight: var(--body-regular-400-font-weight);
+    letter-spacing: var(--body-regular-400-letter-spacing);
+    line-height: var(--body-regular-400-line-height);
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.voir-projetr .text-wrapper-13 {
+    color: var(--gray-900);
+    font-family: var(--body-regular-400-font-family);
+    font-size: var(--body-regular-400-font-size);
+    font-style: var(--body-regular-400-font-style);
+    font-weight: var(--body-regular-400-font-weight);
+    letter-spacing: var(--body-regular-400-letter-spacing);
+    line-height: var(--body-regular-400-line-height);
+    margin-top: -1px;
+    position: relative;
+    width: 200px;
+}
+
+.voir-projetr .text-wrapper-14 {
+    color: var(--gray-400);
+    font-family: var(--body-regular-400-font-family);
+    font-size: var(--body-regular-400-font-size);
+    font-style: var(--body-regular-400-font-style);
+    font-weight: var(--body-regular-400-font-weight);
+    letter-spacing: var(--body-regular-400-letter-spacing);
+    line-height: var(--body-regular-400-line-height);
+    margin-top: -1px;
+    position: relative;
+    width: 114px;
+}
+
+.voir-projetr .frame-5 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 41px;
+    left: 620px;
+    position: absolute;
+    top: 839px;
+}
+
+.voir-projetr .smoothie-card {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: inset 0px 1px 0px #00000040, 0px 4px 4px #00000040;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 383px;
+    padding: 14px 14px 24px;
+    position: relative;
+    width: 354px;
+}
+
+.voir-projetr .frame-6 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    height: 279px;
+    position: relative;
+    width: 100%;
+}
+
+.voir-projetr .frame-7 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    gap: 24px;
+    height: 64px;
+    position: relative;
+    width: 100%;
+}
+
+.voir-projetr .ellipse-3 {
+    align-self: stretch;
+    object-fit: cover;
+    position: relative;
+    width: 64px;
+}
+
+.voir-projetr .frame-8 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 3px;
+    position: relative;
+}
+
+.voir-projetr .text-wrapper-15 {
+    align-self: stretch;
+    color: #284a80;
+    flex: 1;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.voir-projetr .text-wrapper-16 {
+    align-self: stretch;
+    color: #8d98aa;
+    flex: 1;
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 25.2px;
+    position: relative;
+}
+
+.voir-projetr .frame-9 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    gap: 10px;
+    height: 103px;
+    padding: 8px 8px 8px 12px;
+    position: relative;
+    width: 100%;
+}
+
+.voir-projetr .text-wrapper-17 {
+    align-self: stretch;
+    color: #000000;
+    flex: 1;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+}
+
+.voir-projetr .frame-10 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.voir-projetr .frame-11 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 16px;
+    position: relative;
+}
+
+.voir-projetr .ellipse-4 {
+    background-color: #525355;
+    border-radius: 5px;
+    height: 10px;
+    position: relative;
+    width: 10px;
+}
+
+.voir-projetr .text-wrapper-18 {
+    color: #626c70;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    height: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: 164px;
+}
+
+.voir-projetr .button {
+    all: unset;
+    align-items: center;
+    background-color: var(--graywhite);
+    border: 1.5px solid;
+    border-color: var(--primary-500);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 8px;
+    height: 40px;
+    justify-content: center;
+    padding: 0px 24px;
+    position: relative;
+    width: 212.72px;
+}
+
+.voir-projetr .button:hover {
+
+    background-color: #0A65CC;
+    transition: 1s;
+}
+
+.voir-projetr .voir-CV {
+    color: var(--primary-500);
+    font-family: var(--sub-heading-button-font-family);
+    font-size: var(--sub-heading-button-font-size);
+    font-style: var(--sub-heading-button-font-style);
+    font-weight: var(--sub-heading-button-font-weight);
+    letter-spacing: var(--sub-heading-button-letter-spacing);
+    line-height: var(--sub-heading-button-line-height);
+    margin-top: -1.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.voir-projetr .text-wrapper-19 {
+    color: #878f9a;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 921px;
+    letter-spacing: 1.28px;
+    line-height: 35px;
+    position: absolute;
+    top: 1423px;
+    width: 77px;
+}
+
+.voir-projetr .line-3 {
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 1405px;
+    width: 1920px;
+}

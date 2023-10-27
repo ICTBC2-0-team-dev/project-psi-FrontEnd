@@ -4,11 +4,13 @@ export const Container = styled.div`
 background-color: #fff;
 border-radius: 10px;
 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-position: relative;
 overflow: hidden;
-width: 1600px;
+width: 1501px;
 max-width: 100%;
 min-height: 750px;
+display: flex;
+justify-content: center;
+align-items: center;
 `;
 
 export const SignUpContainer = styled.div`

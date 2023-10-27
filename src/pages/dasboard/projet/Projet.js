@@ -1,28 +1,27 @@
 import React, { useState } from "react";
-import "./AddProjet.css";
-import logoPSI from "../../img/logoPSI.png";
-import Vector from "../../img/Vector.svg";
-import houseLine from "../../img/HouseLine.svg";
-import user from "../../img/user.svg";
-import user1 from "../../img/user1.svg";
-import plus from "../../img/plus.svg";
-import reglage from "../../img/reglage.svg";
-import sac from "../../img/sac.svg";
-import notification from "../../img/Notification.svg";
-import profil from "../../img/profil.svg";
-import signOut from "../../img/SignOut.svg";
+import "./projet.css";
+import logoPSI from "../../../img/logoPSI.png";
+import Vector from "../../../img/Vector.svg";
+import houseLine from "../../../img/HouseLine.svg";
+import user from "../../../img/user.svg";
+import user1 from "../../../img/user1.svg";
+import plus from "../../../img/plus.svg";
+import reglage from "../../../img/reglage.svg";
+import sac from "../../../img/sac.svg";
+import notification from "../../../img/Notification.svg";
+import profil from "../../../img/profil.svg";
+import signOut from "../../../img/SignOut.svg";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import NativeSelect from "@mui/material/NativeSelect";
-import DatePicker from "./DataPiker";
+import DatePicker from "../DataPiker";
 import ReactQuill from "react-quill";
 import { Link } from "react-router-dom";
 
-const AddProjet = () => {
+const Projet = () => {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
@@ -58,7 +57,7 @@ const AddProjet = () => {
   };
 
   return (
-    <div className="element-employers">
+    <div className="employers">
       <div className="div">
         <div className="overlap">
           <div className="overlap">
@@ -101,31 +100,35 @@ const AddProjet = () => {
             </div>
           </div>
           <div className="overlap-2">
-            <Link to={`/Dashbord/Accueil`}>
-              <div
-                className="sidebar-nav-tabs"
-                style={{ position: "relative", top: "-30px" }}
-              >
-                <img className="img" alt="Phosphor duotone" src={houseLine} />
-                <div className="text-wrapper-5" style={{cursor:'pointer'}}>Dashboard</div>
-              </div>
-            </Link>
+            <div
+              className="sidebar-nav-tabs"
+              style={{ position: "relative", top: "-30px" }}
+            >
+              <img className="img" alt="Phosphor duotone" src={houseLine} />
+              <Link to={`/dashbord/index`}>
+                <div className="text-wrapper-5" style={{ cursor: "pointer" }}>
+                  Dashboard
+                </div>
+              </Link>
+            </div>
             <div className="sidebar-nav-tabs-2">
               <img className="img" alt="Bx user circle" src={user1} />
               <div className="text-wrapper-6">Profil</div>
             </div>
-            <Link to={`/Dashbord/Add-Projet`}>
-              <div className="sidebar-nav-tabs-3">
-                <img className="img" alt="Bx plus circle" src={plus} />
-                <div className="text-wrapper-7" style={{cursor:'pointer'}}>Ajouter Un Projet</div>
+            <div className="sidebar-nav-tabs-3">
+              <img className="img" alt="Bx plus circle" src={plus} />
+              <div className="text-wrapper-7" style={{ cursor: "pointer" }}>
+                Ajouter Un Projet
               </div>
-            </Link>
-            <Link to={`/Dashbord/projet`}>
-              <div className="sidebar-nav-tabs-4">
-                <img className="img" alt="Bx briefcase alt" src={sac} />
-                <div className="text-wrapper-5" style={{cursor:'pointer'}}>Mes Projets</div>
-              </div>
-            </Link>
+            </div>
+            <div className="sidebar-nav-tabs-4">
+              <img className="img" alt="Bx briefcase alt" src={sac} />
+              <Link to={`/mes-projet`}>
+                <div className="text-wrapper-5" style={{ cursor: "pointer" }}>
+                  Mes Projets
+                </div>
+              </Link>
+            </div>
             <div className="sidebar-nav-tabs-5">
               <img className="img" alt="Bxs user detail" src={user} />
               <div className="text-wrapper-6">Freelance</div>
@@ -193,76 +196,91 @@ const AddProjet = () => {
               </FormControl>
             </Box>
           </div>
-          <div className="frame-6">
+          {/** copi */}
+          <div className="frame-10" style={{ marginTop: "-8%" }}>
             <div
-              class="input-group mb-3 col-6"
-              style={{ width: "320px", height: "55px" }}
+              className="group-6"
+              style={{ postion: "relative", left: "-3px" }}
             >
-              <input
-                type="text"
-                class="form-control"
-                placeholder="MINIMUM"
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2"
-              />
-              <div class="input-group-append">
-                <span
-                  class="input-group-text"
-                  id="basic-addon2"
-                  style={{ height: "55px" }}
+              <div>
+                <div
+                  class="input-group mb-3 col-6"
+                  style={{ width: "320px", height: "55px" }}
                 >
-                  XAF
-                </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="MINIMUM"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      id="basic-addon2"
+                      style={{ height: "55px" }}
+                    >
+                      XAF
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="group-4">
-              <div
-                class="input-group mb-3 col-6"
-                style={{ width: "350px", height: "55px" }}
-              >
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="MAXIMUM"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                />
-                <div class="input-group-append">
-                  <span
-                    class="input-group-text"
-                    id="basic-addon2"
-                    style={{ height: "55px" }}
+            <div className="group-6">
+              <div className="group-6">
+                <div>
+                  <div
+                    class="input-group mb-3 col-6"
+                    style={{ width: "320px", height: "55px" }}
                   >
-                    XAF
-                  </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="MAXIMUM"
+                      aria-label="Recipient's username"
+                      aria-describedby="basic-addon2"
+                    />
+                    <div class="input-group-append">
+                      <span
+                        class="input-group-text"
+                        id="basic-addon2"
+                        style={{ height: "55px" }}
+                      >
+                        XAF
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div
               className="group-5"
-              style={{ postion: "relative", left: "30px", top: "-8px" }}
+              style={{ marginTop: "-0.6%", marginLeft: "-2%" }}
             >
-              <FormControl sx={{ m: 1, minWidth: 220 }}>
-                <InputLabel id="demo-controlled-open-select-label">
-                  monaie
-                </InputLabel>
-                <Select
-                  id="demo-controlled-open-select"
-                  value={monaie}
-                  label="manaie"
-                  onChange={handleChanges}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
+              <div>
+                <FormControl sx={{ m: 1, minWidth: 190 }}>
+                  <InputLabel id="demo-controlled-open-select-label">
+                    monaie
+                  </InputLabel>
+                  <Select
+                    id="demo-controlled-open-select"
+                    value={monaie}
+                    label="manaie"
+                    onChange={handleChanges}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
             </div>
           </div>
 
+          {/** end */}
           <div className="frame-10">
             <div
               className="group-6"
@@ -396,10 +414,8 @@ const AddProjet = () => {
             </div>
           </div>
           <div className="frame-16">
-            <div className="text-wrapper-20" style={{ marginLeft: "-55px" }}>
-              Module1
-            </div>
-            <div style={{ position: "relative", top: "55px" }}>
+            <div className="text-wrapper-20">Module1</div>
+            <div style={{ position: "relative", top: "35px" }}>
               <Box
                 sx={{
                   width: 600,
@@ -440,10 +456,9 @@ const AddProjet = () => {
           </div>
         </div>
         <div className="text-wrapper-23">copyright@PSI</div>
-        <img className="line-5" alt="Line" src="line-4.svg" />
       </div>
     </div>
   );
 };
 
-export default AddProjet;
+export default Projet;

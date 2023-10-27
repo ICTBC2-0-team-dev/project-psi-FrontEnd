@@ -4,20 +4,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, ProgressBar  } from 'react-bootstrap';
 import * as Componentprofil from './Compomentprofil'
 import  './profil.css'
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
+import { LinkContainer } from 'react-router-bootstrap';
+
 
 const ProfilContact = () => {
 
     // navigation
     const [name, setName] = useState('');
-    const navigate = useNavigate();
+   // const navigate = useNavigate();
   
     const handleNameChange = (event) => {
       setName(event.target.value);
     };
   
-    const handleSubmit = (event) => {
+    /*const handleSubmit = (event) => {
       event.preventDefault();
   
       if (name !== '') {
@@ -25,15 +27,15 @@ const ProfilContact = () => {
       } else {
         alert('Veuillez remplir tous les champs.');
       }
-    };
+    };*/
      //navigate return to
-     const handleReturn = (event) => {
+    /* const handleReturn = (event) => {
       event.preventDefault();
   
       if (name == "" || name !== "") {
         navigate('/profil/reseau-sociaux');
       }
-    };
+    };*/
     
     /** progress bar  */
     const progress = 85;
@@ -139,8 +141,8 @@ const ProfilContact = () => {
     <Componentprofil.Copyright>
         {`PSI`}
     </Componentprofil.Copyright>
-        <button type="button" class="btn btn-light"onClick={handleReturn} style={{position: `absolute`, width: `264px`, left: `469px`, top: `545px`}}>Précedant</button>
-        <Button class="btn btn-primary " onClick={handleSubmit} style={{position: `absolute`, width: `264px`, left: `769px`, top: `545px`}}>Suivant</Button>
+        <button type="button" class="btn btn-light"style={{position: `absolute`, width: `264px`, left: `469px`, top: `545px`}}>Précedant</button>
+        <LinkContainer  to="/endProfil"> <Button class="btn btn-primary "  style={{position: `absolute`, width: `264px`, left: `769px`, top: `545px`}}>Suivant</Button></LinkContainer>
     <Componentprofil.Line1>
     </Componentprofil.Line1>
     <Componentprofil.Line41>

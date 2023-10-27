@@ -35,7 +35,7 @@ function EndProfil() {
             </Componentprofil.Copyright>
             <Componentprofil.Frame77>
             </Componentprofil.Frame77>
-                <button type="button" class="btn btn-light" style={{position: `absolute`, width: `214px`, left: `720px`, top: `645px`}}>Voir votre Dashboard</button>
+               <button type="button" class="btn btn-light" style={{position: `absolute`, width: `214px`, left: `720px`, top: `645px`}}>Voir votre Dashboard</button>
                <Button class="btn btn-primary " style={{position: `absolute`,  width: `214px`, left: `942px`, top: `645px`}}>Poster un travail</Button>
             <Componentprofil.Frame88>
             </Componentprofil.Frame88>

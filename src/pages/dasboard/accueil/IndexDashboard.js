@@ -1,24 +1,25 @@
-import React from "react";
-import "./Accueil.css";
-import logoPSI from "../../img/logoPSI.png";
-import Vector from "../../img/Vector.svg";
-import houseLine from "../../img/HouseLine.svg";
-import user from "../../img/user.svg";
-import user1 from "../../img/user1.svg";
-import plus from "../../img/plus.svg";
-import reglage from "../../img/reglage.svg";
-import sac from "../../img/sac.svg";
-import sacjaune from "../../img/sacJaune.svg";
-import sacBleu from "../../img/sacBleu.svg";
-import notification from "../../img/Notification.svg";
-import profil from "../../img/profil.svg";
-import signOut from "../../img/SignOut.svg";
+import React from 'react'
+import "./style.css";
+import logoPSI from "../../../img/logoPSI.png";
+import Vector from "../../../img/Vector.svg";
+import houseLine from "../../../img/HouseLine.svg";
+import user from "../../../img/user.svg";
+import user1 from "../../../img/user1.svg";
+import plus from "../../../img/plus.svg";
+import reglage from "../../../img/reglage.svg";
+import sac from "../../../img/sac.svg";
+import sacjaune from "../../../img/sacJaune.svg";
+import sacBleu from "../../../img/sacBleu.svg";
+import notification from "../../../img/Notification.svg";
+import profil from "../../../img/profil.svg";
+import signOut from "../../../img/SignOut.svg";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 
-const Index = () => {
-  const columns = [
+const IndexDashboard = () => {
+
+      const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
       field: "firstName",
@@ -63,8 +64,8 @@ const Index = () => {
   ];
 
   return (
-    <div className="element-employers" style={{overflowX:'hidden', overflowY:'scroll'}}>
-      <div className="div" style={{height:'916px'}}>
+    <div className="element">
+      <div className="div" >
         <div className="overlap">
           <div className="overlap">
             <div className="rectangle" />
@@ -121,7 +122,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <Link to={`/Dashbord/Accueil`}>
+          <Link to={`/Dashbord/index`}>
             <div className="sidebar-nav-tabs">
               <img className="img" alt="Phosphor duotone" src={houseLine} />
               <div className="text-wrapper-5" style={{ cursor: "pointer" }}>
@@ -136,39 +137,37 @@ const Index = () => {
             </div>
           </div>
           <div className="frame-3">
-            <div className="frame-4" style={{position:'relative', top:"8px"}}>
+            <div className="frame-4" >
               <div className="group">
                 <div className="overlap-group-2">
                   <div className="text-wrapper-7">520</div>
-                  <div className="text-wrapper-8"  style={{position:'relative', top:"8px"}}>Emploi</div>
+                  <div className="text-wrapper-8"  >Emploi</div>
                 </div>
               </div>
               <div className="frame-5">
-                <div className="rectangle-3" style={{position:'relative',left:'70px'}} />
+                <div className="rectangle-3"  />
                 <img
                   className="bx-briefcase-alt"
                   alt="Bx briefcase alt"
                   src={sacBleu}
-                  style={{position:'relative', top:"3px", left:'15px'}}
                 />
               </div>
             </div>
           </div>
-          <div className="frame-6" style={{position:'relative', top:"170px", width:'350px'}}>
-            <div className="frame-7" style={{position:'relative', top:"8px"}}>
+          <div className="frame-6">
+            <div className="frame-7" >
               <div className="overlap-group-wrapper">
                 <div className="overlap-group-3">
                   <div className="text-wrapper-7">2750</div>
-                  <div className="text-wrapper-8" style={{position:'relative', top:"8px"}}>Freelance</div>
+                  <div className="text-wrapper-8">Freelance</div>
                 </div>
               </div>
               <div className="frame-8">
-                <div className="rectangle-3" style={{position:'relative',left:'70px'}} />
+                <div className="rectangle-3" />
                 <img
                   className="bx-briefcase-alt"
                   alt="Bx briefcase alt"
                   src={sacjaune}
-                  style={{position:'relative', top:"3px", left:'15px'}}
                 />
               </div>
             </div>
@@ -179,16 +178,16 @@ const Index = () => {
               <img className="img" alt="Bx user circle" src={user1} />
               <div className="text-wrapper-10">Profil</div>
             </div>
-            <Link to={`/Dashbord/Add-Projet`}>
+            <Link to={`/dashbord/projet`}>
             <div className="sidebar-nav-tabs-3">
               <img className="img" alt="Bx plus circle" src={plus} />
-              <div className="text-wrapper-10"style={{cursor:'pointer'}} >Ajouter Un Projet</div>
+              <div className="text-wrapper-10"style={{cursor:'pointer', color:'black'}} >Ajouter Un Projet</div>
             </div>
             </Link>
-            <Link to={`/Dashbord/projet`}>
+            <Link to={`/mes-projet`}>
               <div className="sidebar-nav-tabs-5">
                 <img className="img" alt="Bx briefcase alt" src={sac} style={{position: 'relative', marginBottom:'33%'}} />
-                <div className="text-wrapper-10" style={{cursor:'pointer', position: 'relative', marginBottom:'33%'}} >Mes Projets</div>
+                <div className="text-wrapper-10" style={{cursor:'pointer', position: 'relative', marginBottom:'33%',color:'black'}} >Mes Projets</div>
               </div>
             </Link>
             <div className="sidebar-nav-tabs-5">
@@ -235,7 +234,7 @@ const Index = () => {
         <img className="line-3" alt="Line" src="line-4.svg" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default IndexDashboard

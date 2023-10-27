@@ -9,9 +9,15 @@ import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
 import ProfilReseaux from "./pages/profil/ProfilReseaux";
 import ProfilContact from "./pages/profil/ProfilContact";
 import EndProfil from "./pages/profil/EndProfil";
-import Accueil from "./components/dashbord/Accueil";
-import Projet from "./components/dashbord/Pojet"
-import AddProjet from "./components/dashbord/AddProjet";
+import EmailVerification from "./pages/freelance/EmailVerification";
+import Account from "./pages/freelance/Account";
+import ForgetPassword from "./pages/freelance/ForgetPassword";
+import Mesprojet from "./pages/dasboard/mesProjet/Mesprojet";
+import Projet from "./pages/dasboard/projet/Projet";
+import IndexDashboard from "./pages/dasboard/accueil/IndexDashboard";
+import More from "./pages/dasboard/mesProjet/More";
+import Profils from "./pages/dasboard/profil/Profil";
+
 
 function App() {
   return (
@@ -27,10 +33,14 @@ function App() {
           <Route path="/profil/reseau-sociaux" element={<ProfilReseaux />} />
           <Route path="/profil/contact" element={<ProfilContact />} />
           <Route path="/endProfil" element={<EndProfil />} />
-          <Route path="/Dashbord/Accueil" element={<Accueil />} />
-          <Route path="/Dashbord/projet" element={<Projet />} />
-          <Route path="/Dashbord/Add-Projet" element={<AddProjet />} />
-
+          <Route path="/emailVerification" element={<EmailVerification />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/forgetpassword" element={<ForgetPassword />} />
+          <Route path="/mes-projet" element={<Mesprojet />} />
+          <Route path="/dashbord/projet" element={<Projet />} />
+          <Route path="/dashbord/acceuil" element={<IndexDashboard />} />
+          <Route path="/mes-projet/detail" element={<More />} />
+          <Route path="/dashbord/profil" element={<Profils />} />
 
 
           <Route path="*" element={<Login />} />
