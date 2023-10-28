@@ -13,7 +13,7 @@ import EmailVerification from "./pages/freelance/EmailVerification";
 import Account from "./pages/freelance/Account";
 import ForgetPassword from "./pages/freelance/ForgetPassword";
 import ResponsiveAppBar from "./pages/ResponsiveAppBar";
-// import FloatingActionButtonZoom from "./pages/FloatingActionButtonZoom"
+import DashProfil from "./components/Dashbord1/DashProfil"
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
           <Route path="/endProfil" element={<EndProfil />} />
           <Route path="/home" element={<HomeScreen/>} />
           <Route path="/responsiveAppBar" element={<ResponsiveAppBar/>}/>
+          <Route path="/DashProfil" element={<DashProfil/>}/>
 
           {/* <Route path="/floatingActionButtonZoom" element={<FloatingActionButtonZoom/>}/> */}
           {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />

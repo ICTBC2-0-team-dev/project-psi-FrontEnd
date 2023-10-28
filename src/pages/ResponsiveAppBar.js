@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Logo from './images/logoPSI.png';
+import Logo from './images/psi.png';
 import Form from 'react-bootstrap/Form';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -64,7 +64,7 @@ function ResponsiveAppBar() {
                   <Nav.Link eventKey="hom">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="freelance">Freelance</Nav.Link>
+                  <Nav.Link href="/#">Freelance</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="con">Consultant</Nav.Link>
@@ -121,7 +121,7 @@ function ResponsiveAppBar() {
         
         <Grid
          sx={{
-            height: '770px',
+            // height: '770px',
             backgroundColor: '#30509dbf',
             padding: {
               xs:'10px',
@@ -132,7 +132,7 @@ function ResponsiveAppBar() {
           }}
         >
           <Grid className='mt-5 mt-sm-0'>
-            <Grid className='mt-5 mt-sm-0'>
+            <Grid className='my-5 my-sm-0'>
               <Box>
                 <Typography className='text-white mb-2 fs-1 fw-normal fs-sm-5'>
                   Bienvenue sur le site PSI !
@@ -167,7 +167,7 @@ function ResponsiveAppBar() {
                 </Box>
               </Box>
             </Grid>
-            <Container  maxWidth="sm">
+            <Container  maxWidth="sm" className='mt-5'>
               <Grid 
                 sx={{
                   display: 'flex',
@@ -179,11 +179,11 @@ function ResponsiveAppBar() {
                  sx={{ flexGrow: 1 ,
                   padding:{xs:'10px',
                   sm:'20px',
-                  md:'75px'},
+                  md:'7px'},
                  }} 
                 >
-                  <Grid container spacing={2} sx={{padding:{xs:'10px',sm:'20px',md:'40px'}}}>
-                    <Grid item xs={false}  md={4}>
+                  <Grid container spacing={2} sx={{padding:{xs:'10px',sm:'20px',md:'4px'}}}>
+                    <Grid item xs={false} sm={4} md={4}>
                      <Item>
                       <Card
                         
@@ -216,14 +216,14 @@ function ResponsiveAppBar() {
                               1,750,500
                             </Typography>
                             <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'> 
-                              Emploi
+                              Emplois
                             </Typography>
                             
                           </Box>
                         </Card>
                         </Item>
                     </Grid>
-                    <Grid item xs={false} md={4}>
+                    <Grid item xs={false} sm={4} md={4}>
                      <Item>
                       <Card
                         
@@ -263,19 +263,17 @@ function ResponsiveAppBar() {
                         </Card>
                         </Item>
                     </Grid>
-                    <Grid item xs={false} md={4}>
-                      <Item>
+                    <Grid item xs={false} sm={4} md={4}>
+                     <Item>
                       <Card
                         
                         sx={{
                           p: 4,
-                          // p:{xs:'1', sm:'2',md:'4'},
                           boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
                           display: 'flex',
                           flexDirection: {
                             xs: 'column', // mobile
-                            sm: 'colunm', // tablet and up
-                            md: 'row'
+                            sm: 'row', // tablet and up
                           },
                         }}
                       >
@@ -284,7 +282,7 @@ function ResponsiveAppBar() {
                           height="50"
                           
                             sx={{
-                             
+                              
                               width: { xs: '100%', sm: 100 },
                               mr: { sm: 1 },
                               mb: { xs: 0, sm: 0 },
@@ -292,12 +290,12 @@ function ResponsiveAppBar() {
                               alignItems: 'center',
                               justifyContent:'center'
                             }}
-                          ><Box sx={{background:'#E7F0FA',padding:'20px'}} className="rounded"><  PersonOutlineOutlinedIcon  sx={{color: '#0A65CC'}} xs={false} md={false} /></Box></CardMedia>
-                          <Box sx={{}}>
-                            <Typography fontWeight="bold" noWrap className='fs-2 fs-xs-1'>
-                              1,750,500
+                          ><Box sx={{background:'#E7F0FA',padding:'20px'}} className="rounded">< PersonOutlineOutlinedIcon  sx={{color: '#0A65CC'}}/></Box></CardMedia>
+                          <Box>
+                            <Typography fontWeight="bold" noWrap className='fs-2'>
+                             750,500
                             </Typography>
-                            <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
+                            <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'> 
                               Freelances
                             </Typography>
                             
@@ -319,7 +317,7 @@ function ResponsiveAppBar() {
       {/* section des offres d'emploi */}
       <Container className='mt-5'>
         <Row>
-          <Col className='fw-bold fs-3'>Offres d'emploi</Col>
+          <Col className='fw-bold fs-3'>Offres d'emplois</Col>
           <Col className='d-flex justify-content-end text-primary fs-5'>  <i class="bi bi-arrow-right">Tout Voir</i></Col>
         </Row>
       </Container>
@@ -600,7 +598,7 @@ function ResponsiveAppBar() {
       <Grid fluid className='mt-5'>
         <Grid fluid 
           style={{
-          backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRJWZ3TJQHnMmYYHsMC7Y9KKaWBemsOdhPAgzyugiGzR0HjVukTUVuUOT6fWXzRrZfjIQ&usqp=CAU)',
+          backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2021/05/connecting-points-dark-background.jpg)',
           backgroundRepeat: 'no-repeat', 
           backgroundSize: 'cover',
           

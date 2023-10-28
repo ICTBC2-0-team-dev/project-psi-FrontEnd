@@ -1,8 +1,41 @@
 import React from 'react'
+import Badge from '@mui/material/Badge';
+import Container from 'react-bootstrap/Container';
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import Avatar from '@mui/material/Avatar';
+import { deepOrange } from '@mui/material/colors';
+// import Logo from './';
 
 const DashProfil = () => {
   return (
-    <div>DashProfil</div>
+    <Container className='mt-3'>
+     
+      <div className="row">
+        <div className="col">
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+        </div>
+        <div className="col-md-4 d-flex justify-content-around mt-xs-5">
+          <div className='col-6'>
+           <Button variant="outlined"><AddIcon />Projets</Button>
+          </div>
+          <div className="col-3">
+            <Badge badgeContent={4} color="primary">
+              <NotificationsNoneIcon  color="action" />
+            </Badge>
+          </div>
+          <div className='col-3'>
+            <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+          </div>
+        </div>
+       
+       
+      </div>
+
+    </Container>
+  
+   
   )
 }
 
