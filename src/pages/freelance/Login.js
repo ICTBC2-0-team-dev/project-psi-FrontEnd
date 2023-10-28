@@ -41,7 +41,7 @@ const Login = () => {
           sm={4}
           md={5}
           sx={{
-            backgroundImage: 'url(https://img.freepik.com/photos-gratuite/portrait-beau-jeune-homme-affaires-noir-africain-travaillant-ordinateur-portable-au-bureau_231208-680.jpg?w=1380&t=st=1696980256~exp=1696980856~hmac=8d782e9a7ac93aad86bbf995ceb44ae02d2edb83ba5ee9ff3ac1cd4792e7fdcd)',
+            backgroundImage: 'url(https://media.istockphoto.com/id/1326046108/fr/photo/voyage-cosmique-dans-lespace.jpg?s=612x612&w=0&k=20&c=GVAzDjgECD9lYTpHb8QKVEKoS63La7PgVOL5bHODMM0=)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
