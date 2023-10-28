@@ -37,6 +37,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 
 
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -64,7 +65,7 @@ function ResponsiveAppBar() {
                   <Nav.Link eventKey="hom">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="/#">Freelance</Nav.Link>
+                  <Nav.Link eventkey="/#" sx={{color:'primary'}}>Freelance</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="con">Consultant</Nav.Link>
@@ -109,7 +110,7 @@ function ResponsiveAppBar() {
       {/* section header */}
       <Grid fluid component="main"
         style={{
-        backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRJWZ3TJQHnMmYYHsMC7Y9KKaWBemsOdhPAgzyugiGzR0HjVukTUVuUOT6fWXzRrZfjIQ&usqp=CAU)',
+        backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2021/05/rhea-group-space-banner-768x425.jpg)',
         backgroundRepeat: 'no-repeat', 
         backgroundSize: 'cover',
         flexDirection: 'start',
@@ -160,10 +161,10 @@ function ResponsiveAppBar() {
                   />
                 </Typography>
                 <Box>
-                  <Typography className='mb-5 text-white lh-sm text-wrap' paragraph>
+                  {/* <Typography className='mb-5 text-white lh-sm text-wrap' paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id
                     purus sodales, pulvinar purus dsld;woefjnwamsacda;ellqwfnmwa
-                  </Typography>
+                  </Typography> */}
                 </Box>
               </Box>
             </Grid>
@@ -333,16 +334,17 @@ function ResponsiveAppBar() {
                   <IconButton aria-label="calender">
                     <CalendarMonthRoundedIcon/>
                   </IconButton>
-                  <Typography>22 janvier 2022</Typography>
+                  <Typography>2 janvier 2024</Typography>
                 </CardActions>
                 <CardContent>
-                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-start'>
-                  Light energy capture in solar cells.
+                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-center'>
+                  Ingénieur Logiciel
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
+                  concevoir, développer et tester des logiciels informatiques. 
+                  Travailler sur des applications, des systèmes d'exploitation, 
+                  des jeux vidéo, etc.
+                  résolver également des problèmes liés au code et aux performances.
                   </Typography>
                 </CardContent>
                 <CardHeader
@@ -358,12 +360,12 @@ function ResponsiveAppBar() {
                   }
                   title={
                     <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                    Shrimp and Chorizo Paella
+                    Roland Herves
                   </Typography>
                   }
                   subheader={
                     <Typography variant="body2" color="text.secondary" className='text-start'>
-                    This impressive
+                    ITC
                   </Typography>
                   }
                 />
@@ -378,16 +380,16 @@ function ResponsiveAppBar() {
                   <IconButton aria-label="calender">
                     <CalendarMonthRoundedIcon/>
                   </IconButton>
-                  <Typography>22 janvier 2022</Typography>
+                  <Typography>5 Decembre 2023</Typography>
                 </CardActions>
                 <CardContent>
-                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-start'>
-                  Light energy capture in solar cells.
+                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-center'>
+                    Comptable
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
+                  responsables de la gestion des finances de l'organisation.
+                  tenir des registres financiers, préparer des déclarations fiscales,
+                  effectuer des audits et conseillent sur la gestion financière.
                   </Typography>
                 </CardContent>
                 <CardHeader
@@ -403,12 +405,12 @@ function ResponsiveAppBar() {
                   }
                   title={
                     <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                    Shrimp and Chorizo Paella
+                    Shrimp 
                   </Typography>
                   }
                   subheader={
                     <Typography variant="body2" color="text.secondary" className='text-start'>
-                    This impressive
+                    UBA
                   </Typography>
                   }
                 />
@@ -423,22 +425,23 @@ function ResponsiveAppBar() {
                   <IconButton aria-label="calender">
                     <CalendarMonthRoundedIcon/>
                   </IconButton>
-                  <Typography>22 janvier 2022</Typography>
+                  <Typography>22 novwmbre 2023</Typography>
                 </CardActions>
                 <CardContent>
-                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-start'>
-                  Light energy capture in solar cells.
+                  <Typography  variant="h5" className='text-primary mb-2 fs-4 fw-normal text-center'>
+                  Architecte
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
+                  Concevoir des bâtiments et des structures. 
+                  Créer des plans, supervisent la construction,
+                  et veiller à ce que les bâtiments soient esthétiques, 
+                  fonctionnels et conformes aux réglementations.
                   </Typography>
                 </CardContent>
                 <CardHeader
                   avatar={
                     <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
-                      R
+                      J
                     </Avatar>
                   }
                   action={
@@ -448,12 +451,12 @@ function ResponsiveAppBar() {
                   }
                   title={
                     <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                    Shrimp and Chorizo Paella
+                    Junior Leonel
                   </Typography>
                   }
                   subheader={
                     <Typography variant="body2" color="text.secondary" className='text-start'>
-                    This impressive
+                    Afrik-Solutions
                   </Typography>
                   }
                 />
