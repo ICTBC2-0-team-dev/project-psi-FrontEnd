@@ -493,7 +493,7 @@ function ResponsiveAppBar() {
                       1
                     </Avatar>
                     <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-center my-2'>
-                      Creer un compte
+                      Créer un compte
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         This impressive paella is a perfect party dish and a fun meal to cook
@@ -516,7 +516,7 @@ function ResponsiveAppBar() {
                       2
                     </Avatar>
                     <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-center my-2'>
-                      Telecharger le CV
+                      Télécharger le CV
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         This impressive paella is a perfect party dish and a fun meal to cook
@@ -863,7 +863,7 @@ function ResponsiveAppBar() {
       </Grid>
       
       {/* Temoignage */}
-      <Grid  fluid className='mt-5'
+      {/* <Grid  fluid className='mt-5'
         style={{
           backgroundColor:'#f1f2f4',
           height:'700px'
@@ -880,12 +880,12 @@ function ResponsiveAppBar() {
           <CarrouselProfil />
         </Grid>
         </Container>
-      </Grid>
+      </Grid> */}
       
       {/* footer */}
       <Grid  fluid className='mt-5'
         style={{
-          backgroundColor:'#fff',
+          backgroundColor:'#f1f2f4',
          }}
        >
       
@@ -936,7 +936,7 @@ function ResponsiveAppBar() {
                 Compagnie
               </Typography>
             
-              <List sx={{ bgcolor: 'background.paper',textAlign:'end' }}>
+              <List sx={{ bgcolor: '#f1f2f4',textAlign:'end' }}>
                   
                 <ListItem>
                   <ListItemText primary="A propos"  />
@@ -961,7 +961,7 @@ function ResponsiveAppBar() {
                   Accès Rapide
                 </Typography>
               
-                <List sx={{  bgcolor: 'background.paper',textAlign:'end' }}>
+                <List sx={{  bgcolor: '#f1f2f4',textAlign:'end' }}>
                     
                   <ListItem>
                     <ListItemText primary="Acceuil"  />
