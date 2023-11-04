@@ -13,7 +13,14 @@ import EmailVerification from "./pages/freelance/EmailVerification";
 import Account from "./pages/freelance/Account";
 import ForgetPassword from "./pages/freelance/ForgetPassword";
 import ResponsiveAppBar from "./pages/ResponsiveAppBar";
-import DashProfil from "./components/Dashbord1/DashProfil"
+import DashProfil from "./components/Dashbord1/DashProfil";
+import Freelance from "./components/Dashbord1/Freelance";
+import ProfilDash from "./components/Dashbord1/ProfilDash";
+// import Accueil from "./components/dashbord/Accueil"
+// import Projet from "./components/dashbord/Projet"
+import AddProjet from "./components/Dashbord1/AddProjet";
+import Projet from "./components/Dashbord1/Projet"
+
 
 
 function App() {
@@ -36,13 +43,13 @@ function App() {
           <Route path="/home" element={<HomeScreen/>} />
           <Route path="/responsiveAppBar" element={<ResponsiveAppBar/>}/>
           <Route path="/DashProfil" element={<DashProfil/>}/>
-
-          {/* <Route path="/floatingActionButtonZoom" element={<FloatingActionButtonZoom/>}/> */}
+          <Route path="/Freelance" element={<Freelance/>}/>
+          <Route path="/ProfilDash" element={<ProfilDash/>}/>
+          <Route path="/AddProjet" element={<AddProjet />} /> 
+          <Route path="/Projet" element={<Projet />} /> 
           {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />
-          <Route path="/Dashbord/projet" element={<Projet />} />
-          <Route path="/Dashbord/Add-Projet" element={<AddProjet />} /> */}
-
-
+          <Route path="/Dashbord/projet" element={<Projet />} />*/}
+          
 
           <Route path="*" element={<Login />} />
         </Routes>

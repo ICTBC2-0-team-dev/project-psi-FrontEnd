@@ -191,10 +191,12 @@ const Index = () => {
                 <div className="text-wrapper-10" style={{cursor:'pointer', position: 'relative', marginBottom:'33%'}} >Mes Projets</div>
               </div>
             </Link>
-            <div className="sidebar-nav-tabs-5">
-              <img className="img" alt="Bxs user detail" src={user} />
-              <div className="text-wrapper-10">Freelance</div>
-            </div>
+            <Link to={`/Dashbord/Freelance`}>
+              <div className="sidebar-nav-tabs-5">
+                <img className="img" alt="Bxs user detail" src={user} />
+                <div className="text-wrapper-10">Freelance</div>
+              </div>
+            </Link>
             <div className="sidebar-nav-tabs-6">
               <img className="img" alt="Bx cog" src={reglage} />
               <div className="text-wrapper-10">Parametres</div>

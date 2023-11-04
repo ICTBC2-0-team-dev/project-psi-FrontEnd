@@ -13,6 +13,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import * as Components from "./Components";
 import Container from 'react-bootstrap/Container';
 import Logo from '../images/logoPSI.png';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
 
 
 const defaultTheme = createTheme();
@@ -28,6 +35,14 @@ const Login = () => {
       email: data.get('email'),
       password: data.get('password'),
     });
+  };
+
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -80,16 +95,48 @@ const Login = () => {
                 autoComplete="email"
                 autoFocus
               />
-              <TextField
+              {/* <TextField
                 margin="normal"
                 required
                 fullWidth
                 name="password"
                 label="Mot de passe"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
                 id="password"
                 autoComplete="current-password"
-              />
+              /> */}
+                <FormControl  variant="outlined" fullWidth>
+               <InputLabel htmlFor="outlined-adornment-password">Mot de passe</InputLabel>
+               <OutlinedInput
+                 id="outlined-adornment-password"
+                 type={showPassword ? 'text' : 'password'}
+                 endAdornment={
+                   <InputAdornment position="end">
+                     <IconButton
+                       aria-label="toggle password visibility"
+                       onClick={handleClickShowPassword}
+                       onMouseDown={handleMouseDownPassword}
+                       edge="end"
+                     >
+                       {showPassword ? <VisibilityOff /> : <Visibility />}
+                     </IconButton>
+                   </InputAdornment>
+                 }
+                 label="Mot de passe"
+               />
+              </FormControl>
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Maintenir la connexion"

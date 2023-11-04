@@ -8,7 +8,7 @@ const CardForCarrouselProfil = () => {
       <img className="rectangle" alt="Rectangle" src={homme} />
       <div className="frame">
         <p className="text-wrapper">
-          How to make a perfect smoothie at home during lockdown
+          développeur web 
         </p>
       </div>
       <div className="div">
