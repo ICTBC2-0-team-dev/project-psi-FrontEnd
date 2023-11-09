@@ -40,7 +40,7 @@ const Freelance = () => {
           <h1>Freelance</h1>
         </Box> */}
       
-       <Container className='mt-5' direction="column">
+       <Container className='mt-5' direction="column" >
           <div className='row'>
             <div className='col-4'>
               <Card>

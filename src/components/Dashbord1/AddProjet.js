@@ -14,9 +14,10 @@ import Select from '@mui/material/Select';
 import InputAdornment from '@mui/material/InputAdornment';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Button from '@mui/material/Button';
-
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 const AddProjets = () => {
@@ -112,7 +113,7 @@ const AddProjets = () => {
               <div className="row justify-content-between">
                 <div class="col-6">
                   <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">Tags</FormHelperText>
+                    <FormHelperText id="outlined-projet-helper-text">Tag</FormHelperText>
                     <OutlinedInput
                       id="outlined-adornment-projet"
                       // endAdornment={<InputAdornment position="end">kg</InputAdornment>}
@@ -125,7 +126,7 @@ const AddProjets = () => {
                 </div>
                 <div class="col-4">
                   <FormControl fullWidth  sx={{ m: 1}}>
-                    <FormHelperText id="outlined-projet-helper-text">Domaines</FormHelperText>
+                    <FormHelperText id="outlined-projet-helper-text">Domaine</FormHelperText>
                     <InputLabel id="demo-select-small-label"></InputLabel>
                     <Select
                       labelId="demo-select-small-label"
@@ -180,7 +181,7 @@ const AddProjets = () => {
                 </div>
                 <div class="col-4">
                     <FormControl fullWidth  sx={{ m: 1}}>
-                      <FormHelperText id="outlined-projet-helper-text">Devises</FormHelperText>
+                      <FormHelperText id="outlined-projet-helper-text">Devise</FormHelperText>
                       <InputLabel id="demo-select-label"></InputLabel>
                       <Select
                         labelId="demo-select-label"
@@ -210,27 +211,17 @@ const AddProjets = () => {
                   <div className='col-4'>
                     <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
                       <FormHelperText id="outlined-projet-helper-text">Date De creation</FormHelperText>
-                      <OutlinedInput
-                        id="outlined-adornment-projet"
-                        endAdornment={<InputAdornment position="end">< CalendarMonthIcon/></InputAdornment>}
-                        aria-describedby="outlined-projet-helper-text"
-                        inputProps={{
-                          'aria-label': 'projet',
-                        }}
-                      />
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker />
+                      </LocalizationProvider>
                     </FormControl>
                   </div>
                   <div className='col-4'>
                     <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
                       <FormHelperText id="outlined-projet-helper-text">Date D’expiration</FormHelperText>
-                      <OutlinedInput
-                        id="outlined-adornment-projet"
-                        endAdornment={<InputAdornment position="end">< CalendarMonthIcon/></InputAdornment>}
-                        aria-describedby="outlined-projet-helper-text"
-                        inputProps={{
-                          'aria-label': 'projet',
-                        }}
-                      />
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker />
+                      </LocalizationProvider>
                     </FormControl>
                   </div>
                   <div class="col-4">
