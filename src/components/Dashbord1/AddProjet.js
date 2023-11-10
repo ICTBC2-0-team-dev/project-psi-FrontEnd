@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Footer from './Footer.js'
 
 
 const AddProjets = () => {
@@ -335,6 +336,7 @@ const AddProjets = () => {
       
        
       </Box>
+      <Footer/>
     </>
    
   

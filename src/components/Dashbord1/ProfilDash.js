@@ -22,6 +22,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import Footer from './Footer.js'
 
 
 const ProfilDash = () => {
@@ -127,7 +128,7 @@ const ProfilDash = () => {
                       <Typography sx={{ mb: 1.5 }} color="text.dark">
                         Description
                       </Typography>
-                      <Typography variant="body2">
+                      <Typography variant="body2" color="text.secondary">
                       This impressive paella is a perfect party dish and 
                       a fun meal to cook together with your guests. Add 1 cup of frozen
                       peas along with the mussels, if you like.
@@ -161,7 +162,7 @@ const ProfilDash = () => {
       
         
      
-      
+      <Footer/>
     </>
    
   

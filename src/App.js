@@ -13,6 +13,7 @@ import EmailVerification from "./pages/freelance/EmailVerification";
 import Account from "./pages/freelance/Account";
 import ForgetPassword from "./pages/freelance/ForgetPassword";
 import ResponsiveAppBar from "./pages/ResponsiveAppBar";
+import DetailProjet from "./pages/DetailProjet";
 import DashProfil from "./components/Dashbord1/DashProfil";
 import Freelance from "./components/Dashbord1/Freelance";
 import ProfilDash from "./components/Dashbord1/ProfilDash";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/endProfil" element={<EndProfil />} />
           <Route path="/home" element={<HomeScreen/>} />
           <Route path="/responsiveAppBar" element={<ResponsiveAppBar/>}/>
+          <Route path="/DetailProjet" element={<DetailProjet/>}/>
           <Route path="/DashProfil" element={<DashProfil/>}/>
           <Route path="/Freelance" element={<Freelance/>}/>
           <Route path="/ProfilDash" element={<ProfilDash/>}/>

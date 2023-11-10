@@ -1,22 +1,31 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import Sidebar from './Sidebar.js'
-import NavBar from './NavBar.js'
+import Typography from '@mui/material/Typography';
+// import Sidebar from './Sidebar.js'
+
 
 
 const Footer = () => {
+  function Copyright(props) {
+    return (
+      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Copyright © '}
+        
+          PSI
+        {' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
   return ( 
 
     <>
-      <NavBar/>
-      <Box className='mt-5' sx={{ display: 'flex' }}>
-        <Sidebar/>
-        <Box sx={{ p: 3 }}>
-          {/* <h1></h1> */}
-        </Box>
-        
-      </Box>
+      <Box component="footer" sx={{ p: 3}} className='border-top mt-5'>
+       {/* <Sidebar/>  */}
+       <Copyright/>
       
+      </Box>  
     </>
    
   

@@ -18,7 +18,7 @@ import Container from 'react-bootstrap/Container';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-
+import Footer from './Footer.js'
 
 // const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -63,20 +63,16 @@ const Projets = () => {
           {/* <h1>Projets</h1> */}
         </Box>
       </Box>
+      <Container>
         <Box>
-          <div class="row justify-content-around">
-            <div class="col-4">
-             <Typography fontWeight="bold" noWrap className='fs-3 text-center'>
-                Mes projets
-              </Typography>
+          <div class="row">
+            <Typography fontWeight="bold" noWrap className='fs-3 text-center'>
+              Mes projets
+            </Typography>
             </div>
-            {/* <div class="col-4">
-             <Typography fontWeight="bold" noWrap className='fs-5 text-primary'>
-                Tout voir
-              </Typography>
-            </div> */}
-          </div>
+           
         </Box>
+      </Container>
      
        <Container className='mt-3'>
           <TableContainer component={Paper}>
@@ -146,7 +142,7 @@ const Projets = () => {
           </TableContainer>
       </Container>
 
-  
+     <Footer/>
       
     </>
    

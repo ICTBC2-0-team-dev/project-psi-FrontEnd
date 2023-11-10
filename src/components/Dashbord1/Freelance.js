@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import cv from '../../img/homme.jpg'
+import Footer from './Footer.js'
 
 
 const style = {
@@ -188,7 +189,7 @@ const Freelance = () => {
       
         </Container>
       </Box>
-      
+      <Footer/>
     </>
    
   
