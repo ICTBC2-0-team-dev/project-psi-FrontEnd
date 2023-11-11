@@ -97,6 +97,7 @@ const AddProjets = () => {
           <Grid>
             <Container className='mt-5'>
               <div className="row ">
+              <div className="row ">
                 <div className='col'>
                   <FormControl fullWidth sx={{ m: 1,}} variant="outlined">
                     <FormHelperText id="outlined-projet-helper-text">Nom du Projet</FormHelperText>
@@ -145,7 +146,7 @@ const AddProjets = () => {
                     </Select>
                   </FormControl>
                 </div>
-                
+                </div>
                 <div className='row'>
                   <div className='row'>
                     <div className='col'>

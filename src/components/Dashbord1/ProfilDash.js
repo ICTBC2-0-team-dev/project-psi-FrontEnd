@@ -21,8 +21,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import WorkIcon from '@mui/icons-material/Work';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import Footer from './Footer.js'
+import LocationOn from '@mui/icons-material/LocationOn';
 
 
 const ProfilDash = () => {
@@ -97,7 +97,7 @@ const ProfilDash = () => {
                     </ListItem>
                     <ListItem>
                       <ListItemAvatar>
-                        <BeachAccessIcon style={{color: '#005CE8'}}/>
+                        <LocationOn style={{color: '#005CE8'}}/>
                       </ListItemAvatar>
                       <ListItemText primary="Localisation" secondary="Home# 1024/N, Road# 17/A, Adabor, Dhaka-1207, Bangladesh" />
                     </ListItem>
