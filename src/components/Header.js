@@ -38,7 +38,7 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav variant="underline">
                 <Nav.Item>
-                  <Nav.Link eventKey="hom">Home</Nav.Link>
+                  <Nav.Link eventKey="HomeScreen" href="/">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventkey="/#" sx={{ color: "primary" }}>

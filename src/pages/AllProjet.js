@@ -26,9 +26,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setProjetId } from '../features/projetsSlice'
 
 
 const AllProjet = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [Domaine, setDomaine] = React.useState("");
 
   const handleChange = (event) => {
@@ -151,6 +158,11 @@ const AllProjet = () => {
   const handleSelectChange = (event) => {
     setSelectedDomain(event.target.value);
   };
+
+  const handleVoirClick = () => {
+    navigate('/DetailProjet');
+  };
+
 
 
   return (
@@ -466,12 +478,12 @@ const AllProjet = () => {
                               sx={{ bgcolor: red[500] }}
                               aria-label="recipe"
                             >
-                              R
+                              {project.users.userName.charAt(0)}
                             </Avatar>
                           }
                           action={
                             <IconButton aria-label="settings">
-                              <RemoveRedEyeRoundedIcon />
+                              <RemoveRedEyeRoundedIcon onClick={() => handleVoirClick(dispatch(setProjetId(project.id)) )}/>
                             </IconButton>
                           }
                           title={
@@ -479,7 +491,7 @@ const AllProjet = () => {
                               variant="h5"
                               className="text-dark  fs-5 fw-bold text-start"
                             >
-                              Roland Herves
+                             {project.users.userName}
                             </Typography>
                           }
                           subheader={
@@ -493,9 +505,8 @@ const AllProjet = () => {
                                 color="text.secondary"
                               >
                                 <LocationOn sx={{ color: grey[500] }} />{" "}
-                                {project.location}
+                                {project.ville.pays.name}-{project.ville.name}
                               </Typography>
-                              ITC {project.val}
                             </Typography>
                           }
                         />

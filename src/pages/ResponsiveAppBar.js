@@ -11,6 +11,8 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import BusinessIcon from '@mui/icons-material/Business';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import LocationOn from "@mui/icons-material/LocationOn";
+import { grey } from "@mui/material/colors";
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
@@ -384,7 +386,7 @@ function ResponsiveAppBar() {
                   <CardHeader
                     avatar={
                       <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        R
+                        {project.users.userName.charAt(0)}
                       </Avatar>
                     }
                     action={
@@ -394,12 +396,13 @@ function ResponsiveAppBar() {
                     }
                     title={
                       <Typography  variant="h5" className='text-dark  fs-5 fw-bold text-start'>
-                      Roland Herves
+                        {project.users.userName}
                     </Typography>
                     }
                     subheader={
                       <Typography variant="body2" color="text.secondary" className='text-start'>
-                      ITC
+                        <LocationOn sx={{ color: grey[500] }} />{" "}
+                        {project.ville.pays.name}-{project.ville.name}
                     </Typography>
                     }
                   />
