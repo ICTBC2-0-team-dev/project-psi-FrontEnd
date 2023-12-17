@@ -25,11 +25,13 @@ import Projets from "./components/DashboadFreelance/Projet";
 import Module from "./components/Dashbord1/Module"
 //import Paramettre from "./components/DashboadFreelance/Paramettre"
 import ProfilFreelance from './pages/freelance/ProfilFre'
+import Home from "./pages/spaceMarket/Home";
 
 //import dashbord profil
 import DashAccueil from './components/DashboadFreelance/DashAccueil'
 
 import AllProjet from "./pages/AllProjet"
+import DetailProduit from "./pages/spaceMarket/DetailProduit";
 
 
 
@@ -65,6 +67,11 @@ function App() {
           <Route path="/Projets" element={<Projets />} /> {/** inport as dash freelance */}
           <Route path="/ProfilFreelance" element={<ProfilFreelance />} />
           <Route path="/AllProjet" element={<AllProjet />} />
+
+          {/* module space market */}
+          <Route path="/SpaceMarket" element={<Home />} />
+          <Route path="/DetailProduit" element={<DetailProduit />} />
+
 
 
           <Route path="*" element={<Login />} />

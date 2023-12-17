@@ -171,7 +171,7 @@ const Freelance = () => {
            >
              <div>
                <Button
-                 href={`http:localhost:8081/${filteredUser.profile.curriculumVitae}`}
+                 href={`http://localhost:8081/${filteredUser.profile.curriculumVitae}`}
                  variant="outlined"
                  startIcon={<VisibilityIcon />}
                >

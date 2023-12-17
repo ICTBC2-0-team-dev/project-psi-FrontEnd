@@ -832,17 +832,6 @@ function ResponsiveAppBar() {
       {/* footer */}
       <Footer/>
       
-  
-
-      
-      
-
- 
-       
-
-
-     
-    
     </>
   );
 }
