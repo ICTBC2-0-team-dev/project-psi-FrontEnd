@@ -62,13 +62,13 @@ function ResponsiveAppBar() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav variant="underline">
                 <Nav.Item>
-                  <Nav.Link eventKey="hom">Home</Nav.Link>
+                  <Nav.Link eventKey="home">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventkey="/#" sx={{color:'primary'}}>Freelance</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="con">Consultant</Nav.Link>
+                  <Nav.Link eventKey="/DetailProjet">Consultant</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="ind">Industrialisation</Nav.Link>
