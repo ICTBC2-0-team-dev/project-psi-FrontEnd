@@ -47,7 +47,7 @@
   cursor: pointer;
     color: #0d0d0d;
     transition: all 0.5s ease;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
 }
 .button:hover, .button:focus {
     background: #025c61;

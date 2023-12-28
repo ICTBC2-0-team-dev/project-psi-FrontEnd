@@ -21,6 +21,7 @@ import ProfilDash from "./components/Dashbord1/ProfilDash";
 // import Projet from "./components/dashbord/Projet"
 import AddProjet from "./components/Dashbord1/AddProjet";
 import Projet from "./components/Dashbord1/Projet"
+import Produit from "./components/Dashbord1/Produit"
 
 
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/ProfilDash" element={<ProfilDash/>}/>
           <Route path="/AddProjet" element={<AddProjet />} /> 
           <Route path="/Projet" element={<Projet />} /> 
+          <Route path="/Produit" element={<Produit />} /> 
           {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />
           <Route path="/Dashbord/projet" element={<Projet />} />*/}
           
