@@ -14,21 +14,16 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
-import FolderIcon from '@mui/icons-material/Folder';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import {useNavigate} from 'react-router-dom'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
-
-
-
-// import Badge from '@mui/material/Badge';
-// import MailIcon from '@mui/icons-material/Mail';
-
-
-
-
+import Collapse from '@mui/material/Collapse';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
@@ -82,6 +77,11 @@ const openedMixin = (theme) => ({
   const Sidebar = () => {
     const theme = useTheme();
     const [open,setOpen] = React.useState(true);
+    const [isCollapse,setIsCollapse] = React.useState(false);
+    
+    const handleCollapse = () => {
+      setIsCollapse(!isCollapse);
+    }
     const navigate = useNavigate();
                                                                                                                                                                                                                                                                                                                                                                                        
   
@@ -161,26 +161,6 @@ const openedMixin = (theme) => ({
                 <ListItemText primary='Mes Projets' sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/Module")}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <FolderIcon />
-                </ListItemIcon>
-                <ListItemText primary='Modules' sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
             <ListItem disablePadding sx={{ display: 'block' }}onClick={()=>navigate("/AddProjet")}>
               <ListItemButton
                 sx={{
@@ -221,6 +201,69 @@ const openedMixin = (theme) => ({
                 <ListItemText primary='Freelance' sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
+            <ListItem disablePadding sx={{ display: 'block' }} onClick={handleCollapse}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <BusinessCenterOutlinedIcon /> 
+                </ListItemIcon>
+                <ListItemText primary='Mes Produits' sx={{ opacity: open ? 1 : 0 }} />
+                {isCollapse ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
+              </ListItemButton>
+            </ListItem>
+            <Collapse in = {isCollapse} timeout="auto" unmountOnExit>
+              <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/liste")}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 6 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    < FormatListBulletedIcon   /> 
+                  </ListItemIcon>
+                  <ListItemText primary='Liste' sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/commande")}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 6: 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    < AddShoppingCartIcon   /> 
+                  </ListItemIcon>
+                  <ListItemText primary='Commande' sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            </Collapse>
             <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/")}>
               <ListItemButton
                 sx={{

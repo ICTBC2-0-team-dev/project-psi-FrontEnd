@@ -49,6 +49,9 @@ const Header = () => {
                   <Nav.Link eventKey="con">Consultant</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
+                  <Nav.Link eventKey="SpaceMarket" href="/SpaceMarket">spaceMarket</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
                   <Nav.Link eventKey="ind">Industrialisation</Nav.Link>
                 </Nav.Item>
               </Nav>

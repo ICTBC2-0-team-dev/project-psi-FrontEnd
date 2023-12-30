@@ -33,6 +33,9 @@ import DashAccueil from './components/DashboadFreelance/DashAccueil'
 import AllProjet from "./pages/AllProjet"
 import DetailProduit from "./pages/spaceMarket/DetailProduit";
 
+import Liste from "./components/Dashbord1/ListeProduit"
+import Commande from "./components/Dashbord1/CommandeProduit"
+
 
 
 function App() {
@@ -71,6 +74,9 @@ function App() {
           {/* module space market */}
           <Route path="/SpaceMarket" element={<Home />} />
           <Route path="/DetailProduit" element={<DetailProduit />} />
+          {/* module space market Route dashboard */}
+          <Route path="/liste" element={<Liste />} /> 
+          <Route path="/commande" element={<Commande />} /> 
 
 
 

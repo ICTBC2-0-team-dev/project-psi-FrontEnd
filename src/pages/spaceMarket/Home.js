@@ -45,6 +45,7 @@ import SendIcon from "@mui/icons-material/Send";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Homme from "../images/homme.jpg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const buttonStyles = {
@@ -63,7 +64,7 @@ const Home = () => {
               <p style={{ fontSize: "250%" }}>NOUS SOMMES TOUJOURS</p>
               <h1>Votre espace commercial</h1>
               <a
-                href="#"
+                href="/DetailProduit"
                 class="btn btn-primary btn-lg active"
                 role="button"
                 aria-pressed="true"
@@ -87,7 +88,9 @@ const Home = () => {
         </div>
         <div className="col-sm-6">
           <div style={{ marginLeft: "70%", cursor: "pointer" }}>
-            Explorer <ArrowOutwardIcon />
+            <Link to='/DetailProduit' style={{ color: 'black' }}>
+              Explorer <ArrowOutwardIcon />
+            </Link>
           </div>
         </div>
       </div>
@@ -222,7 +225,9 @@ const Home = () => {
         </div>
         <div className="col-sm-6">
           <div style={{ marginLeft: "70%", cursor: "pointer" }}>
-            Explorer <ArrowOutwardIcon />
+            <Link to='/DetailProduit' style={{ color: 'black' }}>
+              Explorer <ArrowOutwardIcon />
+            </Link>
           </div>
         </div>
       </div>
@@ -361,11 +366,11 @@ const Home = () => {
             </p>
             <TextField
               label="Enter your email"
-              style={{background:'white', borderRadius: "100px"}}
+              style={{ background: 'white', borderRadius: "100px" }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <Button variant="contained" color="primary" style={{ borderRadius: "100px"}}>
+                    <Button variant="contained" color="primary" style={{ borderRadius: "100px" }}>
                       Subscribe
                     </Button>
                   </InputAdornment>

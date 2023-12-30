@@ -47,12 +47,12 @@ const DetailProduit = () => {
           flexDirection: "start",
           justifyContent: "center",
           alignItems: "center",
-          height: "600px",
+          height: "650px",
         }}
       >
         <Grid
           sx={{
-            // height: '770px',
+            height: '650px',
             backgroundColor: "#30509dbf",
             padding: {
               xs: "10px",
