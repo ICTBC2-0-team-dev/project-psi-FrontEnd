@@ -50,6 +50,10 @@ const ListeProduit = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const [open2, setOpen2] = React.useState(false);
+    const handleOpen2 = () => setOpen2(true);
+    const handleClose2 = () => setOpen2(false);
+
     const [categorie, setCategorie] = React.useState('');
 
     const handleChangeAge = (event) => {
@@ -62,8 +66,6 @@ const ListeProduit = () => {
             <NavBar />
             <Box className='mt-5' sx={{ display: 'flex', flexDirection: 'column' }} >
                 <Sidebar />
-
-
                 <Container className='mt-5' direction="column" >
                     <Box sx={{
                         marginBottom: 2,
@@ -176,9 +178,94 @@ const ListeProduit = () => {
                             <TabPanel value="1">
                                 <div className='row mt-5  '>
                                     <div className='col-4'>
-                                        <Fab size="small" color="white" aria-label="add" sx={{ zIndex: 1, top: 60, left: 20 }}>
+                                        <Fab size="small" color="white" aria-label="add" sx={{ zIndex: 1, top: 60, left: 20 }} onClick={handleOpen2}>
                                             <RemoveRedEyeOutlinedIcon color="primary" />
                                         </Fab>
+                                        <Modal
+                                            aria-labelledby="transition-modal-title"
+                                            aria-describedby="transition-modal-description"
+                                            open={open2}
+                                            onClose={handleClose2}
+                                            closeAfterTransition
+                                            slots={{ backdrop: Backdrop }}
+                                            slotProps={{
+                                                backdrop: {
+                                                    timeout: 500,
+                                                },
+                                            }}
+                                        >
+                                            <Fade in={open2}>
+                                                <Box sx={style}>
+                                                    <Typography sx={{ mb: 1.5 }} color="text.dark" fontWeight="bold" className='fs-5 text-center'>
+                                                        Detail de l'article
+                                                    </Typography>
+                                                    <div className="row ">
+                                                        <div className='col'>
+                                                            <FormControl fullWidth sx={{ m: 1 }} variant="outlined" size="small">
+                                                                <FormHelperText id="outlined-projet-helper-text" className='fs-6 text-dark fw-bold'>Nom</FormHelperText>
+                                                                <OutlinedInput className='bg-white'
+                                                                    id="outlined-adornment-projet"
+                                                                    aria-describedby="outlined-projet-helper-text"
+                                                                    inputProps={{
+                                                                        'aria-label': 'projet',
+                                                                    }}
+                                                                />
+                                                            </FormControl>
+                                                        </div>
+                                                    </div>
+                                                    <div className="row ">
+                                                        <div className='col'>
+                                                            <FormControl fullWidth sx={{ m: 1 }} variant="outlined" size="small">
+                                                                <FormHelperText id="outlined-projet-helper-text" className='fs-6 text-dark fw-bold'>Prix</FormHelperText>
+                                                                <OutlinedInput className='bg-white'
+                                                                    id="outlined-adornment-projet"
+                                                                    aria-describedby="outlined-projet-helper-text"
+                                                                    inputProps={{
+                                                                        'aria-label': 'projet',
+                                                                    }}
+                                                                    placeholder='Prix'
+                                                                />
+                                                            </FormControl>
+                                                        </div>
+                                                    </div>
+                                                    <div className="row ">
+                                                        <div className='col'>
+                                                            <FormControl fullWidth sx={{ m: 1 }} variant="outlined" size="small">
+                                                                <FormHelperText id="outlined-projet-helper-text" className='fs-6 text-dark fw-bold'>Catégorie</FormHelperText>
+                                                                <OutlinedInput className='bg-white'
+                                                                    id="outlined-adornment-projet"
+                                                                    aria-describedby="outlined-projet-helper-text"
+                                                                    inputProps={{
+                                                                        'aria-label': 'projet',
+                                                                    }}
+                                                                    placeholder='Imagerie'
+                                                                />
+                                                            </FormControl>
+                                                        </div>
+                                                    </div>
+                       
+                                                    <div className="row ">
+                                                        
+                                                        <div className='col'>
+                                                            <FormControl fullWidth sx={{ m: 1, height: '40' }} variant="outlined" >
+                                                                <FormHelperText id="outlined-projet-helper-text" className='fs-6 text-dark fw-bold'>Description</FormHelperText>
+                                                                <OutlinedInput className='bg-white'
+                                                                    id="outlined-adornment-projet"
+                                                                    aria-describedby="outlined-projet-helper-text"
+                                                                    inputProps={{
+                                                                        'aria-label': 'projet',
+                                                                    }}
+                                                                    placeholder='Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+                                                                />
+                                                            </FormControl>
+                                                        </div>
+                                                    </div>
+                                                    <div className='mt-5 d-flex justify-content-end'>
+                                                        <Button variant="contained">Modifier</Button>
+                                                    </div>
+                                                </Box>
+                                            </Fade>
+                                        </Modal>
                                         <Card sx={{ maxWidth: 345 }}>
                                             <Box>
 
