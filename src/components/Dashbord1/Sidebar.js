@@ -19,15 +19,11 @@ import {useNavigate} from 'react-router-dom'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
-
-
-
-// import Badge from '@mui/material/Badge';
-// import MailIcon from '@mui/icons-material/Mail';
-
-
-
-
+import Collapse from '@mui/material/Collapse';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
@@ -81,6 +77,11 @@ const openedMixin = (theme) => ({
   const Sidebar = () => {
     const theme = useTheme();
     const [open,setOpen] = React.useState(true);
+    const [isCollapse,setIsCollapse] = React.useState(false);
+    
+    const handleCollapse = () => {
+      setIsCollapse(!isCollapse);
+    }
     const navigate = useNavigate();
                                                                                                                                                                                                                                                                                                                                                                                        
   
@@ -200,7 +201,7 @@ const openedMixin = (theme) => ({
                 <ListItemText primary='Freelance' sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/Produit")}>
+            <ListItem disablePadding sx={{ display: 'block' }} onClick={handleCollapse}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -218,8 +219,51 @@ const openedMixin = (theme) => ({
                   <BusinessCenterOutlinedIcon /> 
                 </ListItemIcon>
                 <ListItemText primary='Mes Produits' sx={{ opacity: open ? 1 : 0 }} />
+                {isCollapse ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
               </ListItemButton>
             </ListItem>
+            <Collapse in = {isCollapse} timeout="auto" unmountOnExit>
+              <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/liste")}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 6 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    < FormatListBulletedIcon   /> 
+                  </ListItemIcon>
+                  <ListItemText primary='Liste' sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/commande")}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 6: 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    < AddShoppingCartIcon   /> 
+                  </ListItemIcon>
+                  <ListItemText primary='Commande' sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            </Collapse>
             <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/")}>
               <ListItemButton
                 sx={{

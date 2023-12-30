@@ -12,8 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import CardHeader from '@mui/material/CardHeader';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -105,10 +104,7 @@ const ProfilDash = () => {
                 </CardContent>
                 <CardActions disableSpacing>
                   <IconButton aria-label="add to favorites">
-                    <FavoriteIcon style={{color: '#005CE8'}}/>
-                  </IconButton>
-                  <IconButton aria-label="share">
-                    <ShareIcon style={{color: '#005CE8'}}/>
+                    <FacebookOutlinedIcon style={{color: '#005CE8'}}/>
                   </IconButton>
                   
                 </CardActions>

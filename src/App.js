@@ -21,8 +21,8 @@ import ProfilDash from "./components/Dashbord1/ProfilDash";
 // import Projet from "./components/dashbord/Projet"
 import AddProjet from "./components/Dashbord1/AddProjet";
 import Projet from "./components/Dashbord1/Projet"
-import Produit from "./components/Dashbord1/Produit"
-
+import Liste from "./components/Dashbord1/ListeProduit"
+import Commande from "./components/Dashbord1/CommandeProduit"
 
 
 function App() {
@@ -50,7 +50,8 @@ function App() {
           <Route path="/ProfilDash" element={<ProfilDash/>}/>
           <Route path="/AddProjet" element={<AddProjet />} /> 
           <Route path="/Projet" element={<Projet />} /> 
-          <Route path="/Produit" element={<Produit />} /> 
+          <Route path="/liste" element={<Liste />} /> 
+          <Route path="/commande" element={<Commande />} /> 
           {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />
           <Route path="/Dashbord/projet" element={<Projet />} />*/}
           

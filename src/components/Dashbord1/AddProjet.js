@@ -319,6 +319,7 @@ const AddProjets = () => {
                 
                 <div className='col-12'>
                   <Textarea
+                   sx={{width: '100%'}}
                     maxRows={4}
                     aria-label="maximum height"
                     placeholder="Maximum 4 rows"
