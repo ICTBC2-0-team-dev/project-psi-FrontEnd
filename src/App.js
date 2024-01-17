@@ -23,6 +23,10 @@ import AddProjet from "./components/Dashbord1/AddProjet";
 import Projet from "./components/Dashbord1/Projet"
 import Liste from "./components/Dashbord1/ListeProduit"
 import Commande from "./components/Dashbord1/CommandeProduit"
+import Produit from "./components/Admin/Produit";
+import Utilisateur from "./components/Admin/Utilisateur";
+import Accueil from "./components/Admin/Accueil";
+import SidebarAdmin from "./components/Admin/SidebarAdmin";
 
 
 function App() {
@@ -52,6 +56,10 @@ function App() {
           <Route path="/Projet" element={<Projet />} /> 
           <Route path="/liste" element={<Liste />} /> 
           <Route path="/commande" element={<Commande />} /> 
+          <Route path="/produitAdmin" element={<Produit />} /> 
+          <Route path="/utilisateur" element={<Utilisateur />} /> 
+          <Route path="/accuiel" element={<Accueil />} /> 
+          <Route path="/sidebarAdmin" element={<SidebarAdmin />} /> 
           {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />
           <Route path="/Dashbord/projet" element={<Projet />} />*/}
           
