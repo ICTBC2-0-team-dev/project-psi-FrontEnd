@@ -210,40 +210,40 @@ const AddProjets = () => {
 
     if (title === "") {
       setErrorMessage('Veuillez remplir ce champ.');
-    }else if(wording === "") {
+    } else if (wording === "") {
       setErrorWording('Veuillez remplir ce champ.');
     }
-    else if(minAmount === "") {
+    else if (minAmount === "") {
       setErrorMinAmoun('Veuillez remplir ce champ.');
     }
-    else if(maxAmount === "") {
+    else if (maxAmount === "") {
       setErrorMaxAmount('Veuillez remplir ce champ.');
     }
-    else if(delay === "") {
+    else if (delay === "") {
       setErrorDelay('Veuillez remplir ce champ.');
     }
-    else if(monnaie === "") {
+    else if (monnaie === "") {
       setMonnaie('Veuillez remplir ce champ.');
     }
-    else if(dateCreation === "") {
+    else if (dateCreation === "") {
       setErrorDate('Veuillez remplir ce champ.');
     }
-    else if(domain === "") {
+    else if (domain === "") {
       setErrorDomain('Veuillez remplir ce champ.');
     }
-    else if(ville === "") {
+    else if (ville === "") {
       setErrorVille('Veuillez remplir ce champ.');
     }
-    else if(pays === "") {
+    else if (pays === "") {
       setErrorPays('Veuillez remplir ce champ.');
     }
-    else if(minAmount > maxAmount) {
+    else if (minAmount > maxAmount) {
 
       setErrorMessages('Le montant minimum doit être inférieur au montant maximum');
 
-    }else if( wordCount > maxWords ){
+    } else if (wordCount > maxWords) {
       setErrorDescriptiom('Le nombre de mots doit être inférieur ou égal à 300.');
-    }else {
+    } else {
       // Envoyer la requête à l'API ici
       try {
         const response = await axios.post(`/project`, {
@@ -259,11 +259,11 @@ const AddProjets = () => {
           pays,
           users,
         });
-        
+
         console.log(cities);
         alert('Projet creer avec success')
         dispatch(setProjetId(response.data.id))
-        
+
         if (response.status === 200) {
           setTitle("");
           setWording("");
@@ -271,7 +271,7 @@ const AddProjets = () => {
           setMaxAmount("");
           setSelectedDelay("");
           setMonnaie("");
-          setSelectedDate( "");
+          setSelectedDate("");
           setSelectedDomain("");
           setSelectedCity("");
           setSelectedCountry("");
@@ -284,14 +284,14 @@ const AddProjets = () => {
 
   };
 
-  return ( 
-   
+  return (
+
 
     <>
-      <NavBar/>
-     
-      <Box className='mt-5' sx={{ display: 'flex' ,flexDirection:'column'}}>
-        <Sidebar/>
+      <NavBar />
+
+      <Box className='mt-5' sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Sidebar />
         <Box sx={{ p: 3 }}>
           <Typography fontWeight="bold" noWrap className='fs-3 text-center'>
             Ajouter Un Projtes
@@ -301,9 +301,9 @@ const AddProjets = () => {
           <Grid>
             <Container className='mt-5'>
               <div className="row ">
-              <div className="row ">
-                <div className='col'>
-                  {/* <FormControl fullWidth sx={{ m: 1,}} variant="outlined">
+                <div className="row ">
+                  <div className='col'>
+                    {/* <FormControl fullWidth sx={{ m: 1,}} variant="outlined">
                     <FormHelperText id="outlined-projet-helper-text">Nom du Projet</FormHelperText>
                     <OutlinedInput
                       id="outlined-adornment-projet"
@@ -316,86 +316,86 @@ const AddProjets = () => {
                       onChange={(e) => setTitle(e.target.value)}
                     />
                   </FormControl> */}
+                  </div>
                 </div>
-              </div>
-              <div className="row justify-content-between">
-                <div class="col-6">
-                  <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">Nom du Projet</FormHelperText>
-                    <OutlinedInput
-                      id="outlined-adornment-projet"
-                      // endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                      aria-describedby="outlined-projet-helper-text"
-                      inputProps={{
-                        'aria-label': 'projet',
-                      }}
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                    />
-                    {errorMessage && <span style={{color: "red"}}>{errorMessage}</span>}
-                  </FormControl>
-                </div>
-                <div class="col-4">
-                  <FormControl fullWidth  sx={{ m: 1}}>
-                    <FormHelperText id="outlined-projet-helper-text">Domaine</FormHelperText>
-                    <InputLabel id="demo-select-small-label"></InputLabel>
-                    <Select value={selectedDomain} onChange={handleSelectChange}>
-                      <MenuItem value="">Sélectionnez un domaine</MenuItem>
-                      {domains.map((domain) => (
-                        <MenuItem key={domain.id} value={domain}>
-                          {domain.titled}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                    {errorDomain && <span style={{color: "red"}}>{errorDomain}</span>}
-                  </FormControl>
-                </div>
+                <div className="row justify-content-between">
+                  <div class="col-6">
+                    <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
+                      <FormHelperText id="outlined-projet-helper-text">Nom du Projet</FormHelperText>
+                      <OutlinedInput
+                        id="outlined-adornment-projet"
+                        // endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+                        aria-describedby="outlined-projet-helper-text"
+                        inputProps={{
+                          'aria-label': 'projet',
+                        }}
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                      />
+                      {errorMessage && <span style={{ color: "red" }}>{errorMessage}</span>}
+                    </FormControl>
+                  </div>
+                  <div class="col-6">
+                    <FormControl fullWidth sx={{ m: 1 }}>
+                      <FormHelperText id="outlined-projet-helper-text">Domaine</FormHelperText>
+                      <InputLabel id="demo-select-small-label"></InputLabel>
+                      <Select value={selectedDomain} onChange={handleSelectChange}>
+                        <MenuItem value="">Sélectionnez un domaine</MenuItem>
+                        {domains.map((domain) => (
+                          <MenuItem key={domain.id} value={domain}>
+                            {domain.titled}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                      {errorDomain && <span style={{ color: "red" }}>{errorDomain}</span>}
+                    </FormControl>
+                  </div>
                 </div>
                 <div className='row'>
                   <div className='row'>
                     <div className='col'>
-                      <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2'> 
+                      <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2'>
                         Salaires
                       </Typography>
                     </div>
-                </div>
-                <div className='col-4'>
-                  <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">Minimum</FormHelperText>
-                     <OutlinedInput
-                      id="outlined-adornment-projet"
-                      endAdornment={<InputAdornment position="end">XAF</InputAdornment>}
-                      aria-describedby="outlined-projet-helper-text"
-                      inputProps={{
-                        'aria-label': 'projet',
-                      }}
-                      type='number'
-                      value={minAmount}
-                      onChange={(e) => setMinAmount(e.target.value)}
-                    />
-                    {errorMinAmoun && <span style={{color: "red"}}>{errorMinAmoun}</span>}
-                    {errorMessages && <span style={{color: "red"}}>{errorMessages}</span>}
-                  </FormControl>
-                </div>
-                <div className='col-4'>
-                  <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">Maximum</FormHelperText>
-                    <OutlinedInput
-                      id="outlined-adornment-projet"
-                      endAdornment={<InputAdornment position="end">XAF</InputAdornment>}
-                      aria-describedby="outlined-projet-helper-text"
-                      inputProps={{
-                        'aria-label': 'projet',
-                      }}
-                      type='number'
-                      value={maxAmount}
-                      onChange={(e) => setMaxAmount(e.target.value)}
-                    />
-                    {errorMaxAmount && <span style={{color: "red"}}>{errorMaxAmount}</span>}
-                  </FormControl>
-                </div>
-                <div class="col-4">
-                    <FormControl fullWidth  sx={{ m: 1}}>
+                  </div>
+                  <div className='col-4'>
+                    <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
+                      <FormHelperText id="outlined-projet-helper-text">Minimum</FormHelperText>
+                      <OutlinedInput
+                        id="outlined-adornment-projet"
+                        endAdornment={<InputAdornment position="end">XAF</InputAdornment>}
+                        aria-describedby="outlined-projet-helper-text"
+                        inputProps={{
+                          'aria-label': 'projet',
+                        }}
+                        type='number'
+                        value={minAmount}
+                        onChange={(e) => setMinAmount(e.target.value)}
+                      />
+                      {errorMinAmoun && <span style={{ color: "red" }}>{errorMinAmoun}</span>}
+                      {errorMessages && <span style={{ color: "red" }}>{errorMessages}</span>}
+                    </FormControl>
+                  </div>
+                  <div className='col-4'>
+                    <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
+                      <FormHelperText id="outlined-projet-helper-text">Maximum</FormHelperText>
+                      <OutlinedInput
+                        id="outlined-adornment-projet"
+                        endAdornment={<InputAdornment position="end">XAF</InputAdornment>}
+                        aria-describedby="outlined-projet-helper-text"
+                        inputProps={{
+                          'aria-label': 'projet',
+                        }}
+                        type='number'
+                        value={maxAmount}
+                        onChange={(e) => setMaxAmount(e.target.value)}
+                      />
+                      {errorMaxAmount && <span style={{ color: "red" }}>{errorMaxAmount}</span>}
+                    </FormControl>
+                  </div>
+                  <div class="col-4">
+                    <FormControl fullWidth sx={{ m: 1 }}>
                       <FormHelperText id="outlined-projet-helper-text">Devise</FormHelperText>
                       <InputLabel id="demo-select-label"></InputLabel>
                       <Select value={monnaie} onChange={(e) => setMonnaie(e.target.value)}>
@@ -403,110 +403,90 @@ const AddProjets = () => {
                         <MenuItem value="Euro">Euro</MenuItem>
                         <MenuItem value="Dollar">Dollar</MenuItem>
                       </Select>
-                      {errorMonnaie && <span style={{color: "red"}}>{errorMonnaie}</span>}
+                      {errorMonnaie && <span style={{ color: "red" }}>{errorMonnaie}</span>}
                     </FormControl>
                   </div>
                 </div>
                 <div className='row'>
                   <div className='row'>
                     <div className='col'>
-                      <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2'> 
+                      <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2'>
                         Informations
                       </Typography>
                     </div>
-                </div>
-                  <div className='col-4'>
-                    <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
+                  </div>
+                  <div className='col-6'>
+                    <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
                       <FormHelperText id="outlined-projet-helper-text">Date De creation</FormHelperText>
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker 
+                        <DatePicker
                           value={selectedDate}
                           onChange={handleDateChange}
-                          renderInput={(params) => <TextField {...params}/>}
+                          renderInput={(params) => <TextField {...params} />}
                         />
-                        {errorDelay && <span style={{color: "red"}}>{errorDelay}</span>}
+                        {errorDelay && <span style={{ color: "red" }}>{errorDelay}</span>}
                       </LocalizationProvider>
                     </FormControl>
                   </div>
-                  <div className='col-4'>
-                    <FormControl  fullWidth sx={{ m: 1,}} variant="outlined">
+                  <div className='col-6'>
+                    <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
                       <FormHelperText id="outlined-projet-helper-text">Date D’expiration</FormHelperText>
-                      <LocalizationProvider dateAdapter={AdapterDayjs}   value={delay} onChange={(e) => setDelay(e.target.value)}>
+                      <LocalizationProvider dateAdapter={AdapterDayjs} value={delay} onChange={(e) => setDelay(e.target.value)}>
                         <DatePicker
                           value={selectedDelay}
                           onChange={handleDateChanges}
-                          renderInput={(params) => <TextField {...params}/>} 
+                          renderInput={(params) => <TextField {...params} />}
                         />
-                        {errorDate && <span style={{color: "red"}}>{errorDate}</span>}
+                        {errorDate && <span style={{ color: "red" }}>{errorDate}</span>}
                       </LocalizationProvider>
                     </FormControl>
                   </div>
-                  <div class="col-4">
-                  <FormControl fullWidth  sx={{ m: 1}}>
-                    <FormHelperText id="outlined-projet-helper-text">Modules</FormHelperText>
-                    <InputLabel id="demo-select-label"></InputLabel>
-                    <Select
-                      labelId="demo-select-label"
-                      id="demo-select-small"
-                      value={Domaine}
-                      // label="Age"
-                      onChange={handleChange}
-                    >
-                      <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem>
-                      <MenuItem value={1}>1</MenuItem>
-                      <MenuItem value={2}>2</MenuItem>
-                      <MenuItem value={3}>3</MenuItem>
-                    </Select>
-                  </FormControl>
                 </div>
               </div>
-             </div>
               <Container className='mt-5'>
-                < Box sx={{backgroundColor:'#F9FAFB'}}>
+                < Box sx={{ backgroundColor: '#F9FAFB' }}>
                   <Container className='p-3'>
-                    <div className='row'> 
-                        <div className='row'>
-                          <div className='col'>
-                            <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2 text-center'> 
-                              localisation
-                            </Typography>
-                          </div>
-                          <Box className='pb-4'>
-                            <div className='row'>
-                              <div className="col-6">
-                                <FormControl fullWidth  sx={{ m: 1}}>
-                                  <FormHelperText id="outlined-projet-helper-text">Pays</FormHelperText>
-                                  <Select value={selectedCountry} onChange={handleCountryChange}>
-                                    <MenuItem value="">Select a country</MenuItem>
-                                    {countries.map(country => (
-                                      <MenuItem key={country.id} value={country}>
-                                        {country.name}
-                                      </MenuItem>
-                                    ))}
-                                  </Select>
-                                  {errorPays && <span style={{color: "red"}}>{errorPays}</span>}
-                                </FormControl>
-                              </div>
-                              <div className="col-6">
-                                <FormControl fullWidth  sx={{ m: 1}}>
-                                  <FormHelperText id="outlined-projet-helper-text">Ville</FormHelperText>
-                                  <InputLabel id="demo-select-label"></InputLabel>
-                                  <Select value={selectedCity} onChange={handleCityChange}>
-                                    <MenuItem value="">Select a city</MenuItem>
-                                    {cities.map(city => (
-                                      <MenuItem key={city.id} value={city}>
-                                        {city.name}
-                                      </MenuItem>
-                                    ))}
-                                  </Select>
-                                  {errorVille && <span style={{color: "red"}}>{errorVille}</span>}
-                                </FormControl>
-                              </div>
+                    <div className='row'>
+                      <div className='row'>
+                        <div className='col'>
+                          <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2 text-center'>
+                            localisation
+                          </Typography>
+                        </div>
+                        <Box className='pb-4'>
+                          <div className='row'>
+                            <div className="col-6">
+                              <FormControl fullWidth sx={{ m: 1 }}>
+                                <FormHelperText id="outlined-projet-helper-text">Pays</FormHelperText>
+                                <Select value={selectedCountry} onChange={handleCountryChange}>
+                                  <MenuItem value="">Select a country</MenuItem>
+                                  {countries.map(country => (
+                                    <MenuItem key={country.id} value={country}>
+                                      {country.name}
+                                    </MenuItem>
+                                  ))}
+                                </Select>
+                                {errorPays && <span style={{ color: "red" }}>{errorPays}</span>}
+                              </FormControl>
                             </div>
-                          
-                          </Box>
+                            <div className="col-6">
+                              <FormControl fullWidth sx={{ m: 1 }}>
+                                <FormHelperText id="outlined-projet-helper-text">Ville</FormHelperText>
+                                <InputLabel id="demo-select-label"></InputLabel>
+                                <Select value={selectedCity} onChange={handleCityChange}>
+                                  <MenuItem value="">Select a city</MenuItem>
+                                  {cities.map(city => (
+                                    <MenuItem key={city.id} value={city}>
+                                      {city.name}
+                                    </MenuItem>
+                                  ))}
+                                </Select>
+                                {errorVille && <span style={{ color: "red" }}>{errorVille}</span>}
+                              </FormControl>
+                            </div>
+                          </div>
+
+                        </Box>
                       </div>
                     </div>
                   </Container>
@@ -515,12 +495,12 @@ const AddProjets = () => {
               <div className='row mt-3'>
                 <div className='row'>
                   <div className='col'>
-                    <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2'> 
+                    <Typography variant="h5" color="text.dark" fontWeight="semiBold" className='fs-5 mt-2 p-2'>
                       Description
                     </Typography>
                   </div>
                 </div>
-                
+
                 <div className='col-12'>
                   <Textarea
                     value={wording}
@@ -529,24 +509,24 @@ const AddProjets = () => {
                     required
                     sx={{ mb: 1 }}
                   />
-                  {errorWording && <span style={{color: "red"}}>{errorWording}</span>}
-                  {errorDescriptiom && <span style={{color: "red"}}>{errorDescriptiom}</span>}
+                  {errorWording && <span style={{ color: "red" }}>{errorWording}</span>}
+                  {errorDescriptiom && <span style={{ color: "red" }}>{errorDescriptiom}</span>}
                 </div>
                 <div className='mt-5'>
-                <Button variant="contained" onClick={handleSubmit}>Ajouter</Button>
+                  <Button variant="contained" onClick={handleSubmit}>Ajouter</Button>
                 </div>
-               
+
               </div>
             </Container>
           </Grid>
         </Grid>
-      
-       
+
+
       </Box>
-      <Footer/>
+      <Footer />
     </>
-   
-  
+
+
   )
 }
 

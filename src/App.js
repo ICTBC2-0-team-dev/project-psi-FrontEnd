@@ -36,7 +36,12 @@ import DetailProduit from "./pages/spaceMarket/DetailProduit";
 import Liste from "./components/Dashbord1/ListeProduit"
 import Commande from "./components/Dashbord1/CommandeProduit"
 
+// import dashbord admin
 
+import Produit from "./components/Admin/Produit";
+import Utilisateur from "./components/Admin/Utilisateur";
+import Accueil from "./components/Admin/Accueil";
+import SidebarAdmin from "./components/Admin/SidebarAdmin";
 
 function App() {
   return (
@@ -70,6 +75,12 @@ function App() {
           <Route path="/Projets" element={<Projets />} /> {/** inport as dash freelance */}
           <Route path="/ProfilFreelance" element={<ProfilFreelance />} />
           <Route path="/AllProjet" element={<AllProjet />} />
+
+          {/** Route de l'admin */}
+          <Route path="/produitAdmin" element={<Produit />} /> 
+          <Route path="/utilisateur" element={<Utilisateur />} /> 
+          <Route path="/accuiel" element={<Accueil />} /> 
+          <Route path="/sidebarAdmin" element={<SidebarAdmin />} /> 
 
           {/* module space market */}
           <Route path="/SpaceMarket" element={<Home />} />

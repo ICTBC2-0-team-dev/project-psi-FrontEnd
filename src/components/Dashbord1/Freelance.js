@@ -133,11 +133,11 @@ const Freelance = () => {
          <Box className="mt-5" sx={{ display: "flex", flexDirection: "column"}}>
            <Sidebar />
          <Container className="mt-5" direction="column">
-         <div className="row">
+         <div className="row d-flex justify-content-center align-items-center">
         {filteredUsers.map(filteredUser => (
-         <div className="col-4">
+         <div className="col-md-3" >
          <Card>
-           <Box sx={{ p: 2, display: "flex", mt: 2}} className="ms-2" key={filteredUser.id} >
+           <Box  className="ms-2" key={filteredUser.id} >
              <Avatar>{filteredUser.userName.charAt(0)}</Avatar>
              <Stack spacing={0.5} className="ms-3">
                <Typography fontWeight="bold" className="ps-2">

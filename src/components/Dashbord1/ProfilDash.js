@@ -69,7 +69,7 @@ const ProfilDash = () => {
                     <CardMedia
                       component="img"
                       height="140"
-                      image='http://localhost:8081/banniere/capture.png' 
+                      image={`http://localhost:8081/${profileData[0].banniere}`}
                       alt="green iguana"
                     />
                     {/* <img  alt="Ellipse" src='http://localhost:8081/banniere/capture.png' /> */}
@@ -77,7 +77,7 @@ const ProfilDash = () => {
                       <Box sx={{ '& > :not(style)': { m: 1 } }}>
                         <Avatar
                           alt="Remy Sharp"
-                          src="/static/images/avatar/1.jpg"
+                          src={`http://localhost:8081/${profileData[0].logo}`}
                           sx={{ width: 76,height: 76 }}
                         />
                       </Box>

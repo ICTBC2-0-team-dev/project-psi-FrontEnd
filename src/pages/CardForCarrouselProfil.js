@@ -23,7 +23,7 @@ export function ProfilFisrt() {
 
   const myFirstProfile = profiles.length > 0 && (
     <div className='smoothie-card '>
-      <img className="rectangle" alt="Rectangle" src='http://localhost:8081/photo/480538.png' />
+      <img className="rectangle" alt="Rectangle" src={`http://localhost:8081/${profiles[0].photo}`} style={{width:'100%', height:'50%', display:'flex', justifyContent:'center', alignItems:'center'}} />
       <div className="frame">
         <p className="text-wrapper">
           {profiles[0].description} 
@@ -68,7 +68,7 @@ export function ProfilSecond() {
 
   const mySecondProfile  = profiles.length > 0 && (
     <div className='smoothie-card '>
-      <img className="rectangle" alt="Rectangle" src='http://localhost:8081/photo/afr.jpg' />
+      <img className="rectangle" alt="Rectangle" src={`http://localhost:8081/${profiles[1].photo}`} style={{width:'100%', height:'50%', display:'flex', justifyContent:'center', alignItems:'center'}}  />
       <div className="frame">
         <p className="text-wrapper">
           {profiles[1].description} 
@@ -113,10 +113,10 @@ export function ProfilThird() {
 
   const myThirdProfile   = profiles.length > 0 && (
     <div className='smoothie-card '>
-      <img className="rectangle" alt="Rectangle" src='http://localhost:8081/photo/afr.jpg' />
+      <img className="rectangle" alt="Rectangle" src={`http://localhost:8081/${profiles[2].photo}`} style={{width:'100%', height:'50%', display:'flex', justifyContent:'center', alignItems:'center'}} />
       <div className="frame">
         <p className="text-wrapper">
-          {profiles[0].description} 
+          {profiles[2].description} 
         </p>
       </div>
       <div className="div">
@@ -158,10 +158,10 @@ export function ProfilFour() {
 
   const myFourProfile   = profiles.length > 0 && (
     <div className='smoothie-card '>
-      <img className="rectangle" alt="Rectangle" src='http://localhost:8081/photo/480538.png' />
+      <img className="rectangle" alt="Rectangle" src={`http://localhost:8081/${profiles[3].photo}`} style={{width:'100%', height:'50%', display:'flex', justifyContent:'center', alignItems:'center', backgroundImage:'center'}} />
       <div className="frame">
         <p className="text-wrapper">
-          {profiles[1].description} 
+          {profiles[3].description} 
         </p>
       </div>
       <div className="div">

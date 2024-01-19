@@ -77,7 +77,7 @@ function ResponsiveAppBar() {
       const fetchProjects = async () => {
         try {
           const response = await axios.get("/projects");
-          setProjects(response.data);
+          setProjects(response.data.slice(-6));
           console.log(response.data);
         } catch (error) {
           console.log(error);
