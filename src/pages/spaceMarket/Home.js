@@ -96,7 +96,7 @@ const Home = () => {
   useEffect(() => {
     const fectData = async () => {
       try {
-        const request = await axios.get("/articles/");
+        const request = await axios.get("/articlesValide");
         setPosts(request.data.slice(-4));
       } catch (error) {
         console.log(error);

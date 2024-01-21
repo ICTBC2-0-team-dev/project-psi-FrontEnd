@@ -35,7 +35,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 648,
-  height: 566,
+  height: 606,
   bgcolor: "background.paper",
   borderRadius: 8,
   boxShadow: 24,
@@ -187,28 +187,45 @@ const ListeProduit = () => {
   const [nomModifieImagerie, setNomdifieImagerie] = useState('')
   const [prixModifieImagerie, setPrixdifieImagerie] = useState('')
   const [descriptionModifieImagerie, setDescriptiondifieImagerie] = useState('')
+  const [selectedPhotosModifieImagerie, setSelectedPhotosModifieImagerie] = useState(null);
+  const categorieImage = selectedCategorie;
 
+  const handlePhotoChangesModifieImagerie = (event) => {
+    const file = event.target.files[0];
+    setSelectedPhotosModifieImagerie(file);
+  };
 
-  // const formDataModifie = new FormData();
-  // console.log("valeur a envoyer", formData);
-  // formData.append("nom ", nom);
-  // formData.append("prix", prix);
-  // formData.append("description", description);
+  // modifier des imageries
 
   const handleValiderClickImagerie = async () => {
     // Vérifiez si l'ID du projet sélectionné est valide
 
-    const newValues = {
-      nom: nomModifieImagerie,
-      prix: prixModifieImagerie,
-      description: descriptionModifieImagerie
-    };
+    const formData = new FormData();
+    console.log("valeur a envoyer", formData);
+    formData.append("photo", selectedPhotosModifieImagerie);
+    formData.append("nom ", nomModifieImagerie);
+    formData.append("prix", prixModifieImagerie);
+    formData.append("categorie", categorieImage.id);
+    formData.append("description", descriptionModifieImagerie);
+    formData.append("user", user);
 
-    if (selectedIdImagerie) {
-          axios.put(`/article/valide/${selectedIdImagerie}`, newValues)
+    if (nomModifieImagerie === "") {
+      setErrorNom("Veuillez remplir ce champ.");
+    } else if (prixModifieImagerie === "") {
+      setErrorPrix("Veuillez remplir ce champ.");
+    } else if (categorieImage === "") {
+      setErrorCategorie("Veuillez remplir ce champ.");
+    } else if (descriptionModifieImagerie === "") {
+      setErrorDescription("Veuillez remplir ce champ.");
+    } else if (selectedPhotos === "") {
+      setErrorPhoto("Veuillez remplir ce champ.");
+    } else {
+
+      if (selectedIdImagerie) {
+        axios.put(`/article/update/${selectedIdImagerie}`, formData)
           .then(response => {
             console.log('New module created:', response.data);
-            
+
             alert('Article mis a jours')
             // Close the modal and fetch updated projects
             handleCloseImagerie();
@@ -227,8 +244,10 @@ const ListeProduit = () => {
         // } catch (error) {
         //   console.error('cadidature failled',error);
         // }
-        
+
+      }
     }
+
   };
 
   /** end modal from imagerie */
@@ -250,43 +269,83 @@ const ListeProduit = () => {
     fectData();
   }, []);
 
-    /**modal from Gps */
-    const [openModalGps, setOpenModalGps] = useState(false);
-    const handleCloseGps = () => setOpenModalGps(false);
-  
-    const [selectedIdGps, setSelectedIdGps] = useState(null);
-  
-    const handleOpenModalAcceptGps = (id) => {
-      setSelectedIdGps(id);
-      setOpenModalGps(true);
-    };
+  /**modal from Gps */
+  const [openModalGps, setOpenModalGps] = useState(false);
+  const handleCloseGps = () => setOpenModalGps(false);
+
+  const [selectedIdGps, setSelectedIdGps] = useState(null);
+
+  const handleOpenModalAcceptGps = (id) => {
+    setSelectedIdGps(id);
+    setOpenModalGps(true);
+  };
+
     /**traitement de la requette */
+
+    const [nomModifieGps, setNomdifieGps] = useState('')
+    const [prixModifieGps, setPrixdifieGps] = useState('')
+    const [descriptionModifieGps, setDescriptiondifieGps] = useState('')
+    const [selectedPhotosModifieGps, setSelectedPhotosModifieGps] = useState(null);
+    const categorieGps = selectedCategorie;
+  
+    const handlePhotoChangesModifieGps = (event) => {
+      const file = event.target.files[0];
+      setSelectedPhotosModifieGps(file);
+    };
+  
+    // modifier des Gpss
+  
     const handleValiderClickGps = async () => {
       // Vérifiez si l'ID du projet sélectionné est valide
-      if (selectedIdGps) {
-          try {
-            const request = await axios.put(`/article/valide/${selectedIdGps}`, {
-                id: selectedIdGps
+  
+      const formData = new FormData();
+      console.log("valeur a envoyer", formData);
+      formData.append("photo", selectedPhotosModifieGps);
+      formData.append("nom ", nomModifieGps);
+      formData.append("prix", prixModifieGps);
+      formData.append("categorie", categorieGps.id);
+      formData.append("description", descriptionModifieGps);
+      formData.append("user", user);
+  
+      if (nomModifieGps === "") {
+        setErrorNom("Veuillez remplir ce champ.");
+      } else if (prixModifieGps === "") {
+        setErrorPrix("Veuillez remplir ce champ.");
+      } else if (categorieImage === "") {
+        setErrorCategorie("Veuillez remplir ce champ.");
+      } else if (descriptionModifieGps === "") {
+        setErrorDescription("Veuillez remplir ce champ.");
+      } else if (selectedPhotos === "") {
+        setErrorPhoto("Veuillez remplir ce champ.");
+      } else {
+  
+        if (selectedIdGps) {
+          axios.put(`/article/update/${selectedIdGps}`, formData)
+            .then(response => {
+              console.log('New module created:', response.data);
+  
+              alert('Article mis a jours')
+              // Close the modal and fetch updated projects
+              handleCloseImagerie();
+            })
+            .catch(error => {
+              console.error('Error update article:', error);
             });
-            // Traitement de la réponse de la requête
-            console.log('Imagerie accepter avec success',request.data);
-            alert('Imagerie accepter avec success')
   
-          } catch (error) {
-            console.error('cadidature failled',error);
-          }
+        }
       }
-    };
   
-    /** end modal from Gps */
+    };
 
-      /**affichage(recuperation des donnees) des GPS */
+  /** end modal from Gps */
+
+  /**affichage(recuperation des donnees) des GPS */
   const [gps, setGps] = useState([]);
   console.log("mes donnee gps", gps);
   useEffect(() => {
     const fectData = async () => {
       try {
-        const request = await axios.get(`/articleByCategorieAndUser/5/${user}`);
+        const request = await axios.get(`/articleByCategorieAndUser/2/${user}`);
         setGps(request.data);
         console.log(request.data);
       } catch (error) {
@@ -298,35 +357,77 @@ const ListeProduit = () => {
   }, []);
 
 
-    /**modal from Gps */
-    const [openModalmetheorologique, setOpenModalmetheorologique] = useState(false);
-    const handleClosemetheorologique = () => setOpenModalmetheorologique(false);
+  /**modal from Gps */
+  const [openModalmetheorologique, setOpenModalmetheorologique] = useState(false);
+  const handleClosemetheorologique = () => setOpenModalmetheorologique(false);
+
+  const [selectedIdmetheorologique, setSelectedIdmetheorologique] = useState(null);
+
+  const handleOpenModalAcceptmetheorologique = (id) => {
+    setSelectedIdmetheorologique(id);
+    setOpenModalmetheorologique(true);
+  };
+
+
+  /**traitement de la requette */
+
   
-    const [selectedIdmetheorologique, setSelectedIdmetheorologique] = useState(null);
-  
-    const handleOpenModalAcceptmetheorologique = (id) => {
-      setSelectedIdmetheorologique(id);
-      setOpenModalmetheorologique(true);
-    };
-    /**traitement de la requette */
-    const handleValiderClickmetheorologique = async () => {
-      // Vérifiez si l'ID du projet sélectionné est valide
+  const [nomModifiemetheo, setNomdifiemetheo] = useState('')
+  const [prixModifiemetheo, setPrixdifiemetheo] = useState('')
+  const [descriptionModifiemetheo, setDescriptiondifiemetheo] = useState('')
+  const [selectedPhotosModifiemetheo, setSelectedPhotosModifiemetheo] = useState(null);
+  const categoriemetheo = selectedCategorie;
+
+  const handlePhotoChangesModifiemetheo = (event) => {
+    const file = event.target.files[0];
+    setSelectedPhotosModifiemetheo(file);
+  };
+
+  // modifier des metheos
+
+  const handleValiderClickmetheorologique = async () => {
+    // Vérifiez si l'ID du projet sélectionné est valide
+
+    const formData = new FormData();
+    console.log("valeur a envoyer", formData);
+    formData.append("photo", selectedPhotosModifiemetheo);
+    formData.append("nom ", nomModifiemetheo);
+    formData.append("prix", prixModifiemetheo);
+    formData.append("categorie", categoriemetheo.id);
+    formData.append("description", descriptionModifiemetheo);
+    formData.append("user", user);
+
+    if (nomModifiemetheo === "") {
+      setErrorNom("Veuillez remplir ce champ.");
+    } else if (prixModifiemetheo === "") {
+      setErrorPrix("Veuillez remplir ce champ.");
+    } else if (categorieImage === "") {
+      setErrorCategorie("Veuillez remplir ce champ.");
+    } else if (descriptionModifiemetheo === "") {
+      setErrorDescription("Veuillez remplir ce champ.");
+    } else if (selectedPhotos === "") {
+      setErrorPhoto("Veuillez remplir ce champ.");
+    } else {
+
       if (selectedIdmetheorologique) {
-          try {
-            const request = await axios.put(`/article/valide/${selectedIdmetheorologique}`, {
-                id: selectedIdmetheorologique
-            });
-            // Traitement de la réponse de la requête
-            console.log('Imagerie accepter avec success',request.data);
-            alert('Imagerie accepter avec success')
-  
-          } catch (error) {
-            console.error('cadidature failled',error);
-          }
+        axios.put(`/article/update/${selectedIdmetheorologique}`, formData)
+          .then(response => {
+            console.log('New module created:', response.data);
+
+            alert('Article mis a jours')
+            // Close the modal and fetch updated projects
+            handleCloseImagerie();
+          })
+          .catch(error => {
+            console.error('Error update article:', error);
+          });
+
       }
-    };
-  
-    /** end modal from metheorologique */
+    }
+
+  };
+
+  /** end modal from metheorologique */
 
   /**affichage(recuperation des donnees) des metheorologique */
   const [metheorologique, setmetheorologique] = useState([]);
@@ -334,7 +435,7 @@ const ListeProduit = () => {
   useEffect(() => {
     const fectData = async () => {
       try {
-        const request = await axios.get(`/articleByCategorieAndUser/4/${user}`);
+        const request = await axios.get(`/articleByCategorieAndUser/3/${user}`);
         setmetheorologique(request.data);
         console.log(request.data);
       } catch (error) {
@@ -579,157 +680,213 @@ const ListeProduit = () => {
               </Box>
               <TabPanel value="1">
                 <div className="row">
-                {imagerie.map((image) => (
-                  <div className="col-4">
-                    <Fab
-                      size="small"
-                      color="white"
-                      aria-label="add"
-                      sx={{ zIndex: 1, top: 60, left: 20 }}
-                      onClick={() => handleOpenModalAcceptImagerie(image.id)}
-                    >
-                      <RemoveRedEyeOutlinedIcon color="primary" />
-                    </Fab>
-                    {/** modal from imagerie */}
-                    <Modal
-                      aria-labelledby="transition-modal-title"
-                      aria-describedby="transition-modal-description"
-                      open={openModalImagerie}
-                      onClose={handleCloseImagerie}
-                      closeAfterTransition
-                      slots={{ backdrop: Backdrop }}
-                      slotProps={{
-                        backdrop: {
-                          timeout: 500,
-                        },
-                      }}
-                    >
-                      <Fade in={openModalImagerie}>
-                        <Box sx={style}>
-                          <Typography
-                            sx={{ mb: 1.5 }}
-                            color="text.dark"
-                            fontWeight="bold"
-                            className="fs-5 text-center"
-                          >
-                            Detail de l'article
-                          </Typography>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                  {imagerie.length === 0 ? (
+                    <h3>Pas d'articles trouves</h3>
+                  ) : imagerie.map((image) => (
+                    <div className="col-4">
+                      <Fab
+                        size="small"
+                        color="white"
+                        aria-label="add"
+                        sx={{ zIndex: 1, top: 60, left: 20 }}
+                        onClick={() => handleOpenModalAcceptImagerie(image.id)}
+                      >
+                        <RemoveRedEyeOutlinedIcon color="primary" />
+                      </Fab>
+                      {/** modal from imagerie */}
+                      <Modal
+                        aria-labelledby="transition-modal-title"
+                        aria-describedby="transition-modal-description"
+                        open={openModalImagerie}
+                        onClose={handleCloseImagerie}
+                        closeAfterTransition
+                        slots={{ backdrop: Backdrop }}
+                        slotProps={{
+                          backdrop: {
+                            timeout: 500,
+                          },
+                        }}
+                      >
+                        <Fade in={openModalImagerie}>
+                          <Box sx={style}>
+                            <Typography
+                              sx={{ mb: 1.5 }}
+                              color="text.dark"
+                              fontWeight="bold"
+                              className="fs-5 text-center"
+                            >
+                              Detail de l'article
+                            </Typography>
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Nom
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  value={nomModifieImagerie}
-                                  onChange={(e) => setNomdifieImagerie(e.target.value)}
-                                />
-                              </FormControl>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Nom
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    placeholder={`${image.nom}`}
+                                    value={nomModifieImagerie}
+                                    onChange={(e) => setNomdifieImagerie(e.target.value)}
+                                  />
+                                  {errorNom && (
+                                    <span style={{ color: "red" }}>{errorNom}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Prix
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Prix"
-                                  value={prixModifieImagerie}
-                                  onChange={(e) => setPrixdifieImagerie(e.target.value)}
-                                />
-                              </FormControl>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Prix
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    placeholder={`${image.prix}`}
+                                    value={prixModifieImagerie}
+                                    onChange={(e) => setPrixdifieImagerie(e.target.value)}
+                                  />
+                                  {errorPrix && (
+                                    <span style={{ color: "red" }}>{errorPrix}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Catégorie
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Imagerie"
-                                />
-                              </FormControl>
-                            </div>
-                          </div>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Catégorie
+                                  </FormHelperText>
+                                  <Select
+                                    labelId="demo-select-small-label"
+                                    id="demo-select-small"
+                                    value={selectedCategorie}
+                                    label="Categorie"
+                                    onChange={handleSelectChange}
+                                    placeholder={image.categorie.name}
+                                  >
+                                    <MenuItem value="">
+                                      Sélectionnez une categorie
+                                    </MenuItem>
 
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1, height: "40" }}
-                                variant="outlined"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
-                                >
-                                  Description
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  value={descriptionModifieImagerie}
-                                  onChange={(e) => setDescriptiondifieImagerie(e.target.value)}
-                                  placeholder="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-                                />
-                              </FormControl>
+                                    {categories.map((categorie) => (
+                                      <MenuItem key={categorie.id} value={categorie}>
+                                        {categorie.name}
+                                      </MenuItem>
+                                    ))}
+                                  </Select>
+                                  {errorCategorie && (
+                                    <span style={{ color: "red" }}>{errorCategorie}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="mt-5 d-flex justify-content-end">
-                            <Button variant="contained" onClick={handleValiderClickImagerie}>Modifier</Button>
-                          </div>
-                        </Box>
-                      </Fade>
-                    </Modal>
-                    
+
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1, height: "40" }}
+                                  variant="outlined"
+                                >
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Description
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    value={descriptionModifieImagerie}
+                                    onChange={(e) => setDescriptiondifieImagerie(e.target.value)}
+                                    placeholder={`${image.description}`}
+                                  />
+                                  {errorDescription && (
+                                    <span style={{ color: "red" }}>
+                                      {errorDescription}
+                                    </span>
+                                  )}
+                                </FormControl>
+                              </div>
+                            </div>
+
+                            <div className="row">
+                              <div className="col">
+                                <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
+                                  <label htmlFor="upload-cv">
+                                    <input
+                                      style={{ display: "none" }}
+                                      id="upload-cv"
+                                      name="upload-cv"
+                                      type="file"
+                                      onChange={handlePhotoChangesModifieImagerie}
+                                    />
+
+                                    <Button
+                                      color="secondary"
+                                      variant="contained"
+                                      component="span"
+                                    >
+                                      Télécharger une photos
+                                    </Button>
+                                    {selectedPhotosModifieImagerie && (
+                                      <p>Votre produit: {selectedPhotosModifieImagerie.name}</p>
+                                    )}
+                                  </label>
+                                  {errorPhoto && (
+                                    <span style={{ color: "red" }}>{errorPhoto}</span>
+                                  )}
+                                </FormControl>
+                              </div>
+                            </div>
+                            <div className="mt-5 d-flex justify-content-end">
+                              <Button variant="contained" onClick={handleValiderClickImagerie}>Modifier</Button>
+                            </div>
+                          </Box>
+                        </Fade>
+                      </Modal>
+
                       <Card sx={{ maxWidth: 345 }}>
                         <Box>
                           <CardMedia
@@ -744,7 +901,7 @@ const ListeProduit = () => {
                             component="div"
                             className="text-end text-primary"
                           >
-                            PRIX: <span style={{color: "black"}}>{image.prix}</span>
+                            PRIX: <span style={{ color: "black" }}>{image.prix}</span>
                           </Typography>
                           <Typography gutterBottom variant="h4" component="div">
                             {image.nom}
@@ -754,355 +911,479 @@ const ListeProduit = () => {
                           </Typography>
                         </CardContent>
                       </Card>
-                    
-                  </div>
-                ))}
+
+                    </div>
+                  ))}
                 </div>
               </TabPanel>
               <TabPanel value="2">
                 <div className="row">
-                {gps.map((donneeGps) => (
-                  <div className="col-4">
-                    <Fab
-                      size="small"
-                      color="white"
-                      aria-label="add"
-                      sx={{ zIndex: 1, top: 60, left: 20 }}
-                      onClick={() => handleOpenModalAcceptGps(donneeGps.id)}
-                    >
-                      <RemoveRedEyeOutlinedIcon color="primary" />
-                    </Fab>
-                    <Modal
-                      aria-labelledby="transition-modal-title"
-                      aria-describedby="transition-modal-description"
-                      open={openModalGps}
-                      onClose={handleCloseGps}
-                      closeAfterTransition
-                      slots={{ backdrop: Backdrop }}
-                      slotProps={{
-                        backdrop: {
-                          timeout: 500,
-                        },
-                      }}
-                    >
-                      <Fade in={openModalGps}>
-                        <Box sx={style}>
-                          <Typography
-                            sx={{ mb: 1.5 }}
-                            color="text.dark"
-                            fontWeight="bold"
-                            className="fs-5 text-center"
-                          >
-                            Detail de l'article
-                          </Typography>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                  {gps.length === 0 ? (
+                    <h3>Pas d'articles trouves</h3>
+                  ) : gps.map((donneeGps) => (
+                    <div className="col-4">
+                      <Fab
+                        size="small"
+                        color="white"
+                        aria-label="add"
+                        sx={{ zIndex: 1, top: 60, left: 20 }}
+                        onClick={() => handleOpenModalAcceptGps(donneeGps.id)}
+                      >
+                        <RemoveRedEyeOutlinedIcon color="primary" />
+                      </Fab>
+                      <Modal
+                        aria-labelledby="transition-modal-title"
+                        aria-describedby="transition-modal-description"
+                        open={openModalGps}
+                        onClose={handleCloseGps}
+                        closeAfterTransition
+                        slots={{ backdrop: Backdrop }}
+                        slotProps={{
+                          backdrop: {
+                            timeout: 500,
+                          },
+                        }}
+                      >
+                        <Fade in={openModalGps}>
+                          <Box sx={style}>
+                            <Typography
+                              sx={{ mb: 1.5 }}
+                              color="text.dark"
+                              fontWeight="bold"
+                              className="fs-5 text-center"
+                            >
+                              Detail de l'article
+                            </Typography>
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Nom
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                />
-                              </FormControl>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Nom
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    placeholder={`${donneeGps.nom}`}
+                                    value={nomModifieGps}
+                                    onChange={(e) => setNomdifieGps(e.target.value)}
+                                  />
+                                  {errorNom && (
+                                    <span style={{ color: "red" }}>{errorNom}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Prix
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Prix"
-                                />
-                              </FormControl>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Prix
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    placeholder={`${donneeGps.prix}`}
+                                    value={prixModifieGps}
+                                    onChange={(e) => setPrixdifieGps(e.target.value)}
+                                  />
+                                  {errorPrix && (
+                                    <span style={{ color: "red" }}>{errorPrix}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Catégorie
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Imagerie"
-                                />
-                              </FormControl>
-                            </div>
-                          </div>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Catégorie
+                                  </FormHelperText>
+                                  <Select
+                                    labelId="demo-select-small-label"
+                                    id="demo-select-small"
+                                    value={selectedCategorie}
+                                    label="Categorie"
+                                    onChange={handleSelectChange}
+                                    placeholder={donneeGps.categorie.name}
+                                  >
+                                    <MenuItem value="">
+                                      Sélectionnez une categorie
+                                    </MenuItem>
 
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1, height: "40" }}
-                                variant="outlined"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
-                                >
-                                  Description
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-                                />
-                              </FormControl>
+                                    {categories.map((categorie) => (
+                                      <MenuItem key={categorie.id} value={categorie}>
+                                        {categorie.name}
+                                      </MenuItem>
+                                    ))}
+                                  </Select>
+                                  {errorCategorie && (
+                                    <span style={{ color: "red" }}>{errorCategorie}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="mt-5 d-flex justify-content-end">
-                            <Button variant="contained" onClick={handleValiderClickGps}>Modifier</Button>
-                          </div>
+
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1, height: "40" }}
+                                  variant="outlined"
+                                >
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Description
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    value={descriptionModifieGps}
+                                    onChange={(e) => setDescriptiondifieGps(e.target.value)}
+                                    placeholder={`${donneeGps.description}`}
+                                  />
+                                  {errorDescription && (
+                                    <span style={{ color: "red" }}>
+                                      {errorDescription}
+                                    </span>
+                                  )}
+                                </FormControl>
+                              </div>
+                            </div>
+
+                            <div className="row">
+                              <div className="col">
+                                <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
+                                  <label htmlFor="upload-cv">
+                                    <input
+                                      style={{ display: "none" }}
+                                      id="upload-cv"
+                                      name="upload-cv"
+                                      type="file"
+                                      onChange={handlePhotoChangesModifieGps}
+                                    />
+
+                                    <Button
+                                      color="secondary"
+                                      variant="contained"
+                                      component="span"
+                                    >
+                                      Télécharger une photos
+                                    </Button>
+                                    {selectedPhotosModifieGps && (
+                                      <p>Votre produit: {selectedPhotosModifieGps.name}</p>
+                                    )}
+                                  </label>
+                                  {errorPhoto && (
+                                    <span style={{ color: "red" }}>{errorPhoto}</span>
+                                  )}
+                                </FormControl>
+                              </div>
+                            </div>
+                            <div className="mt-5 d-flex justify-content-end">
+                              <Button variant="contained" onClick={handleValiderClickGps}>Modifier</Button>
+                            </div>
+                          </Box>
+                        </Fade>
+                      </Modal>
+                      <Card sx={{ maxWidth: 345 }}>
+                        <Box>
+                          <CardMedia
+                            sx={{ height: 200, margin: 1, borderRadius: 2 }}
+                            image={`http://localhost:8081/${donneeGps.photo}`}
+                          />
                         </Box>
-                      </Fade>
-                    </Modal>
-                    <Card sx={{ maxWidth: 345 }}>
-                      <Box>
-                        <CardMedia
-                          sx={{ height: 200, margin: 1, borderRadius: 2 }}
-                          image={`http://localhost:8081/${donneeGps.photo}`}
-                        />
-                      </Box>
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          component="div"
-                          className="text-end text-primary"
-                        >
-                          prix: {donneeGps.prix}
-                        </Typography>
-                        <Typography gutterBottom variant="h4" component="div">
-                        {donneeGps.nom}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {donneeGps.description}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            className="text-end text-primary"
+                          >
+                            prix: {donneeGps.prix}
+                          </Typography>
+                          <Typography gutterBottom variant="h4" component="div">
+                            {donneeGps.nom}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {donneeGps.description}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
                 </div>
               </TabPanel>
               <TabPanel value="3">
                 <div className="row">
-                {metheorologique.map((metheo) => (
-                  <div className="col-4">
-                    <Fab
-                      size="small"
-                      color="white"
-                      aria-label="add"
-                      sx={{ zIndex: 1, top: 60, left: 20 }}
-                      onClick={() => handleOpenModalAcceptmetheorologique(metheo.id)}
-                    >
-                      <RemoveRedEyeOutlinedIcon color="primary" />
-                    </Fab>
-                    <Modal
-                      aria-labelledby="transition-modal-title"
-                      aria-describedby="transition-modal-description"
-                      open={openModalmetheorologique}
-                      onClose={handleClosemetheorologique}
-                      closeAfterTransition
-                      slots={{ backdrop: Backdrop }}
-                      slotProps={{
-                        backdrop: {
-                          timeout: 500,
-                        },
-                      }}
-                    >
-                      <Fade in={openModalmetheorologique}>
-                        <Box sx={style}>
-                          <Typography
-                            sx={{ mb: 1.5 }}
-                            color="text.dark"
-                            fontWeight="bold"
-                            className="fs-5 text-center"
-                          >
-                            Detail de l'article
-                          </Typography>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                  {metheorologique.length === 0 ? (
+                    <h3>Pas d'articles trouves</h3>
+                  ) : metheorologique.map((metheo) => (
+                    <div className="col-4">
+                      <Fab
+                        size="small"
+                        color="white"
+                        aria-label="add"
+                        sx={{ zIndex: 1, top: 60, left: 20 }}
+                        onClick={() => handleOpenModalAcceptmetheorologique(metheo.id)}
+                      >
+                        <RemoveRedEyeOutlinedIcon color="primary" />
+                      </Fab>
+                      <Modal
+                        aria-labelledby="transition-modal-title"
+                        aria-describedby="transition-modal-description"
+                        open={openModalmetheorologique}
+                        onClose={handleClosemetheorologique}
+                        closeAfterTransition
+                        slots={{ backdrop: Backdrop }}
+                        slotProps={{
+                          backdrop: {
+                            timeout: 500,
+                          },
+                        }}
+                      >
+                        <Fade in={openModalmetheorologique}>
+                          <Box sx={style}>
+                            <Typography
+                              sx={{ mb: 1.5 }}
+                              color="text.dark"
+                              fontWeight="bold"
+                              className="fs-5 text-center"
+                            >
+                              Detail de l'article
+                            </Typography>
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Nom
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                />
-                              </FormControl>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Nom
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    placeholder={`${metheo.nom}`}
+                                    value={nomModifiemetheo}
+                                    onChange={(e) => setNomdifiemetheo(e.target.value)}
+                                  />
+                                  {errorNom && (
+                                    <span style={{ color: "red" }}>{errorNom}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Prix
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Prix"
-                                />
-                              </FormControl>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Prix
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    placeholder={`${metheo.prix}`}
+                                    value={prixModifiemetheo}
+                                    onChange={(e) => setPrixdifiemetheo(e.target.value)}
+                                  />
+                                  {errorPrix && (
+                                    <span style={{ color: "red" }}>{errorPrix}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1 }}
-                                variant="outlined"
-                                size="small"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1 }}
+                                  variant="outlined"
+                                  size="small"
                                 >
-                                  Catégorie
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Imagerie"
-                                />
-                              </FormControl>
-                            </div>
-                          </div>
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Catégorie
+                                  </FormHelperText>
+                                  <Select
+                                    labelId="demo-select-small-label"
+                                    id="demo-select-small"
+                                    value={selectedCategorie}
+                                    label="Categorie"
+                                    onChange={handleSelectChange}
+                                    placeholder={metheo.categorie.name}
+                                  >
+                                    <MenuItem value="">
+                                      Sélectionnez une categorie
+                                    </MenuItem>
 
-                          <div className="row ">
-                            <div className="col">
-                              <FormControl
-                                fullWidth
-                                sx={{ m: 1, height: "40" }}
-                                variant="outlined"
-                              >
-                                <FormHelperText
-                                  id="outlined-projet-helper-text"
-                                  className="fs-6 text-dark fw-bold"
-                                >
-                                  Description
-                                </FormHelperText>
-                                <OutlinedInput
-                                  className="bg-white"
-                                  id="outlined-adornment-projet"
-                                  aria-describedby="outlined-projet-helper-text"
-                                  inputProps={{
-                                    "aria-label": "projet",
-                                  }}
-                                  placeholder="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-                                />
-                              </FormControl>
+                                    {categories.map((categorie) => (
+                                      <MenuItem key={categorie.id} value={categorie}>
+                                        {categorie.name}
+                                      </MenuItem>
+                                    ))}
+                                  </Select>
+                                  {errorCategorie && (
+                                    <span style={{ color: "red" }}>{errorCategorie}</span>
+                                  )}
+                                </FormControl>
+                              </div>
                             </div>
-                          </div>
-                          <div className="mt-5 d-flex justify-content-end">
-                            <Button variant="contained" onClick={handleValiderClickmetheorologique}>Modifier</Button>
-                          </div>
+
+                            <div className="row ">
+                              <div className="col">
+                                <FormControl
+                                  fullWidth
+                                  sx={{ m: 1, height: "40" }}
+                                  variant="outlined"
+                                >
+                                  <FormHelperText
+                                    id="outlined-projet-helper-text"
+                                    className="fs-6 text-dark fw-bold"
+                                  >
+                                    Description
+                                  </FormHelperText>
+                                  <OutlinedInput
+                                    className="bg-white"
+                                    id="outlined-adornment-projet"
+                                    aria-describedby="outlined-projet-helper-text"
+                                    inputProps={{
+                                      "aria-label": "projet",
+                                    }}
+                                    value={descriptionModifiemetheo}
+                                    onChange={(e) => setDescriptiondifiemetheo(e.target.value)}
+                                    placeholder={`${metheo.description}`}
+                                  />
+                                  {errorDescription && (
+                                    <span style={{ color: "red" }}>
+                                      {errorDescription}
+                                    </span>
+                                  )}
+                                </FormControl>
+                              </div>
+                            </div>
+
+                            <div className="row">
+                              <div className="col">
+                                <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
+                                  <label htmlFor="upload-cv">
+                                    <input
+                                      style={{ display: "none" }}
+                                      id="upload-cv"
+                                      name="upload-cv"
+                                      type="file"
+                                      onChange={handlePhotoChangesModifiemetheo}
+                                    />
+
+                                    <Button
+                                      color="secondary"
+                                      variant="contained"
+                                      component="span"
+                                    >
+                                      Télécharger une photos
+                                    </Button>
+                                    {selectedPhotosModifiemetheo && (
+                                      <p>Votre produit: {selectedPhotosModifiemetheo.name}</p>
+                                    )}
+                                  </label>
+                                  {errorPhoto && (
+                                    <span style={{ color: "red" }}>{errorPhoto}</span>
+                                  )}
+                                </FormControl>
+                              </div>
+                            </div>
+                            <div className="mt-5 d-flex justify-content-end">
+                              <Button variant="contained" onClick={handleValiderClickmetheorologique}>Modifier</Button>
+                            </div>
+                          </Box>
+                        </Fade>
+                      </Modal>
+                      <Card sx={{ maxWidth: 345 }}>
+                        <Box>
+                          <CardMedia
+                            sx={{ height: 200, margin: 1, borderRadius: 2 }}
+                            image={`http://localhost:8081/${metheo.photo}`}
+                          />
                         </Box>
-                      </Fade>
-                    </Modal>
-                    <Card sx={{ maxWidth: 345 }}>
-                      <Box>
-                        <CardMedia
-                          sx={{ height: 200, margin: 1, borderRadius: 2 }}
-                          image={`http://localhost:8081/${metheo.photo}`}
-                        />
-                      </Box>
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          component="div"
-                          className="text-end text-primary"
-                        >
-                          prix: {metheo.prix}
-                        </Typography>
-                        <Typography gutterBottom variant="h4" component="div">
-                        {metheo.nom}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        {metheo.description}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            className="text-end text-primary"
+                          >
+                            prix: {metheo.prix}
+                          </Typography>
+                          <Typography gutterBottom variant="h4" component="div">
+                            {metheo.nom}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {metheo.description}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
                 </div>
               </TabPanel>
             </TabContext>
