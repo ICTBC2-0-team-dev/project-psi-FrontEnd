@@ -12,9 +12,12 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Logo from '../images/logoPSI.png';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 import Entreprise from './Entreprise';
-import PayementForm from './PayementForm';
-import Review from './Review';
+import Informations from './Informations';
+import Reseaux from './Reseaux';
 import Contact from './Contact';
 
 function Copyright() {
@@ -30,16 +33,16 @@ function Copyright() {
     );
 }
 
-const steps = ['Entreprise', 'Fondation', 'Réseaux Sociaux','Contact'];
+const steps = ['Entreprise', 'Informations Générales', 'Réseaux Sociaux','Contact'];
 
 function getStepContent(step) {
     switch (step) {
       case 0:
         return <Entreprise />;
       case 1:
-        return <PayementForm />;
+        return <Informations />;
       case 2:
-        return <Review />;
+        return <Reseaux/>;
       case 3:
         return <Contact />;
       default:
@@ -87,15 +90,22 @@ function Checkout() {
             ))}
           </Stepper>
           {activeStep === steps.length ? (
-            <React.Fragment>
-              <Typography variant="h5" gutterBottom>
-                Thank you for your order.
+            <React.Fragment >
+              <Stack direction="row" sx={{display:'flex', justifyContent:'center'}}>
+                <Avatar sx={{width: 80, height: 80}}>
+                  <DoneAllIcon/>
+                </Avatar>
+              </Stack>
+              <Typography variant="h5" gutterBottom align='center'sx={{mt:5}}>
+                Félicitation profil crée  avec succès
               </Typography>
-              <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
+              <Typography variant="subtitle1" align='center'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id purus sodales, pulvinar purus 
               </Typography>
+              <Stack spacing={2} direction="row" sx={{display:'flex', justifyContent:'center', mt: 3}}>
+                <Button variant="contained">Dashbord</Button>
+                <Button variant="outlined">Poster</Button>
+              </Stack>
             </React.Fragment>
           ) : (
             <React.Fragment>

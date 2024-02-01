@@ -49,7 +49,6 @@ const Projet = () => {
     setDomaines(event.target.value);
   };
 
-  /** for reactquil text zone */
   const [content, setContent] = useState("");
 
   const handleChangezone = (value) => {

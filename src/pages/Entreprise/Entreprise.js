@@ -64,11 +64,11 @@ function Entreprise() {
         <Grid item xs={12}>
            <TextField
           id="standard-multiline-static"
-          label="Description "
+          label="Description"
           fullWidth
           multiline
           rows={4}
-          defaultValue="Descriptio"
+          placeholder='Faites connaître votre entreprise. Faites savoir au candidat qui vous êtes ...'
           variant="standard"
         />
         </Grid>
