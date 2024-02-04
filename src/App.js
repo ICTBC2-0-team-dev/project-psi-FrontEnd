@@ -1,18 +1,10 @@
 import React from "react";
-
-{/**authentification */ }
 import Login from "./pages/freelance/Login";
 import LoginVerification from "./pages/freelance/LoginVerification";
 import Resetpassword from "./pages/freelance/Resetpassword";
-import EmailVerification from "./pages/freelance/EmailVerification";
-import Account from "./pages/freelance/Account";
-import ForgetPassword from "./pages/freelance/ForgetPassword";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-{/** homePae */ }
+import Profil from "./pages/profil/Profil";
 import HomeScreen from "./pages/ResponsiveAppBar"
-import ResponsiveAppBar from "./pages/ResponsiveAppBar";
 
 //profile employer
 import ProfilEnd from "./pages/Entreprise/ProfilEnd";
@@ -21,13 +13,15 @@ import Informations from "./pages/Entreprise/Informations";
 import Reseaux from "./pages/Entreprise/Reseaux";
 import Contact from "./pages/Entreprise/Contact";
 
-// import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
-// import ProfilReseaux from "./pages/profil/ProfilReseaux";
-// import ProfilContact from "./pages/profil/ProfilContact";
-// import EndProfil from "./pages/profil/EndProfil";
-// import Profil from "./pages/profil/Profil";
 
-{/**employeur */ }
+import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
+import ProfilReseaux from "./pages/profil/ProfilReseaux";
+import ProfilContact from "./pages/profil/ProfilContact";
+import EndProfil from "./pages/profil/EndProfil";
+import EmailVerification from "./pages/freelance/EmailVerification";
+import Account from "./pages/freelance/Account";
+import ForgetPassword from "./pages/freelance/ForgetPassword";
+import ResponsiveAppBar from "./pages/ResponsiveAppBar";
 import DetailProjet from "./pages/DetailProjet";
 import DashProfil from "./components/Dashbord1/DashProfil";
 import Freelance from "./components/Dashbord1/Freelance";
@@ -39,12 +33,11 @@ import Projet from "./components/Dashbord1/Projet"
 import Projets from "./components/DashboadFreelance/Projet";
 import Module from "./components/Dashbord1/Module"
 //import Paramettre from "./components/DashboadFreelance/Paramettre"
-
-{/**freelance */}
 import ProfilFreelance from './pages/freelance/ProfilFre'
 import Home from "./pages/spaceMarket/Home";
-import DashAccueil from './components/DashboadFreelance/DashAccueil'
 
+//import dashbord profil
+import DashAccueil from './components/DashboadFreelance/DashAccueil'
 
 import AllProjet from "./pages/AllProjet"
 import DetailProduit from "./pages/spaceMarket/DetailProduit";
