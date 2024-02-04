@@ -11,7 +11,8 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import Logo from '../images/logoPSI.png';
+// import Logo from '../images/logoPSI.png';
+import Logo2 from '../images/full-logo-wide-ldpi.png'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
@@ -73,8 +74,8 @@ function Checkout() {
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
       >
-        <Toolbar>
-          <img src={Logo} alt=""/>
+        <Toolbar sx={{height:80}}>
+          <img src={Logo2} alt="" />
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
