@@ -175,11 +175,19 @@ const ProfilFreelance = () => {
 
   return (
     <div>
-      <Card sx={{ width: 985, marginLeft: 70, marginTop: 20 }}>
+      <Card sx={{ 
+                my: 0,
+                mx: 5,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 1500,
+                height: "auto"
+              }}>
         <CardContent>
           <Box
             className="mt-5"
-            sx={{ display: "flex", flexDirection: "column" }}
           >
             <h2>Enregistrer votre profil</h2>
             {/* <Box sx={{ p: 3 }}>

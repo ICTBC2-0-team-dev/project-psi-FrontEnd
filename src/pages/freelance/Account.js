@@ -156,7 +156,7 @@ const Account = () => {
             },
           });
 
-          navigate("/profil");
+          navigate("/Entreprises");
           setAlertVariant("success");
           setAlertMessage("Votre compte a été créé avec succès");
           const reponse = request.data;
@@ -211,7 +211,7 @@ const Account = () => {
             },
           });
 
-          navigate("/profil");
+          navigate("/Entreprises");
           setAlertVariant("success");
           setAlertMessage("Votre compte a été créé avec succès");
           const reponse = request.data;
