@@ -28,6 +28,7 @@ import Utilisateur from "./components/Admin/Utilisateur";
 import Accueil from "./components/Admin/Accueil";
 import SidebarAdmin from "./components/Admin/SidebarAdmin";
 import Checkout from "./pages/Entreprise/Checkout";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -62,8 +63,8 @@ function App() {
           <Route path="/accuiel" element={<Accueil />} /> 
           <Route path="/sidebarAdmin" element={<SidebarAdmin />} /> 
           <Route path="/checkout" element={<Checkout />} /> 
-          {/* <Route path="/Dashbord/Accueil" element={<Accueil />} />
-          <Route path="/Dashbord/projet" element={<Projet />} />*/}
+          <Route path="/Accueil" element={<Home />} />
+          {/* <Route path="/Dashbord/projet" element={<Projet />} /> */}
           
 
           <Route path="*" element={<Login />} />

@@ -123,14 +123,14 @@ function Checkout() {
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}
                 >
-                  {activeStep === steps.length - 1 ? 'Terminer' : 'Suivant'}
+                  {activeStep === steps.length - 1 ? 'Terminer ' : 'Suivant'}
                 </Button>
               </Box>
             </React.Fragment>
           )}
         </Paper>
         <Copyright />
-      </Container>
+      </Container>                                                                        
     </React.Fragment>
   )
 }
