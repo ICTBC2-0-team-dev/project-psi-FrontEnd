@@ -556,7 +556,7 @@ function ResponsiveAppBar() {
         }}
         >
           
-          <Grid className='my-5'
+          {/* <Grid className='my-5'
           sx={{
              display:'flex',
               justifyContent:'center',
@@ -589,7 +589,7 @@ function ResponsiveAppBar() {
                 </Box>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
 

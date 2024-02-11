@@ -98,6 +98,8 @@ function Contact() {
       // Vous pouvez ajouter les actions de réinitialisation appropriées dans votre slice Redux
       if (response.status === 200) {
         navigate("/checkout");
+      }else{
+        alert('Une erreur est survenue lors de l\'enregistrement: Verifier que tout les champ sont bien remplie et le type de fichier que vous importer doit etre .png ou .jpeg ou .jpg');
       }
     } catch (error) {
       console.error(error);

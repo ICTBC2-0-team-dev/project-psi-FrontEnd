@@ -2,7 +2,7 @@ import React from "react";
 import Login from "./pages/freelance/Login";
 import LoginVerification from "./pages/freelance/LoginVerification";
 import Resetpassword from "./pages/freelance/Resetpassword";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Redirect, useLocation } from "react-router-dom";
 import Profil from "./pages/profil/Profil";
 import HomeScreen from "./pages/ResponsiveAppBar"
 
@@ -12,6 +12,7 @@ import Entreprises from "./pages/Entreprise/Entreprise";
 import Informations from "./pages/Entreprise/Informations";
 import Reseaux from "./pages/Entreprise/Reseaux";
 import Contact from "./pages/Entreprise/Contact";
+import Checkout from "./pages/Entreprise/Checkout";
 
 
 import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
@@ -51,14 +52,20 @@ import Produit from "./components/Admin/Produit";
 import Utilisateur from "./components/Admin/Utilisateur";
 import Accueil from "./components/Admin/Accueil";
 import SidebarAdmin from "./components/Admin/SidebarAdmin";
+import Index from "./pages/Home";
 
+// not found page
+import NotFound from './pages/not found/Index'
+
+// About
+import About from './pages/about/Index'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route index element={<HomeScreen />} />
+          <Route index element={<Index />} />
 
           {/** authentification */}
           <Route path="/loginVerification" element={<LoginVerification />} />
@@ -74,6 +81,7 @@ function App() {
           <Route path="/Informations" element={<Informations />} />
           <Route path="/Reseaux" element={<Reseaux />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/profi" element={<Checkout />} />
 
 
           {/* <Route path="/profil/fondation" element={<ProfilEntreprise />} />
@@ -117,9 +125,15 @@ function App() {
           <Route path="/liste" element={<Liste />} />
           <Route path="/commande" element={<Commande />} />
 
+          <Route path="/freelancePage" element={<HomeScreen />} />
 
+          {/** not found */}
+          <Route path="/NotFound" element={<NotFound />} />
 
-          <Route path="*" element={<Login />} />
+          {/** About */}
+          <Route path="/about" element={<About />} />
+
+          <Route path="*" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </div>

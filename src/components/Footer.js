@@ -15,10 +15,10 @@ import AOS from "aos";
 
 const Footer = () => {
 
-    React.useEffect(() => {
-        AOS.init({duration:2000});
-      }, []);
-      
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <>
       {/* footer */}
@@ -31,7 +31,7 @@ const Footer = () => {
       >
         <Container className="border-bottom" data-aos="fade-up-right">
           <div class="row">
-            <div class="col-lg-6 col-md-4 col-sm-12">
+            {/* <div class="col-lg-6 col-md-4 col-sm-12">
               <Typography
                 variant="h5"
                 className="text-dark  fs-4 fw-bold  pt-5 fs-sm-5"
@@ -61,7 +61,7 @@ const Footer = () => {
                 </Grid>
                 <Button variant="outline-primary">Souscrire</Button>{" "}
               </Box>
-            </div>
+            </div> */}
             <div class="col-lg-3 col-md-4 col-sm-12">
               <Grid item xs={12} md={6}>
                 <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
@@ -107,30 +107,74 @@ const Footer = () => {
               </Grid>
             </div>
             {/* <div class="col-2 col-md-4 col-sm-6" >
-            <Grid item xs={12} md={6}>
-              <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                Contact
-              </Typography>
-            
-              <List sx={{ bgcolor: '#f1f2f4',textAlign:'end' }}>
-                  
-                <ListItem>
-                  <ListItemText primary="contact@panafrican-space.net"  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="info@panafrican-space.net"  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="info@psiafrica.space" />
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary="contact@psiafrica.space"  />
-                </ListItem>
-                  
+              <Grid item xs={12} md={6}>
+                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                  Contact
+                </Typography>
+
+                <List sx={{ bgcolor: '#f1f2f4', textAlign: 'end' }}>
+
+                  {/* <ListItem>
+                  <ListItemText primary="twee"  />
+                </ListItem> 
+                  <ListItem>
+                    <ListItemText primary="" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="" />
+                  </ListItem>
+
                 </List>
-              
-            </Grid>
-          </div> */}
+
+              </Grid>
+            </div> */}
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+              <Grid item xs={12} md={6}>
+                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                  Compagnie
+                </Typography>
+
+                <List sx={{ bgcolor: "#f1f2f4", textAlign: "end" }}>
+                  <ListItem>
+                    <ListItemText primary="instagram" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="facebook" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="contact@psiafrica.space" />
+                  </ListItem>
+                </List>
+              </Grid>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+              <Grid item xs={12} md={6}>
+                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                  Localisation
+                </Typography>
+{/* 
+                <List sx={{ bgcolor: "#f1f2f4", textAlign: "end" }}>
+                  <ListItem>
+                    <ListItemText primary="A propos" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Vision" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Carriere" />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary="Contact" />
+                  </ListItem>
+                </List> */}
+              </Grid>
+            </div>
           </div>
         </Container>
         <Container>

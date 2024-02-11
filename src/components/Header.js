@@ -38,21 +38,27 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav variant="underline">
                 <Nav.Item>
-                  <Nav.Link eventKey="HomeScreen" href="/">Home</Nav.Link>
+                  <Nav.Link eventKey="HomeScreen" href="/">Acceuil</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventkey="/#" sx={{ color: "primary" }}>
+                  <Nav.Link eventKey="SpaceMarket" href="/about">A propos</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventkey="freelance" href="/freelancePage" sx={{ color: "primary" }}>
                     Freelance
                   </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="con">Consultant</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="SpaceMarket" href="/SpaceMarket">spaceMarket</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="ind">Industrialisation</Nav.Link>
+                  <Nav.Link eventKey="con" href="/NotFound">Consultant</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="ind" href="/NotFound">Industrialisation</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="ind" href="/NotFound">contact us</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>
@@ -88,6 +94,7 @@ const Header = () => {
           </Row>
         </Container>
       </Container>
+      
     </>
   );
 };

@@ -1,40 +1,60 @@
-import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import Container from "react-bootstrap/Container";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import SendIcon from "@mui/icons-material/Send";
+import React, { useEffect, useState } from 'react'
+import CssBaseline from '@mui/material/CssBaseline';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Toolbar from '@mui/material/Toolbar';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import Logo from '../images/logoPSI.png';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import OutlinedInput from "@mui/material/OutlinedInput";
+
 import { useNavigate } from "react-router-dom";
-import Chip from "@mui/material/Chip";
 import axios from "../../axios.js";
-import "./ProfilFre.css";
 import { useSelector } from "react-redux";
 import { setProfile } from "../../features/profileSlice.js"
 import { useDispatch } from "react-redux";
 
+import { styled } from '@mui/material/styles';
 
 
-
-const VisuallyHiddenInput = styled("input")({
-  clip: "rect(0 0 0 0)",
+const VisuallyHiddenInput = styled('input')({
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
   height: 1,
+  overflow: 'hidden',
+  position: 'absolute',
   bottom: 0,
   left: 0,
-  whiteSpace: "nowrap",
+  whiteSpace: 'nowrap',
   width: 1,
 });
 
-const ProfilFreelance = () => {
+function Copyright() {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="">
+        PSI
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+
+function Checkout() {
+  const [activeStep, setActiveStep] = React.useState(0);
 
   const dispatch = useDispatch();
 
@@ -61,16 +81,16 @@ const ProfilFreelance = () => {
 
   /** end upload photo */
 
-  
+
   /**recuperation des domaine */
   const [domains, setDomains] = useState([]);
   const [selectedDomain, setSelectedDomain] = useState("");
   console.log(selectedDomain);
-  
+
   const idValue = selectedDomain.id;
   const valuesList = [idValue];
   console.log(valuesList);
-  
+
   const domain = valuesList
   useEffect(() => {
     fetchTypesDomaine();
@@ -141,169 +161,99 @@ const ProfilFreelance = () => {
   const [description, setDescription] = useState("");
   const linkedIn = linkedInLink
 
+  const [errorCV, setErrorCV] = useState('');
+  const [errorphotos, setErrorphotos] = useState('');
+  const [errorcompetence, setErrorcompetence] = useState('');
+  const [errornom, setErrorNom] = useState('');
+  const [errororganisation, setErrororganisation] = useState('');
+  const [errorDescription, setErrorDescription] = useState('');
+
+
   const handleSubmit = async () => {
-    try {
-      const formData = new FormData();
-      console.log('valeur a envoyer',formData);
-      Array.from(selectedPhotos).forEach((photo) => {
-        formData.append("photo", photo);
-      });
-      formData.append("cv", selectedFile);
-      formData.append("linkedIn", linkedIn);
-      formData.append("domain", domain);
-      formData.append("competences", competences);
-      formData.append("description", description);
-      formData.append("user", user);
 
-
-      const request = await axios.post("/profile", formData);
-      // Succès de l'envoi de l'API, effectuez les actions supplémentaires nécessaires ici
-      dispatch(setProfile(request.data.id));
-      navigate("/DashAccueil");
-
-      // Réinitialiser les champs après l'envoi
-      setSelectedPhotos(null);
-      setSelectedFile(null);
-      setName("");
-      setDescription("");
-    } catch (error) {
-      // Gérer les erreurs de l'API ici
-      console.error(error);
+    if (selectedPhotos === "") {
+      setErrorCV('Veuillez remplir ce champ.');
+    } else if (selectedFile === "") {
+      setErrorphotos('Veuillez remplir ce champ.');
     }
+    else if (linkedIn === "") {
+      setErrorNom('Veuillez remplir ce champ.');
+    }
+    else if (domain === "") {
+      setErrororganisation('Veuillez remplir ce champ.');
+    }
+    else if (competences === "") {
+      setErrorcompetence('Veuillez remplir ce champ.');
+    }
+    else if (description === "") {
+      setErrorDescription('Veuillez remplir ce champ.');
+    } else {
+
+      try {
+        const formData = new FormData();
+        console.log('valeur a envoyer', formData);
+        Array.from(selectedPhotos).forEach((photo) => {
+          formData.append("photo", photo);
+        });
+        formData.append("cv", selectedFile);
+        formData.append("linkedIn", linkedIn);
+        formData.append("domain", domain);
+        formData.append("competences", competences);
+        formData.append("description", description);
+        formData.append("user", user);
+
+
+        const request = await axios.post("/profile", formData);
+        // Succès de l'envoi de l'API, effectuez les actions supplémentaires nécessaires ici
+        dispatch(setProfile(request.data.id));
+        navigate("/DashAccueil");
+
+        // Réinitialiser les champs après l'envoi
+        setSelectedPhotos(null);
+        setSelectedFile(null);
+        setName("");
+        setDescription("");
+      } catch (error) {
+        // Gérer les erreurs de l'API ici
+        console.error(error);
+      }
+
+    }
+
   };
 
 
   return (
-    <div>
-      <Card sx={{ 
-                my: 0,
-                mx: 5,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 1500,
-                height: "auto"
-              }}>
-        <CardContent>
-          <Box
-            className="mt-5"
-          >
-            <h2>Enregistrer votre profil</h2>
-            {/* <Box sx={{ p: 3 }}>
-            <h1>Freelance</h1>
-            </Box> */}
-            <Container className="mt-5">
-              <div className="row ">
-                <div className="col">
-                  <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">
-                      Lien linkedin
-                    </FormHelperText>
-                    <OutlinedInput
-                      id="outlined-adornment-projet"
-                      // endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                      aria-describedby="outlined-projet-helper-text"
-                      inputProps={{
-                        "aria-label": "projet",
-                      }}
-                      value={linkedInLink}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </FormControl>
-                </div>
-              </div>
-
-              {/* <div className="row ">
-                <div className="col">
-                  <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">
-                      Libelle
-                    </FormHelperText>
-                    <OutlinedInput
-                      id="outlined-adornment-projet"
-                      // endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                      aria-describedby="outlined-projet-helper-text"
-                      inputProps={{
-                        "aria-label": "projet",
-                      }}
-                      value={libelle}
-                      onChange={(e) => setLibelle(e.target.value)}
-                    />
-                  </FormControl>
-                </div>
-              </div> */}
-
-              <div className="row">
-                <div className="col">
-                  <FormControl fullWidth sx={{ width: 440, marginLeft: 1, marginTop: 4 }}>
-                    <InputLabel id="demo-select-label"></InputLabel>
-                    <Select
-                      value={selectedDomain}
-                      onChange={handleDomainChange}
-                    >
-                      <MenuItem value="">Sélectionnez un Domaine</MenuItem>
-                      {domains.map((domain) => (
-                        <MenuItem key={domain.id} value={domain}>
-                          {domain.titled}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </div>
-                <div className="col">
-                  <FormControl sx={{ width: 440, marginLeft: 1, marginTop: 4}}>
-                    <InputLabel id="competence-select-label">
-                      Sélectionnez une compétence :
-                    </InputLabel>
-                    <Select
-                      labelId="competence-select-label"
-                      id="competence-select"
-                      multiple
-                      value={selectedCompetences}
-                      onChange={handleCompetenceChange}
-                      input={
-                        <OutlinedInput
-                          id="select-multiple-chip"
-                          label="Sélectionnez une compétence"
-                        />
-                      }
-                    >
-                      <MenuItem value="">Sélectionnez une competence</MenuItem>
-                      {competenceByDomaine.map((competence) => (
-                        <MenuItem key={competence.id} value={competence.id}>
-                          {competence.name}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </div>
-              </div>
-
-              <div className="row ">
-                <div className="col">
-                  <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
-                    <FormHelperText id="outlined-projet-helper-text">
-                      Description
-                    </FormHelperText>
-                    <OutlinedInput
-                      id="outlined-adornment-projet"
-                      // endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-                      aria-describedby="outlined-projet-helper-text"
-                      inputProps={{
-                        "aria-label": "projet",
-                      }}
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
-                    />
-                  </FormControl>
-                </div>
-              </div>
-
-              <div className="row ">
-                <div className="col">
-                  <FormControl fullWidth sx={{ m: 1 }} variant="outlined">
-                    <label htmlFor="upload-cv">
+    <React.Fragment>
+      <CssBaseline />
+      <AppBar
+        position="absolute"
+        color="default"
+        elevation={0}
+        sx={{
+          position: 'relative',
+          borderBottom: (t) => `1px solid ${t.palette.divider}`,
+        }}
+      >
+        <Toolbar>
+          <img src={Logo} alt="" />
+        </Toolbar>
+      </AppBar>
+      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+        <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+          <Typography component="h1" variant="h4" align="center">
+            PROFIL DU FREELANCE
+          </Typography>
+          <React.Fragment >
+            <br />
+            <Typography variant="h6" gutterBottom sx={{}}>
+              CV & photos
+            </Typography>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={5}>
+                <Box sx={{ p: 5, border: '1px dashed grey', borderRadius: 1 }}>
+                  <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
+                    <label htmlFor="upload-cv" style={{ marginLeft: -25 }}>
                       <input
                         style={{ display: "none" }}
                         id="upload-cv"
@@ -316,18 +266,19 @@ const ProfilFreelance = () => {
                         color="secondary"
                         variant="contained"
                         component="span"
+                        startIcon={<CloudUploadIcon />}
                       >
                         Télécharger un CV
                       </Button>
                       {selectedFile && <p>Votre cv: {selectedFile.name}</p>}
+                      {errorCV && <span style={{ color: "red" }}>{errorCV}</span>}
                     </label>
                   </FormControl>
-
-                  <FormControl
-                    fullWidth
-                    sx={{ width: 280, marginLeft: 1 }}
-                    variant="outlined"
-                  >
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={7}>
+                <Box sx={{ p: 5, border: '1px dashed grey', borderRadius: 1 }}>
+                  <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
                     <Button
                       color="success"
                       component="label"
@@ -340,47 +291,106 @@ const ProfilFreelance = () => {
                         onChange={handlePhotoChanges}
                       />
                     </Button>
-                    {selectedPhotos && (
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          marginTop: "1rem",
-                        }}
-                      >
-                        {Array.from(selectedPhotos).map((photo, index) => (
-                          <img
-                            key={index}
-                            src={URL.createObjectURL(photo)}
-                            alt={`Selected file ${index + 1}`}
-                            style={{
-                              borderRadius: "50%",
-                              height: "100px",
-                              marginLeft: "0.5rem",
-                            }}
-                          />
-                        ))}
-                      </div>
-                    )}
+                    {selectedPhotos && <p>Votre photo: {selectedPhotos[0].name}</p>}
+                    {errorphotos && <span style={{ color: "red" }}>{errorphotos}</span>}
                   </FormControl>
-                </div>
-              </div>
-            </Container>
-          </Box>
-        </CardContent>
-        <CardActions>
-          <Button
-            sx={{ width: 925, marginLeft: 3 }}
-            onClick={handleSubmit}
-            variant="contained"
-            endIcon={<SendIcon />}
-          >
-            Enregistrer
-          </Button>
-        </CardActions>
-      </Card>
-    </div>
-  );
-};
+                </Box>
+              </Grid>
+              {/* <Grid><Divider/></Grid> */}
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  id="nom"
+                  name="nom"
+                  label="Nom de l’Entreprise"
+                  fullWidth
+                  autoComplete="entreprise"
+                  variant="standard"
+                  value={linkedInLink}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                {errornom && <span style={{ color: "red" }}>{errornom}</span>}
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 235 }}>
+                  <InputLabel id="demo-simple-select-standard-label">Type d'organisation</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={selectedDomain}
+                    onChange={handleDomainChange}
+                    label="Type d'organisation"
+                  >
+                    <MenuItem value="">Sélectionnez un Domaine</MenuItem>
+                    {domains.map((domain) => (
+                      <MenuItem key={domain.id} value={domain}>
+                        {domain.titled}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                {errororganisation && <span style={{ color: "red" }}>{errororganisation}</span>}
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 235 }}>
+                  <InputLabel id="demo-simple-select-standard-label">Type d'industrie</InputLabel>
+                  <Select
+                    label="Type d'industrie"
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    multiple
+                    value={selectedCompetences}
+                    onChange={handleCompetenceChange}
+                    input={
+                      <OutlinedInput
+                        id="select-multiple-chip"
+                        label="Sélectionnez une compétence"
+                      />
+                    }
+                  >
+                    <MenuItem value="">Sélectionnez une competence</MenuItem>
+                    {competenceByDomaine.map((competence) => (
+                      <MenuItem key={competence.id} value={competence.id}>
+                        {competence.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                {errorcompetence && <span style={{ color: "red" }}>{errorcompetence}</span>}
+              </Grid>
 
-export default ProfilFreelance;
+              <Grid item xs={12}>
+                <TextField
+                  id="standard-multiline-static"
+                  label="Description"
+                  fullWidth
+                  multiline
+                  rows={4}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder='Faites connaître votre entreprise. Faites savoir au candidat qui vous êtes ...'
+                  variant="standard"
+                />
+                {errorDescription && <span style={{ color: "red" }}>{errorDescription}</span>}
+
+              </Grid>
+            </Grid>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+
+              <Button
+                variant="contained"
+                onClick={handleSubmit}
+                sx={{ mt: 3, ml: 1 }}
+              >
+                Terminer
+              </Button>
+            </Box>
+          </React.Fragment>
+        </Paper>
+        <Copyright />
+      </Container>
+    </React.Fragment>
+  )
+}
+
+export default Checkout
