@@ -1,39 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Grid, AppBar, Toolbar, Typography, Tabs, Tab, Box, Button} from '@mui/material';
+// import Logo2 from './full-logo-wide-.svg';
 
 
-const Header = () => {
+const Header = ({links}) => {
+  const [value, setValue] = useState();
   return (
-    <div>
-      <div className="top-navbar">
-        <div className="top-navbar-grid">
-          <div className="logo">Logo</div>
-          <nav className="main-navigation">
-            <ul>
-              <li>Home</li>
-              <li>Freelance</li>
-              <li>SpaceMarket</li>
-              <li>Consultation</li>
-              <li>Industrialisation</li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div className="bottom-navbar">
-        <div className="bottom-navbar-grid">
-          <div className="logo">Logo</div>
-          <div className="search-bar">
-            <input type="text" placeholder="Recherche" />
-          </div>
-          <div className="button-container">
-            <button className="signup-button">S'inscrire</button>
-            <button className="login-button">Se connecter</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <AppBar>
+      <Toolbar>
+        <Grid container >
+          <Grid item xs={2}>
+            {/* <Typography><img src={Logo2} alt="Logo" height={100}/></Typography> */}
+            <Typography>Logo</Typography>
+          </Grid>
+          <Grid item xs={6
+          } >
+            <Tabs 
+              indicatorColor='secondary' 
+              textColor='inherit' 
+              value={value} 
+              onChange={(e, val)=> setValue(val)}
+           >
+              {links.map((link, index) => (
+                <Tab key={index} label={link} />
+              ))}
+            </Tabs>
+          </Grid>
+          <Grid item xs={1}/>
+          <Grid item xs={3}>
+            <Box display={'flex'}>
+              <Button sx={{marginLeft: 'auto '}} variant='contained'> S'inscrire</Button>
+              <Button sx={{marginLeft: 1}} variant='contained'> Se Connecter</Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Toolbar>
+    </AppBar>
+
   )
 }
 
-export default Header
+export default Header 

@@ -29,6 +29,7 @@ import Accueil from "./components/Admin/Accueil";
 import SidebarAdmin from "./components/Admin/SidebarAdmin";
 import Checkout from "./pages/Entreprise/Checkout";
 import Home from "./pages/Home";
+import Header from "./components/Header";
 
 
 function App() {
@@ -64,9 +65,7 @@ function App() {
           <Route path="/sidebarAdmin" element={<SidebarAdmin />} /> 
           <Route path="/checkout" element={<Checkout />} /> 
           <Route path="/Accueil" element={<Home />} />
-          {/* <Route path="/Dashbord/projet" element={<Projet />} /> */}
-          
-
+          <Route path="/Header" element={<Header />} />
           <Route path="*" element={<Login />} />
         </Routes>
       </BrowserRouter>
