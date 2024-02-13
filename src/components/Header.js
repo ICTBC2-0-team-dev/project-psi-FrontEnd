@@ -9,9 +9,9 @@ const Header = ({links}) => {
   const [value, setValue] = useState();
   return (
 
-    <AppBar>
+    <AppBar sx={{backgroundImage: '#fff'}}>
       <Toolbar>
-        <Grid container >
+        <Grid sx={{placeItems:'center'}} container >
           <Grid item xs={2}>
             {/* <Typography><img src={Logo2} alt="Logo" height={100}/></Typography> */}
             <Typography>Logo</Typography>
