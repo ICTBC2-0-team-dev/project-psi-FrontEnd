@@ -1,12 +1,7 @@
 import * as React from 'react';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Logo from './images/psi.png';
-import Form from 'react-bootstrap/Form';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -28,15 +23,11 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import CarrouselProfil from "./Carrousel";
 import AddLocationAltRoundedIcon from '@mui/icons-material/AddLocationAltRounded';
-import TextField from '@mui/material/TextField';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { Divider } from '@mui/material';
 
-
-
-
-
+const linksArray = ["Accueil", "Services", "À propos de nous", "Actualités", "Contact"];
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -55,59 +46,7 @@ function ResponsiveAppBar() {
   return (
     <>
       <Container fluid className="bg-body-tertiary">
-        <Navbar expand="lg" className="bg-body-tertiary">
-          <Container fluid className='mx-5'>
-
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav variant="underline">
-                <Nav.Item>
-                  <Nav.Link eventKey="home">Home</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventkey="/#" active>Freelance</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="/D">Space Market</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="/DetailProjet">Consultant</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="ind">Industrialisation</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Navbar.Collapse>
-
-          </Container>
-        </Navbar>
-      </Container>
-
-      {/* Logo */}
-      <Container fluid className='bg-white my-2'>
-        <Container>
-          <Row>
-            <Col xs={false} md={4}>
-              <img src={Logo} alt='' style={{ height: '80px' }} />
-            </Col>
-            <Col xs={12} md={4} className='mt-3  justify-content-end '>
-              <Form className="d-flex">
-
-                <Form.Control
-                  type="search"
-                  placeholder="Rechercher..."
-                  className="me-2"
-                  aria-label="Search"
-                />
-
-              </Form>
-            </Col>
-            <Col xs={12} md={4} className='mt-3 justify-content-end '>
-              <Button variant="outline-primary">S’inscrire</Button>{' '}
-              <Button variant="primary">Se Connecter</Button>
-            </Col>
-          </Row>
-        </Container>
+        <Header links={linksArray} />
       </Container>
 
       {/* section header */}
@@ -137,12 +76,13 @@ function ResponsiveAppBar() {
         >
           <Grid className='mt-5 mt-sm-0'>
             <Grid className='my-5 my-sm-0'>
-              <Box sx={{ borderLeft: 5, borderColor: 'white', borderRadius: 5, padding: 2 }}>
-                <Typography className='text-white mb-2 fs-1 fw-normal fs-sm-5'>
+              <Box sx={{ padding: 2 }}>
+                <Typography className='text-white mt-2 fs-1 fw-normal fs-sm-5'>
                   Bienvenue sur le site PSI !
+                  <Divider sx={{ backgroundColor: '#413DEE', height: 5, width: 100, borderRadius: 5 }} />
                 </Typography>
-                </Box>
-                <Box className='mt-3'>
+              </Box>
+              <Box className='mt-3'>
                 <Typography className=' mb-5'>
                   <TypeWriterEffect
                     textStyle={{
@@ -605,7 +545,7 @@ function ResponsiveAppBar() {
           </Grid>
         </Container>
       </Grid>
-{/* 
+      {/* 
       <Grid fluid className='mt-5'>
         <Grid fluid
           style={{
@@ -893,119 +833,8 @@ function ResponsiveAppBar() {
       </Grid> */}
 
       {/* footer */}
-      <Grid fluid className='mt-5'
-        style={{
-          backgroundColor: '#f1f2f4',
-        }}
-      >
+      <Footer />
 
-        <Container className='border-bottom'>
-
-          <div class="row">
-            <div class="col-8 col-md-4 col-sm-12">
-
-              <Typography variant="h5" className='text-dark  fs-4 fw-bold  pt-5 fs-sm-5'>
-                Restez à jour
-              </Typography>
-              <Typography className='mb-3 fw-ligh lh-sm ' paragraph>
-                Joindre notre newletter pour des mises à jour régulières
-              </Typography>
-              <Typography className='mt-4 fw-ligh lh-sm ' paragraph>
-                Enter votre email:
-              </Typography>
-              <Box
-                component="form"
-                sx={{
-                  // '& > :not(style)': { width: '50ch',height:'50px' },
-                  display: 'flex',
-                  // justifyContent:'space-between'
-                }}
-                noValidate
-                autoComplete="off"
-
-              >
-
-                <Grid className='me-2'>
-
-                  <Paper elevation={2} >
-                    <TextField label="email" variant="outlined" />
-                  </Paper>
-                </Grid>
-
-                <Button variant="outline-primary">Souscrire</Button>{' '}
-
-
-              </Box>
-
-
-            </div>
-            <div class="col-2 col-md-4 col-sm-6" >
-
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Compagnie
-                </Typography>
-
-                <List sx={{ bgcolor: '#f1f2f4', textAlign: 'end' }}>
-
-                  <ListItem>
-                    <ListItemText primary="A propos" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Vision" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Carriere" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Contact" />
-                  </ListItem>
-
-                </List>
-
-              </Grid>
-            </div>
-            <div class="col-2 col-md-4 col-sm-6">
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Accès Rapide
-                </Typography>
-
-                <List sx={{ bgcolor: '#f1f2f4', textAlign: 'end' }}>
-
-                  <ListItem>
-                    <ListItemText primary="Acceuil" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Space Market" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Consultant" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Industrialisation" />
-                  </ListItem>
-
-                </List>
-
-              </Grid>
-            </div>
-          </div>
-
-        </Container>
-        <Container>
-          <div className='Row'>
-            <div className="col-6 col-md-4 col-sm-12 text-center">
-
-              <Typography className='fw-ligh fs-6 ' paragraph>
-                <img src={Logo} alt='' style={{ height: '80px' }} />Copyright © 2023 PSI.
-              </Typography>
-            </div>
-
-
-          </div>
-        </Container>
-      </Grid>
 
 
 
