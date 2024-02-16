@@ -9,6 +9,16 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Logo from '../img/logopsi2.png';
 import Form from 'react-bootstrap/Form';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useTheme } from '@mui/material/styles';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from 'react-router-dom';
@@ -26,9 +36,48 @@ const Header = () => {
     navigate('/login');
   };
 
-    React.useEffect(() => {
-      AOS.init({duration:2000});
-    }, []);
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  // open from service
+  const [anchorElSer, setAnchorElSer] = React.useState(null);
+  const openSer = Boolean(anchorElSer);
+  const handleClickSer = (event) => {
+    setAnchorElSer(event.currentTarget);
+  };
+  const handleCloseSer = () => {
+    setAnchorElSer(null);
+  };
+
+  const handleGoToFreelance = () => {
+    navigate("/freelancePage");
+  };
+
+  const handleGoToSpaceMarket = () => {
+    navigate("/SpaceMarket");
+  };
+  const handleGoToConsulting = () => {
+    navigate("/NotFound");
+  };
+  const handleGoToIndustri = () => {
+    navigate("/NotFound");
+  };
+  const handleGoToactualite = () => {
+    navigate("/actualite");
+  };
+  const handleGoToEvene = () => {
+    navigate("/evenement");
+  };
   return (
     <>
       <Container fluid className="bg-body-tertiary">
@@ -44,21 +93,55 @@ const Header = () => {
                   <Nav.Link eventKey="SpaceMarket" href="/about">A propos</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventkey="freelance" href="/freelancePage" sx={{ color: "primary" }}>
-                    Freelance
+                  <Nav.Link
+                    aria-controls={openSer ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openSer ? 'true' : undefined}
+                    onClick={handleClickSer}
+                  >Service et solutions
+                    {openSer ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                   </Nav.Link>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorElSer}
+                    open={openSer}
+                    onClose={handleCloseSer}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+                    }}
+                  >
+                    <MenuItem eventkey="freelance" onClick={handleGoToFreelance} sx={{ color: "primary" }}>Freelance</MenuItem>
+                    <MenuItem eventKey="SpaceMarket"  onClick={handleGoToSpaceMarket}>spaceMarket</MenuItem>
+                    <MenuItem eventKey="con"  onClick={handleGoToConsulting}>Consultant</MenuItem>
+                    <MenuItem eventKey="con" onClick={handleGoToIndustri} >Industrialisation</MenuItem>
+                  </Menu>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="SpaceMarket" href="/SpaceMarket">spaceMarket</Nav.Link>
+                  <Nav.Link
+                    eventKey="ind"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                  >MEDIAS
+                    {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                  </Nav.Link>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+                    }}
+                  >
+                    <MenuItem  onClick={handleGoToactualite}>Actualites</MenuItem>
+                    <MenuItem onClick={handleGoToEvene}>Evenement</MenuItem>
+                  </Menu>
                 </Nav.Item>
+
                 <Nav.Item>
-                  <Nav.Link eventKey="con" href="/NotFound">Consultant</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="ind" href="/NotFound">Industrialisation</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="ind" href="/NotFound">contact us</Nav.Link>
+                  <Nav.Link eventKey="Contact_us" href="/Contact_us">contact us</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>
@@ -94,7 +177,7 @@ const Header = () => {
           </Row>
         </Container>
       </Container>
-      
+
     </>
   );
 };

@@ -53,12 +53,20 @@ import Utilisateur from "./components/Admin/Utilisateur";
 import Accueil from "./components/Admin/Accueil";
 import SidebarAdmin from "./components/Admin/SidebarAdmin";
 import Index from "./pages/Home";
+import AddActualite from "./components/Admin/AddActualite";
 
 // not found page
 import NotFound from './pages/not found/Index'
 
 // About
 import About from './pages/about/Index'
+
+//medias
+import Actualite from "./pages/medias/Actualite";
+import Evenement from "./pages/medias/Evenement";
+
+//contact
+import Contact_us from "./pages/contact/Contact_us";
 
 function App() {
   return (
@@ -116,6 +124,7 @@ function App() {
           <Route path="/utilisateur" element={<Utilisateur />} />
           <Route path="/accuiel" element={<Accueil />} />
           <Route path="/sidebarAdmin" element={<SidebarAdmin />} />
+          <Route path="/AddActuality" element={<AddActualite />} />
 
           {/* module space market */}
           <Route path="/SpaceMarket" element={<Home />} />
@@ -132,6 +141,13 @@ function App() {
 
           {/** About */}
           <Route path="/about" element={<About />} />
+
+          {/** About */}
+          <Route path="/actualite" element={<Actualite />} />
+          <Route path="/evenement" element={<Evenement />} />
+
+          {/** Contact */}
+          <Route path="/Contact_us" element={<Contact_us />} />
 
           <Route path="*" element={<Index />} />
         </Routes>

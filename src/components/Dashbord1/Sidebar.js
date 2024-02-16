@@ -82,8 +82,7 @@ const openedMixin = (theme) => ({
     const handleCollapse = () => {
       setIsCollapse(!isCollapse);
     }
-    const navigate = useNavigate();
-                                                                                                                                                                                                                                                                                                                                                                                       
+    const navigate = useNavigate();                                                                                                                                                                                                                                                                                                                                                  
   
     return (
       <Box sx={{ display: 'flex' }}>
