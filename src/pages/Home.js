@@ -11,9 +11,10 @@ import { CardActionArea, Divider, Paper } from '@mui/material';
 import Link from '@mui/material/Link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { CssBaseline
-   
-  } from '@mui/material';
+import {
+    CssBaseline
+
+} from '@mui/material';
 
 const linksArray = ["Accueil", "Services", "À propos de nous", "Actualités", "Contact"];
 
@@ -275,10 +276,24 @@ const Home = () => {
                                     alignItems: 'start',
                                 }}
                             >
-                                <Typography component="h1" variant="h5">
+                                <Typography className='text-dark mt-2 fs-1 fw-normal fs-sm-5' underline>
                                     A Propos
                                 </Typography>
-                                
+
+                                <Typography variant="body2" color="text.secondary" className='mt-5'>
+                                    aidant les
+                                    industries et les start-ups, les gouvernements, les investisseurs, les ONG universitaires, etc. à faire bon usage des sciences, des
+                                    applications et des technologiesaidant les
+                                    industries et les start-ups, les gouvernements, les investisseurs, les ONG universitaires, etc. à faire bon usage des sciences, des
+                                    applications et des technologies aidant les
+                                    industries et les start-ups, les gouvernements, les investisseurs, les ONG universitaires, etc. à faire bon usage des sciences, des
+                                    applications et des technologies
+                                </Typography>
+
+                                <Link href="/responsiveAppBar" underline="none" className='mt-5'>
+                                            {' En savoir plus'}
+                                        </Link>
+
                             </Box>
                         </Grid>
                     </Grid>
