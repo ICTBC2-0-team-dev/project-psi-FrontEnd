@@ -11,14 +11,14 @@ import { CardActionArea, Divider, Paper } from '@mui/material';
 import Link from '@mui/material/Link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {
-    CssBaseline
+import { CssBaseline } from '@mui/material';
 
-} from '@mui/material';
 
-const linksArray = ["Accueil", "Services", "À propos de nous", "Actualités", "Contact"];
+const linksArray = ["Accueil", "Services", "À propos de nous", "Média", "Contact"];
 
 const Home = () => {
+   
+  
     return (
         <>
             <Container fluid className="bg-body-tertiary">
@@ -252,7 +252,7 @@ const Home = () => {
                             sm={4}
                             md={6}
                             sx={{
-                                backgroundImage: 'url(https://media.istockphoto.com/id/1326046108/fr/photo/voyage-cosmique-dans-lespace.jpg?s=612x612&w=0&k=20&c=GVAzDjgECD9lYTpHb8QKVEKoS63La7PgVOL5bHODMM0=)',
+                                backgroundImage: 'url(/home/eva/Documents/project-psi-FrontEnd-eva/src/pages/images/full-logo-wide-.svg)',
                                 backgroundRepeat: 'no-repeat',
                                 backgroundColor: (t) =>
                                     t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -290,14 +290,87 @@ const Home = () => {
                                     applications et des technologies
                                 </Typography>
 
-                                <Link href="/responsiveAppBar" underline="none" className='mt-5'>
-                                            {' En savoir plus'}
-                                        </Link>
+                                <Link href="/About" underline="none" className='mt-5'>
+                                    {' En savoir plus'}
+                                </Link>
 
                             </Box>
                         </Grid>
                     </Grid>
 
+                </Grid>
+            </Grid>
+
+            {/* section entreprise */}
+
+            <Grid fluid className='mt-5'>
+                <Grid fluid
+                    sx={{
+                        padding: {
+                            xs: '10px',
+                            sm: '50px',
+                            md: '50px',
+                        },
+
+
+                    }}
+                    style={{
+                        backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2021/05/connecting-points-dark-background.jpg)',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+
+
+                    }}
+                >
+
+                    <Grid sx={{
+                        padding: {
+                            xs: '10px',
+                            sm: '50px',
+                        },
+                        paddingInline: {
+                            md: '70px'
+                        }
+                    }}>
+
+                        <Grid sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }} fluid >
+                            <Grid item xs={4}  sx={{ textAlign: 'center' }} >
+                                <Box>
+                                    <img src='https://www.rheagroup.com/wp-content/uploads/2021/03/rhea-group-quality-icon.png' alt='' height='120' width='120'/>
+                                </Box>
+                                <Typography className='text-white mb-2 fs-2 fw-normal fs-sm-5'>
+                                    5 Ans
+                                </Typography>
+                                <Typography className='mb-3 lh-sm text-white' paragraph>
+                                    D'experiences et toujours la pour vous servir
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={4} sx={{ textAlign: 'center' }}>
+                                <Box>
+                                    <img src='https://www.rheagroup.com/wp-content/uploads/2021/03/rhea-group-people-icon.png' alt='' height='120' width='120' />
+                                </Box>
+                                <Typography className='text-white mb-2 fs-2 fw-normal fs-sm-5'>
+                                    200 Experts
+                                </Typography>
+                                <Typography className='mb-3 lh-sm text-white' paragraph>
+                                    Qui sont à votre disposition
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={4} sx={{ textAlign: 'center' }}>
+                                <Box>
+                                    <img src='https://www.rheagroup.com/wp-content/uploads/2021/03/rhea-group-global-europe-icon.png' alt='' height='120' width='120' />
+                                </Box>
+                                <Typography className='text-white mb-2 fs-2 fw-normal fs-sm-5'>
+                                    50 Pays
+                                </Typography>
+                                <Typography className='mb-3 lh-sm text-white' paragraph>
+                                    Avec qui nous travaillons depuis plusieurs annees
+                                </Typography>
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
                 </Grid>
             </Grid>
 

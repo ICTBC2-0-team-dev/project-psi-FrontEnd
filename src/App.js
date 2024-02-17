@@ -30,6 +30,13 @@ import SidebarAdmin from "./components/Admin/SidebarAdmin";
 import Checkout from "./pages/Entreprise/Checkout";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import About from './pages/about/Index';
+import Contact from "./pages/contact/Contact_us";
+import Actualite  from "./pages/medias/Actualite";
+import Evenement from "./pages/medias/Evenement";
+import NotFound from './pages/not found/Index'
+// import HomeMarket from './pages/spaceMarket/Home';
+// import DetailProduit from './pages/spaceMarket/DetailProduit';
 
 
 function App() {
@@ -40,7 +47,7 @@ function App() {
           <Route index element={<Login />} />
           <Route path="/loginVerification" element={<LoginVerification />} />
           <Route path="/emailVerification" element={<EmailVerification />} />
-          <Route path="account" element={<Account />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/resetpassword" element={<Resetpassword />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/profil" element={<Profil />} />
@@ -66,6 +73,13 @@ function App() {
           <Route path="/checkout" element={<Checkout />} /> 
           <Route path="/Accueil" element={<Home />} />
           <Route path="/Header" element={<Header />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact_us" element={<Contact />} />
+          <Route path="/Actualite" element={<Actualite />} />
+          <Route path="/Evenement" element={<Evenement />} />
+          <Route path="/NotFound" element={<NotFound />} />
+          {/* <Route path="/SpaceMarket" element={<HomeMarket />} />
+          <Route path="/DetailProduit" element={<DetailProduit />} /> */}
           <Route path="*" element={<Login />} />
         </Routes>
       </BrowserRouter>

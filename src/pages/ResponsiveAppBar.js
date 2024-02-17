@@ -545,8 +545,8 @@ function ResponsiveAppBar() {
           </Grid>
         </Container>
       </Grid>
-      {/* 
-      <Grid fluid className='mt-5'>
+      
+      {/* <Grid fluid className='mt-5'>
         <Grid fluid
           style={{
             backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2021/05/connecting-points-dark-background.jpg)',
