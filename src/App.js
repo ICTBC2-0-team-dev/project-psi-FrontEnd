@@ -37,6 +37,7 @@ import Evenement from "./pages/medias/Evenement";
 import NotFound from './pages/not found/Index'
 // import HomeMarket from './pages/spaceMarket/Home';
 // import DetailProduit from './pages/spaceMarket/DetailProduit';
+// import AddActualite from "./components/Admin/AddActualite";
 
 
 function App() {
@@ -79,7 +80,8 @@ function App() {
           <Route path="/Evenement" element={<Evenement />} />
           <Route path="/NotFound" element={<NotFound />} />
           {/* <Route path="/SpaceMarket" element={<HomeMarket />} />
-          <Route path="/DetailProduit" element={<DetailProduit />} /> */}
+          <Route path="/DetailProduit" element={<DetailProduit />} />
+           <Route path="/AddActuality" element={<AddActualite />} /> */}
           <Route path="*" element={<Login />} />
         </Routes>
       </BrowserRouter>

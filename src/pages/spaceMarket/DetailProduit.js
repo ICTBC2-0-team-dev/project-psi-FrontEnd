@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Image from "../../img/Rectangle 10342.png";
+import Image from "../images/blue-earth-from-space-background.jpg";
 import Fade from "@mui/material/Fade";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";

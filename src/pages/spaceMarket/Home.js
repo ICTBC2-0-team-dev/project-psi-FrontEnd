@@ -40,7 +40,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Image from "../../img/Rectangle 10342.png";
+import Image from "../../img/profils.jpg";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";

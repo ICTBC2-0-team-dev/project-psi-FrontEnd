@@ -3,7 +3,7 @@ import './Header.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Grid, AppBar, Toolbar, Typography,
-  Tabs, Tab, Box, Button, useTheme, useMediaQuery, Collapse,
+  Tabs, Tab, Box, Button, useTheme, useMediaQuery, List, ListItemButton, ListItemIcon, ListItemText,
 } from '@mui/material';
 import Logo2 from './full-logo-wide-.svg';
 import Menu from './Menu';
@@ -28,7 +28,7 @@ const Header = ({ links }) => {
   let CustomTabs = ({ to, label }) => (
     <Tab
       textColor='primary'
-      underline='hover'
+      textAlign='center'
       indicatorColor='primary'
       value={value}
       onChange={(e, val) => setValue(val)}
@@ -38,6 +38,20 @@ const Header = ({ links }) => {
       selected={to === location.pathname}
     />
   );
+  // let CustomListItem = ({ to, primary }) => (
+  //   <ListItemButton
+  //     component={Link}
+  //     to={to}
+  //     selected={to === location.pathname}
+  //     textColor='primary'
+  //     indicatorColor='primary'
+  //     value={value}
+  //     onChange={(e, val) => setValue(val)}>
+  //     <ListItemIcon>
+  //       <ListItemText primary={primary} />
+  //     </ListItemIcon>
+  //   </ListItemButton>
+  // );
 
   const [value, setValue] = useState();
   return (
@@ -55,24 +69,24 @@ const Header = ({ links }) => {
           </Grid>
           <Grid item xs={6} sx={{ textColor: 'dark' }}>
             <Tabs
-              // indicatorColor='secondary'
-              // textColor='primary'
               value={value}
               onChange={(e, val) => setValue(val)}
             >
-              {/* {links.map((link, index) => (
-                <Tab key={index} label={link} />
-              ))} */}
               <CustomTabs to="/Accueil" label="Accueil" />
-              <CustomTabs to="#" label="Services" onClick={handleClick} endIcon={open ? <ExpandLess /> : <ExpandMore />} /> 
-              {/* <Collapse in={open} timeout='auto' unmountOnExit>
-                <CustomTabs to="/Accueil" label="Accueil" component="div" disablePadding/>
-              </Collapse> */}
+              <CustomTabs to="#" label="Services"  />
               <CustomTabs to="/About" label="À propos de nous" />
               <CustomTabs to="/Actualite" label="Média" />
               <CustomTabs to="/Contact_us" label="Contact" />
-  
+
             </Tabs>
+            {/* <List sx={{ display: 'flex' }}>
+
+              <CustomListItem to="/Accueil" primary="Accueil" />
+              <CustomListItem to="#" primary="Services" />
+              <CustomListItem to="/About" primary="À propos de nous" />
+              <CustomListItem to="/Actualite" primary="Média" />
+              <CustomListItem to="/Contact_us" primary="Contact" />
+            </List> */}
           </Grid>
           <Grid item xs={1} />
           <Grid item xs={3}>
