@@ -1,34 +1,39 @@
-import React, { useEffect, useState } from "react";
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Image from "../../img/Rectangle 10342.png";
 import Fade from "@mui/material/Fade";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
-import TextField from "@mui/material/TextField";
-import Backdrop from "@mui/material/Backdrop";
-import InputAdornment from "@mui/material/InputAdornment";
-import Fab from "@mui/material/Fab";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
-import Modal from "@mui/material/Modal";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Homme from "../images/homme.jpg";
-import AOS from "aos";
-import Grid from "@mui/material/Grid";
-import "aos/dist/aos.css";
-import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
+import Grid from "@mui/material/Grid";
+import InputAdornment from "@mui/material/InputAdornment";
+import Modal from "@mui/material/Modal";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
+import Pagination from '@mui/material/Pagination';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Tab from "@mui/material/Tab";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { styled } from '@mui/material/styles';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect, useState } from "react";
+import { default as Container } from 'react-bootstrap/Container';
 import axios from "../../axios.js";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import './Detail.css';
 
 
 const style = {
@@ -43,6 +48,15 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 
 const DetailProduit = () => {
 
@@ -115,12 +129,16 @@ const DetailProduit = () => {
 
   /**affichage(recuperation des donnees) des imagerie */
   const [imagerie, setImagerie] = useState([]);
+  const [imagerieCount, setImagerieCount] = useState(0)
+
   console.log(imagerie);
   useEffect(() => {
     const fectData = async () => {
       try {
         const request = await axios.get(`/articleByCategorie/1`);
         setImagerie(request.data);
+        const totalCount = request.data.length;
+        setImagerieCount(totalCount);
         console.log(request.data);
       } catch (error) {
         console.log(error);
@@ -143,12 +161,15 @@ const DetailProduit = () => {
 
   /**affichage(recuperation des donnees) des GPS */
   const [gps, setGps] = useState([]);
+  const [gpsCount, setGpsCount] = useState(0)
   console.log("mes donnee gps", gps);
   useEffect(() => {
     const fectData = async () => {
       try {
         const request = await axios.get(`/articleByCategorie/2`);
         setGps(request.data);
+        const totalCount = request.data.length;
+        setGpsCount(totalCount);
         console.log(request.data);
       } catch (error) {
         console.log(error);
@@ -170,12 +191,15 @@ const DetailProduit = () => {
 
   /**affichage(recuperation des donnees) des metheorologique */
   const [metheorologique, setmetheorologique] = useState([]);
+  const [metoCount, setMethoCount] = useState(0)
   console.log(metheorologique);
   useEffect(() => {
     const fectData = async () => {
       try {
         const request = await axios.get(`/articleByCategorie/3`);
         setmetheorologique(request.data);
+        const totalCount = request.data.length;
+        setMethoCount(totalCount);
         console.log(request.data);
       } catch (error) {
         console.log(error);
@@ -184,6 +208,20 @@ const DetailProduit = () => {
 
     fectData();
   }, []);
+
+  /**pagination */
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
   return (
     <>
       <Header />
@@ -232,6 +270,165 @@ const DetailProduit = () => {
         </Grid>
       </Grid>
 
+      <Container style={{ marginTop: '-5%' }}>
+        <Grid container spacing={2} sx={{ padding: { xs: '10px', sm: '20px', md: '4px' } }}>
+          <Grid item xs={false} sm={4} md={4}
+            data-aos="fade-down-right">
+            <Item>
+              <Card
+
+                sx={{
+                  p: 4,
+                  boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
+                  display: 'flex',
+                  flexDirection: {
+                    xs: 'column', // mobile
+                    sm: 'row', // tablet and up
+                  },
+                }}
+              >
+                <CardMedia
+                  width="50"
+                  height="50"
+
+                  sx={{
+
+                    width: { xs: '100%', sm: 100 },
+                    mr: { sm: 1 },
+                    mb: { xs: 0, sm: 0 },
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                ><Box sx={{ background: '#E7F0FA', padding: '20px' }} className="rounded">< AddPhotoAlternateIcon sx={{ color: '#0A65CC' }} /></Box></CardMedia>
+                <Box>
+                  <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
+                    Imageries
+                  </Typography>
+                  <Typography>{imagerieCount}</Typography>
+                </Box>
+              </Card>
+            </Item>
+          </Grid>
+          <Grid item xs={false} sm={4} md={4} data-aos="fade-down">
+            <Item>
+              <Card
+
+                sx={{
+                  p: 4,
+                  boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
+                  display: 'flex',
+                  flexDirection: {
+                    xs: 'column', // mobile
+                    sm: 'row', // tablet and up
+                  },
+                }}
+              >
+                <CardMedia
+                  width="50"
+                  height="50"
+
+                  sx={{
+
+                    width: { xs: '100%', sm: 100 },
+                    mr: { sm: 1 },
+                    mb: { xs: 0, sm: 0 },
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                ><Box sx={{ background: '#0A65CC', padding: '20px' }} className="rounded"><FmdGoodIcon sx={{ color: '#fff' }} /></Box></CardMedia>
+                <Box sx={{}}>
+                  <Typography fontWeight="bold" noWrap className='fs-2'>
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
+                    GPS
+                  </Typography>
+                  <Typography>{gpsCount}</Typography>
+                </Box>
+              </Card>
+            </Item>
+          </Grid>
+          <Grid item xs={false} sm={4} md={4} data-aos="fade-down-left">
+            <Item>
+              <Card
+
+                sx={{
+                  p: 4,
+                  boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
+                  display: 'flex',
+                  flexDirection: {
+                    xs: 'column', // mobile
+                    sm: 'row', // tablet and up
+                  },
+                }}
+              >
+                <CardMedia
+                  width="50"
+                  height="50"
+
+                  sx={{
+
+                    width: { xs: '100%', sm: 100 },
+                    mr: { sm: 1 },
+                    mb: { xs: 0, sm: 0 },
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                ><Box sx={{ background: '#E7F0FA', padding: '20px' }} className="rounded">< CloudQueueIcon sx={{ color: '#0A65CC' }} /></Box></CardMedia>
+                <Box>
+                  <Typography fontWeight="bold" noWrap className='fs-2'>
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
+                    Métheorologique
+                  </Typography>
+                  <Typography>{metoCount}</Typography>
+
+                </Box>
+              </Card>
+            </Item>
+          </Grid>
+
+        </Grid>
+      </Container>
+
+      <Container fluid style={{ marginTop: '6%', width: '90%' }}>
+        <Typography variant="h4"> À propos de nos produits</Typography>
+        <div className="Row d-flex justify-content-between" style={{ marginTop: '6%' }}>
+          <div class="col-md-3">
+            <div class="card text-white bg-secondary mb-3">
+              <div class="card-circle"><AddPhotoAlternateIcon style={{ fontSize: '5rem' }} /> </div>
+              <div class="card-body">
+                <h5 class="card-title">Données Imageries</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card text-white bg-secondary mb-3">
+              <div class="card-circle"><FmdGoodIcon style={{ fontSize: '5rem' }} /> </div>
+              <div class="card-body">
+                <h5 class="card-title">Données GPS</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card text-white bg-secondary mb-3">
+              <div class="card-circle"><CloudQueueIcon style={{ fontSize: '5rem' }} /> </div>
+              <div class="card-body">
+                <h5 class="card-title">Données metheorologique</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </Container>
+
       {/** afficharge de tout les produit par categorie */}
       <Box sx={{ width: "100%", typography: "body1", marginTop: '5%' }}>
         <Typography className="text-center">Acheter</Typography>
@@ -248,7 +445,7 @@ const DetailProduit = () => {
           </Box>
           <TabPanel value="1">
             <div className="row d-flex justify-content-center">
-              {imagerie.map((image) => {
+              {imagerie.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((image) => {
                 if (image.state !== "Rejette" || image.state !== "EnAttente" && state === "Valide") {
                   return (
                     <div className="col-4">
@@ -475,11 +672,20 @@ const DetailProduit = () => {
                   );
                 }
               })}
+              <Container className='d-flex justify-content-center mt-5'>
+                <Stack spacing={2} >
+                  <Pagination count={imagerie.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage} variant="outlined" color="primary" />
+                </Stack>
+              </Container>
             </div>
           </TabPanel>
           <TabPanel value="2">
             <div className="row d-flex justify-content-center">
-              {gps.map((donneeGps) => {
+              {gps.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((donneeGps) => {
                 if (donneeGps.state !== "Rejette" || donneeGps.state !== "EnAttente" && state === "Valide") {
                   return (
                     <div className="col-4">
@@ -688,12 +894,21 @@ const DetailProduit = () => {
                   );
                 }
               })}
+              <Container className='d-flex justify-content-center mt-5'>
+                <Stack spacing={2} >
+                  <Pagination count={gps.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage} variant="outlined" />
+                </Stack>
+              </Container>
             </div>
           </TabPanel>
           <TabPanel value="3">
             <div className="row d-flex justify-content-center">
-              {metheorologique.map((metheo) => {
-                if (metheo.state !== "Rejette" && metheo.state !== "EnAttente" && state === "Valide") {
+              {metheorologique.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((metheo) => {
+                if (metheo.state !== "Rejette" || metheo.state !== "EnAttente" && state === "Valide") {
                   return (
                     <div className="col-4">
                       <Card sx={{ maxWidth: 345 }}>
@@ -902,14 +1117,93 @@ const DetailProduit = () => {
                   );
                 }
               })}
+              <Container className='d-flex justify-content-center mt-5'>
+                <Stack spacing={2} >
+                  <Pagination count={metheorologique.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage} variant="outlined" color="primary" />
+                </Stack>
+              </Container>
             </div>
           </TabPanel>
         </TabContext>
       </Box>
 
+      <section style={{ marginTop: '6%' }}>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10 col-xl-8 text-center">
+            <h3 class="mb-4">Testimonials</h3>
+            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+              numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+              quisquam eum porro a pariatur veniam.
+            </p>
+          </div>
+        </div>
+
+        <Container fluid style={{ width: '80%' }}>
+          <div class="row text-center d-flex align-items-stretch">
+            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style={{ backgroundColor: '#9d789b' }}></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                    class="rounded-circle img-fluid" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Maria Smantha</h4>
+                  <hr />
+                  <p class="dark-grey-text mt-4">
+                    <FormatQuoteIcon />Lorem ipsum dolor sit amet eos adipisci,
+                    consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style={{ backgroundColor: '#7a81a8' }}></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                    class="rounded-circle img-fluid" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Lisa Cudrow</h4>
+                  <hr />
+                  <p class="dark-grey-text mt-4">
+                    <FormatQuoteIcon />Neque cupiditate assumenda in maiores
+                    repudi mollitia architecto.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style={{ backgroundColor: '#6d5b98' }}></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                    class="rounded-circle img-fluid" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">John Smith</h4>
+                  <hr />
+                  <p class="dark-grey-text mt-4">
+                    <FormatQuoteIcon />Delectus impedit saepe officiis ab
+                    aliquam repellat rem unde ducimus.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </Container>
+      </section>
+
       <div
         className="container"
-        style={{ background: "#0A65CC", borderRadius: "20px" }}
+        style={{ background: "#0A65CC", borderRadius: "20px", marginTop: '6%' }}
       >
         <div style={{ padding: "10%", color: "white" }}>
           <div style={{ textAlign: "center" }}>

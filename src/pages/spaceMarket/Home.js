@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Home.css"
+import "./Home.css";
 // import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
@@ -28,30 +28,27 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 // import Paper from '@mui/material/Paper';
 // import { styled } from '@mui/material/styles';
 // import CarrouselProfil from "./Carrousel";
-import AOS from "aos";
 import "aos/dist/aos.css";
 // import { useNavigate } from 'react-router-dom';
 // import axios from '../axios'
 // import { useDispatch } from 'react-redux';
 // import { setProjetId } from '../features/projetsSlice'
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Image from "../../img/Rectangle 10342.png";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Modal from "@mui/material/Modal";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Homme from "../images/homme.jpg";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import axios from "../../axios";
-
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Image from "../../img/Rectangle 10342.png";
+import Homme from "../images/homme.jpg";
 
 
 const style = {
@@ -125,6 +122,14 @@ const Home = () => {
                 aria-pressed="true"
               >
                 Explorer La Marketplace
+              </a> &nbsp; &nbsp;
+              <a
+                href="/Rapport"
+                class="btn btn-secondary btn-lg active"
+                role="button"
+                aria-pressed="true"
+              >
+                Explorer Les Tendances
               </a>
             </div>
           </div>

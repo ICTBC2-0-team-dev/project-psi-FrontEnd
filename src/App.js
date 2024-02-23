@@ -1,65 +1,64 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeScreen from "./pages/ResponsiveAppBar";
 import Login from "./pages/freelance/Login";
 import LoginVerification from "./pages/freelance/LoginVerification";
 import Resetpassword from "./pages/freelance/Resetpassword";
-import { BrowserRouter, Route, Routes, Redirect, useLocation } from "react-router-dom";
-import Profil from "./pages/profil/Profil";
-import HomeScreen from "./pages/ResponsiveAppBar"
 
 //profile employer
-import ProfilEnd from "./pages/Entreprise/ProfilEnd";
+import Checkout from "./pages/Entreprise/Checkout";
+import Contact from "./pages/Entreprise/Contact";
 import Entreprises from "./pages/Entreprise/Entreprise";
 import Informations from "./pages/Entreprise/Informations";
+import ProfilEnd from "./pages/Entreprise/ProfilEnd";
 import Reseaux from "./pages/Entreprise/Reseaux";
-import Contact from "./pages/Entreprise/Contact";
-import Checkout from "./pages/Entreprise/Checkout";
 
 
-import ProfilEntreprise from "./pages/profil/ProfilEntreprise";
-import ProfilReseaux from "./pages/profil/ProfilReseaux";
-import ProfilContact from "./pages/profil/ProfilContact";
-import EndProfil from "./pages/profil/EndProfil";
-import EmailVerification from "./pages/freelance/EmailVerification";
-import Account from "./pages/freelance/Account";
-import ForgetPassword from "./pages/freelance/ForgetPassword";
-import ResponsiveAppBar from "./pages/ResponsiveAppBar";
-import DetailProjet from "./pages/DetailProjet";
 import DashProfil from "./components/Dashbord1/DashProfil";
 import Freelance from "./components/Dashbord1/Freelance";
 import ProfilDash from "./components/Dashbord1/ProfilDash";
+import DetailProjet from "./pages/DetailProjet";
+import ResponsiveAppBar from "./pages/ResponsiveAppBar";
+import Account from "./pages/freelance/Account";
+import EmailVerification from "./pages/freelance/EmailVerification";
+import ForgetPassword from "./pages/freelance/ForgetPassword";
 // import Accueil from "./components/dashbord/Accueil"
 // import Projet from "./components/dashbord/Projet"
-import AddProjet from "./components/Dashbord1/AddProjet";
-import Projet from "./components/Dashbord1/Projet"
 import Projets from "./components/DashboadFreelance/Projet";
-import Module from "./components/Dashbord1/Module"
+import AddProjet from "./components/Dashbord1/AddProjet";
+import Module from "./components/Dashbord1/Module";
+import Projet from "./components/Dashbord1/Projet";
 //import Paramettre from "./components/DashboadFreelance/Paramettre"
-import ProfilFreelance from './pages/freelance/ProfilFre'
+import ProfilFreelance from './pages/freelance/ProfilFre';
+
+// spameMarket
+import DetailProduit from "./pages/spaceMarket/DetailProduit";
 import Home from "./pages/spaceMarket/Home";
+import Rapport from "./pages/spaceMarket/Rapport";
+import Tendance from "./pages/spaceMarket/Tendance";
 
 //import dashbord profil
-import DashAccueil from './components/DashboadFreelance/DashAccueil'
+import DashAccueil from './components/DashboadFreelance/DashAccueil';
 
-import AllProjet from "./pages/AllProjet"
-import DetailProduit from "./pages/spaceMarket/DetailProduit";
+import AllProjet from "./pages/AllProjet";
 
-import Liste from "./components/Dashbord1/ListeProduit"
-import Commande from "./components/Dashbord1/CommandeProduit"
+import Commande from "./components/Dashbord1/CommandeProduit";
+import Liste from "./components/Dashbord1/ListeProduit";
 
 // import dashbord admin
 
-import Produit from "./components/Admin/Produit";
-import Utilisateur from "./components/Admin/Utilisateur";
 import Accueil from "./components/Admin/Accueil";
-import SidebarAdmin from "./components/Admin/SidebarAdmin";
-import Index from "./pages/Home";
 import AddActualite from "./components/Admin/AddActualite";
+import Produit from "./components/Admin/Produit";
+import SidebarAdmin from "./components/Admin/SidebarAdmin";
+import Utilisateur from "./components/Admin/Utilisateur";
+import Index from "./pages/Home";
 
 // not found page
-import NotFound from './pages/not found/Index'
+import NotFound from './pages/not found/Index';
 
 // About
-import About from './pages/about/Index'
+import About from './pages/about/Index';
 
 //medias
 import Actualite from "./pages/medias/Actualite";
@@ -129,6 +128,9 @@ function App() {
           {/* module space market */}
           <Route path="/SpaceMarket" element={<Home />} />
           <Route path="/DetailProduit" element={<DetailProduit />} />
+          <Route path="/Tendance" element={<Tendance />} />
+          <Route path="/Rapport" element={<Rapport />} />
+
 
           {/* module space market Route dashboard */}
           <Route path="/liste" element={<Liste />} />
