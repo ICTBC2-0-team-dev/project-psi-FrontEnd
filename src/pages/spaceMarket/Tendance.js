@@ -13,6 +13,8 @@ import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React, { useState } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../../components/Footer";
@@ -20,6 +22,10 @@ import Header from "../../components/Header";
 import Image from "../../img/FSS-Capacity-Pricing-Trends-768x1078.jpg";
 
 const Tendance = () => {
+
+    React.useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, []);
 
     const [edition, setEdition] = React.useState('');
 
@@ -44,9 +50,9 @@ const Tendance = () => {
         <>
             <Header />
 
-            <div className="container-fluid">
+            <div className="container-fluid"> 
                 <div className="row">
-                    <div className="col-sm-6">
+                    <div className="col-sm-6" data-aos="fade-down-left">
                         <div style={{ marginTop: "25%", marginLeft: "12%" }}>
                             <p style={{ fontSize: "250%" }}>Tendances actuelles du marcher de l'espace en afrique</p>
                             <h1>Une évaluation de la dynamique actuelle de tarification de la capacité satellitaire.</h1>
@@ -162,7 +168,7 @@ const Tendance = () => {
                     </Col>
                     <Col>
                         <div className="row d-flex justify-content-center">
-                            <div className="col-6">
+                            <div className="col-6" data-aos="fade-down-right">
                                 <Card sx={{ maxWidth: 345 }} style={{ backgroundImage: 'url(https://img.freepik.com/photos-gratuite/vaisseau-spatial-brillant-orbite-autour-planete-dans-galaxie-etoilee-generee-par-ia_188544-9655.jpg)', height: '300px' }}>
 
                                     <CardContent>
@@ -177,7 +183,7 @@ const Tendance = () => {
                                     </CardActions>
                                 </Card>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6" data-aos="fade-down">
                                 <Card sx={{ maxWidth: 345 }} style={{ backgroundImage: 'url(https://img.freepik.com/photos-gratuite/vaisseau-spatial-brillant-orbite-autour-planete-dans-galaxie-etoilee-generee-par-ia_188544-9655.jpg)', height: '300px' }}>
 
                                     <CardContent>
@@ -192,7 +198,7 @@ const Tendance = () => {
                                     </CardActions>
                                 </Card>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6" data-aos="fade-down-left">
                                 <Card sx={{ maxWidth: 345 }} style={{ backgroundImage: 'url(https://img.freepik.com/photos-gratuite/vaisseau-spatial-brillant-orbite-autour-planete-dans-galaxie-etoilee-generee-par-ia_188544-9655.jpg)', height: '300px', marginTop: '3%' }}>
 
                                     <CardContent>
@@ -207,7 +213,7 @@ const Tendance = () => {
                                     </CardActions>
                                 </Card>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6" data-aos="fade-down-right">
                                 <Card sx={{ maxWidth: 345 }} style={{ backgroundImage: 'url(https://img.freepik.com/photos-gratuite/vaisseau-spatial-brillant-orbite-autour-planete-dans-galaxie-etoilee-generee-par-ia_188544-9655.jpg)', height: '300px', marginTop: '3%' }}>
 
                                     <CardContent>
@@ -232,7 +238,7 @@ const Tendance = () => {
             <Container className="p-5" fluid style={{ background: '#ccd0db', marginTop: "6%" }}>
                 <Typography variant="h3">Tarifs</Typography>
                 <Row className="mt-3">
-                    <Col style={{
+                    <Col data-aos="fade-down-right" style={{
                         height: '700px',
                         backgroundColor: '#ffffff',
                         padding: {
@@ -264,7 +270,7 @@ const Tendance = () => {
                             </Box>
                         </Container>
                     </Col>
-                    <Col style={{
+                    <Col data-aos="fade-down" style={{
                         height: 'auto',
                         backgroundColor: '#00134d',
                         marginLeft: '2%'
@@ -292,7 +298,7 @@ const Tendance = () => {
                         </Container>
 
                     </Col>
-                    <Col style={{
+                    <Col data-aos="fade-down-left" style={{
                         height: '700px',
                         backgroundColor: '#ffffff',
                         marginLeft: '2%'
