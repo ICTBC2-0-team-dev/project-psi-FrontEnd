@@ -1,13 +1,13 @@
-import React, { useState }  from "react";
-import Typography from "@mui/material/Typography";
-import Container from "react-bootstrap/Container";
+import CheckIcon from "@mui/icons-material/Check";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import CheckIcon from "@mui/icons-material/Check";
+import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
 // import Grid from '@mui/material/Grid';
 // import MenuItem from "@mui/material/MenuItem";
 // import Select from "@mui/material/Select";
@@ -45,7 +45,7 @@ const DetailProjet = () => {
   //   return user.profile.id=== null ? 'profile.id' : profilId;
   // }
 
-  function getProfilUserId() {  
+  function getProfilUserId() {
     if (user.profile === null) {
       return profilId;
     } else {
@@ -96,12 +96,12 @@ const DetailProjet = () => {
           module
         };
         console.log(moduleData);
-  
+
         const response = await axios.post("/candidature", moduleData);
         alert('Votre canditadure a ete envoyer avec succes')
         console.log('reussi avec sucess', response.data);
         console.log(response.data); // Affiche la réponse de l'API
-  
+
         // Faire quelque chose avec la réponse de l'API si nécessaire
       } catch (error) {
         alert('Un probleme est survenue l\'ors de votre enregistrement', error)
@@ -128,15 +128,15 @@ const DetailProjet = () => {
             "id": module
           },
           "profile": {
-                "id": profile
-            }
+            "id": profile
+          }
         };
         console.log(moduleData);
-  
+
         const response = await axios.post("/candidature", moduleData);
         alert('Votre canditadure a ete envoyer avec succes')
         console.log('reussi avec sucess', response.data);
-  
+
         // Faire quelque chose avec la réponse de l'API si nécessaire
       } catch (error) {
         console.error(error);
@@ -172,13 +172,13 @@ const DetailProjet = () => {
 
   return (
     <>
-      <Header/>
+      <Header />
 
       <Container
         fluid
         className="my-5 pb-5"
         style={{
-        backgroundColor:'rgba(246, 214, 214, 0)',
+          backgroundColor: 'rgba(246, 214, 214, 0)',
         }}
       >
         <Container>
@@ -187,94 +187,96 @@ const DetailProjet = () => {
               <Box>
                 <Container className="px-5">
                   <Box className="px-5">
-                   
-                    <Container className="px-5">
-                    {firstProject && (
-                    <Container>
-                      <Box className="border-bottom mt-5">
-                        <div className="row mb-3">
-                          <div className="col-8 ">
-                            <Typography
-                              fontWeight="bold"
-                              noWrap
-                              className="fs-4"
-                            >
-                              {firstProject.title}
-                            </Typography>
-                            <Typography
-                              fontWeight="medium"
-                              noWrap
-                              className="fs-6 mt-1"
-                            >
-                              date de post : {firstProject.dateCreation}
-                            </Typography>
-                          </div>
-                          <div className='col-4 text-end'>
-                            <Button variant="contained" size="medium" onClick={handleSubmits} >
-                            Postuler
-                            </Button>
-                    </div>
-                        </div>
-                      </Box>
-                      <Box className="mt-3">
-                        <div className="row mb-3">
-                          <div className="col-7">
-                            <Typography
-                              sx={{ mb: 1.5 }}
-                              color="text.dark"
-                              fontWeight="bold"
-                              className="fs-5"
-                            >
-                              Qui Sommes-Nous?
-                            </Typography>
-                            <Typography variant="body2" className="lh-lg">
-                              {firstProject.wording}
-                            </Typography>
-                          </div>
-                        </div>
 
-                        <div className="row mb-3">
-                          <div className="col-7">
-                            <Typography
-                              sx={{ mb: 1.5 }}
-                              color="text.dark"
-                              fontWeight="bold"
-                              className="fs-5"
-                            >
-                              date limite du pour postuler
-                            </Typography>
-                            <Typography variant="body2" className="lh-lg">
-                                {firstProject.delay}
-                            </Typography>
-                          </div>
-                          <div className="col-7">
-                            <List
-                              sx={{
-                                width: "100%",
-                                maxWidth: 360,
-                                bgcolor: "background.paper",
-                              }}
-                            >
-                              {projects.map((value) => (
-                                <ListItem key={value.id} disableGutters>
-                                  <ListItemIcon>
-                                    <CheckIcon />
-                                  </ListItemIcon>
-                                  <ListItemText
-                                    primary={`Nom du Module : ${value.title} `}
-                                  />
-                                <Button variant="contained" size="medium" onClick={() => handleApply(value.id)} >
+                    <Container className="px-5">
+                      { !firstProject ? (
+                        <h3>Aucun module Present Pour ce projet</h3>
+                      ) : firstProject && (
+                        <Container>
+                          <Box className="border-bottom mt-5">
+                            <div className="row mb-3">
+                              <div className="col-8 ">
+                                <Typography
+                                  fontWeight="bold"
+                                  noWrap
+                                  className="fs-4"
+                                >
+                                  {firstProject.title}
+                                </Typography>
+                                <Typography
+                                  fontWeight="medium"
+                                  noWrap
+                                  className="fs-6 mt-1"
+                                >
+                                  date de post : {firstProject.dateCreation}
+                                </Typography>
+                              </div>
+                              <div className='col-4 text-end'>
+                                <Button variant="contained" size="medium" onClick={handleSubmits} >
                                   Postuler
                                 </Button>
+                              </div>
+                            </div>
+                          </Box>
+                          <Box className="mt-3">
+                            <div className="row mb-3">
+                              <div className="col-7">
+                                <Typography
+                                  sx={{ mb: 1.5 }}
+                                  color="text.dark"
+                                  fontWeight="bold"
+                                  className="fs-5"
+                                >
+                                  Qui Sommes-Nous?
+                                </Typography>
+                                <Typography variant="body2" className="lh-lg">
+                                  {firstProject.wording}
+                                </Typography>
+                              </div>
+                            </div>
 
-                                </ListItem>
-                              ))}
-                            </List>
-                          </div>
-                        </div>
-                      </Box>
-                    </Container>
-                    )}
+                            <div className="row mb-3">
+                              <div className="col-7">
+                                <Typography
+                                  sx={{ mb: 1.5 }}
+                                  color="text.dark"
+                                  fontWeight="bold"
+                                  className="fs-5"
+                                >
+                                  date limite du pour postuler
+                                </Typography>
+                                <Typography variant="body2" className="lh-lg">
+                                  {firstProject.delay}
+                                </Typography>
+                              </div>
+                              <div className="col-7">
+                                <List
+                                  sx={{
+                                    width: "100%",
+                                    maxWidth: 360,
+                                    bgcolor: "background.paper",
+                                  }}
+                                >
+                                  {projects.map((value) => (
+                                    <ListItem key={value.id} disableGutters>
+                                      <ListItemIcon>
+                                        <CheckIcon />
+                                      </ListItemIcon>
+                                      <ListItemText
+                                        primary={`Nom du Module : ${value.title} `}
+                                      />
+                                      <Button variant="contained" size="medium" onClick={() => handleApply(value.id)} >
+                                        Postuler
+                                      </Button>
+
+                                    </ListItem>
+                                  ))}
+                                </List>
+                              </div>
+                            </div>
+                          </Box>
+                        </Container>
+                      )}
                       {/* <div className="row mb-3 text-center px-5">
                         <Typography
                           sx={{ mb: 1.5, mt: 4 }}

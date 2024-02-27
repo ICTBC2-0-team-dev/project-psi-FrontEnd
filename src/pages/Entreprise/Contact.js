@@ -1,32 +1,26 @@
-import React, { useState } from 'react'
-import CssBaseline from '@mui/material/CssBaseline';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
-import Stepper from '@mui/material/Stepper';
+import Stack from '@mui/material/Stack';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import Logo from '../images/logoPSI.png';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import DoneAllIcon from '@mui/icons-material/DoneAll';
-import Entreprise from './Entreprise';
-import Informations from './Informations';
-import Reseaux from './Reseaux';
-import Grid from '@mui/material/Grid';
+import Stepper from '@mui/material/Stepper';
 import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import React, { useState } from 'react';
+import Logo from '../images/logoPSI.png';
 
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from "../../axios";
-import { setEmail } from "../../features/entrepriseSlice";
 
 function Copyright() {
   return (
@@ -98,11 +92,12 @@ function Contact() {
       // Vous pouvez ajouter les actions de réinitialisation appropriées dans votre slice Redux
       if (response.status === 200) {
         navigate("/checkout");
-      }else{
+      } else {
         alert('Une erreur est survenue lors de l\'enregistrement: Verifier que tout les champ sont bien remplie et le type de fichier que vous importer doit etre .png ou .jpeg ou .jpg');
       }
     } catch (error) {
       console.error(error);
+      alert('Une erreur est survenue lors de l\'enregistrement: Verifier que tout les champ sont bien remplie et le type de fichier que vous importer doit etre .png ou .jpeg ou .jpg');
     }
   };
   // navigation
