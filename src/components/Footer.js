@@ -1,195 +1,182 @@
-import React from "react";
-import Container from 'react-bootstrap/Container';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { Avatar, Box, Button, Divider, Grid, Link, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
-import Button from 'react-bootstrap/Button';
-import Logo from '../img/logopsi2.png';
-import AOS from "aos";
+import TextField from '@mui/material/TextField';
+import * as React from 'react';
+import Logo2 from '../img/PIS Logo Package (1)/PIS Logo Package/01 Wide Logo/01 Full Color/Digital/SVG/full-logo-wide-.svg';
 
+const preventDefault = (event) => event.preventDefault();
 
-const Footer = () => {
-
-  React.useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
-
-  return (
-    <>
-      {/* footer */}
-      <Grid
-        fluid
-        className="mt-5"
-        style={{
-          backgroundColor: "#f1f2f4",
-        }}
-      >
-        <Container className="border-bottom" data-aos="fade-up-right">
-          <div class="row">
-            {/* <div class="col-lg-6 col-md-4 col-sm-12">
-              <Typography
-                variant="h5"
-                className="text-dark  fs-4 fw-bold  pt-5 fs-sm-5"
-              >
-                Restez à jour
-              </Typography>
-              <Typography className="mb-3 fw-ligh lh-sm " paragraph>
+function Footer(props) {
+    return (
+        <>
+        <Grid sx={{backgroundColor: '#f1f2f4'}}> 
+        <Grid sx={{ padding: 10, display: 'flex', alignItems: 'center', justifyContent: 'space-around' }} fluid >
+            <Grid item xs={3}>
+                
+                <Typography className='mb-3 fw-ligh lh-sm ' paragraph>
                 Joindre notre newletter pour des mises à jour régulières
-              </Typography>
-              <Typography className="mt-4 fw-ligh lh-sm " paragraph>
-                Enter votre email:
               </Typography>
               <Box
                 component="form"
                 sx={{
-                  // '& > :not(style)': { width: '50ch',height:'50px' },
-                  display: "flex",
-                  // justifyContent:'space-between'
+                  display: 'flex',
+                 
                 }}
                 noValidate
                 autoComplete="off"
+
               >
-                <Grid className="me-2">
-                  <Paper elevation={2}>
+
+                <Grid className='me-2'>
+
+                  <Paper elevation={2} >
                     <TextField label="email" variant="outlined" />
                   </Paper>
                 </Grid>
-                <Button variant="outline-primary">Souscrire</Button>{" "}
+
+                <Button variant="outlined">Souscrire</Button>{' '}
+
+
               </Box>
-            </div> */}
-            <div class="col-lg-3 col-md-4 col-sm-12">
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Compagnie
+              <Typography><img src={Logo2} alt="Logo" height={150} /></Typography>
+            </Grid>
+            <Grid item xs={3}>
+                <Typography variant="h5" className='text-dark  fs-6 fw-bold  fs-sm-5' >
+                    Accès Rapide
                 </Typography>
-
-                <List sx={{ bgcolor: "#f1f2f4", textAlign: "end" }}>
-                  <ListItem>
-                    <ListItemText primary="A propos" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Vision" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Carriere" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Contact" />
-                  </ListItem>
-                </List>
-              </Grid>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-12">
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Accès Rapide
+                <Box
+                    sx={{
+                        display: 'inline-block',
+                        typography: 'body1',
+                        '& > :not(style) ~ :not(style)': {
+                            ml: 2,
+                        },
+                    }}
+                    onClick={preventDefault}
+                > <List>
+                        <Link href="#" underline="none">
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="Freelance" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                        <Link href="#" underline="none" >
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="SpaceMarket" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                        <Link href="#" underline="none">
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="Consulting" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                        <Link href="#" underline="none">
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="Industrialisation" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                    </List>
+                </Box>
+            </Grid>
+            <Grid item xs={3}>
+                <Typography variant="h5" className='text-dark  fs-6 fw-bold  fs-sm-5'>
+                    Compagnie
                 </Typography>
-
-                <List sx={{ bgcolor: "#f1f2f4", textAlign: "end" }}>
-                  <ListItem>
-                    <ListItemText primary="Acceuil" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Space Market" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Consultant" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Industrialisation" />
-                  </ListItem>
-                </List>
-              </Grid>
-            </div>
-            {/* <div class="col-2 col-md-4 col-sm-6" >
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Contact
+                <Box
+                    sx={{
+                        display: 'inline-block',
+                        typography: 'body1',
+                        '& > :not(style) ~ :not(style)': {
+                            ml: 2,
+                        },
+                    }}
+                    onClick={preventDefault}
+                > <List>
+                        <Link href="#" underline="none">
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="A propos" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                        <Link href="#" underline="none" >
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="Actualités" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                        <Link href="#" underline="none">
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="Service d'assistance" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                        <Link href="#" underline="none">
+                            <ListItemButton sx={{}}>
+                                <ListItemIcon>
+                                    <ListItemText primary="Politique de confidentialité" />
+                                </ListItemIcon>
+                            </ListItemButton>
+                        </Link>
+                    </List>
+                </Box>
+            </Grid>
+            <Grid item xs={3}>
+                <Typography variant="h5" className='text-dark  fs-6 fw-bold  fs-sm-5 mb-3'>
+                    Nous contacter
                 </Typography>
-
-                <List sx={{ bgcolor: '#f1f2f4', textAlign: 'end' }}>
-
-                  {/* <ListItem>
-                  <ListItemText primary="twee"  />
-                </ListItem> 
-                  <ListItem>
-                    <ListItemText primary="" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="" />
-                  </ListItem>
-
-                </List>
-
-              </Grid>
-            </div> */}
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Compagnie
-                </Typography>
-
-                <List sx={{ bgcolor: "#f1f2f4", textAlign: "end" }}>
-                  <ListItem>
-                    <ListItemText primary="instagram" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="facebook" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="contact@psiafrica.space" />
-                  </ListItem>
-                </List>
-              </Grid>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-12">
-              <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                  Localisation
-                </Typography>
-{/* 
-                <List sx={{ bgcolor: "#f1f2f4", textAlign: "end" }}>
-                  <ListItem>
-                    <ListItemText primary="A propos" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Vision" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Carriere" />
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText primary="Contact" />
-                  </ListItem>
-                </List> */}
-              </Grid>
-            </div>
-          </div>
-        </Container>
-        <Container>
-          <div className="Row">
-            <div className="col-lg-12 col-md-12 col-sm-12 text-center">
-              <Typography className="fw-ligh fs-6 " paragraph>
-                <img src={Logo} alt="" style={{ height: "80px" }} />
-                Copyright © 2023 PSI.
-              </Typography>
-            </div>
-          </div>
-        </Container>
-      </Grid>
-    </>
-  );
-};
+                <Box>
+                    <Button>
+                        <Avatar sx={{ backgroundColor: '#413DEE' }}>
+                            <FacebookRoundedIcon sx={{ color: 'dark' }} />
+                        </Avatar>
+                    </Button>
+                    <Button>
+                        <Avatar sx={{ backgroundColor: '#413DEE' }}>
+                            <WhatsAppIcon sx={{ color: 'white' }} />
+                        </Avatar>
+                    </Button>
+                    <Button>
+                        <Avatar sx={{ backgroundColor: '#413DEE' }}>
+                            <InstagramIcon sx={{ color: 'white' }} />
+                        </Avatar>
+                    </Button>
+                    <Button>
+                        <Avatar sx={{ backgroundColor: '#413DEE' }}>
+                            <LinkedInIcon sx={{ color: 'white' }} />
+                        </Avatar>
+                    </Button>
+                    <Box className='mt-3'>
+                        <Link href="#" color="inherit" underline='hover'>
+                          hello@yourcompany.com
+                        </Link>
+                    </Box>
+                </Box>
+            </Grid>
+        </Grid>
+        <Divider />
+        <Grid >
+        <Typography className='fw-ligh fs-6 py-3 text-center' paragraph>
+            Copyright © 2023 ICT Business Center.
+          </Typography>
+        </Grid>
+        </Grid>
+       
+        </>
+    );
+}
 
 export default Footer;

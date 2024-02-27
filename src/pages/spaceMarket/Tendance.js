@@ -85,7 +85,7 @@ const Tendance = () => {
                                 </Select>
                             </FormControl>
                         </Stack>
-                        <Stack spacing={2} direction="row" className='mt-3'>
+                        {/* <Stack spacing={2} direction="row" className='mt-3'>
                             <p style={{ fontSize: "250%" }}>Adhésion</p>
                             <FormControl className='w-25'>
                                 <InputLabel id="demo-simple-select-label">Adhésion</InputLabel>
@@ -102,13 +102,13 @@ const Tendance = () => {
                                     <MenuItem value={30}>2021</MenuItem>
                                 </Select>
                             </FormControl>
-                        </Stack>
+                        </Stack> */}
 
                         <Stack spacing={2} direction="row" className='mt-5'>
                             <Button variant="text">TÉLÉCHARGEZ L'EXTRAIT GRATUIT</Button>
                             <Button variant="contained">COMMUNIQUÉ DE PRESSE</Button>
-                            <Button variant="outlined">VOIR LES PRIX</Button>
-                            <Button variant="text">CONTACTEZ-NOUS</Button>
+                            {/* <Button variant="text">VOIR LES PRIX</Button> */}
+                            <Button variant="outlined">CONTACTEZ-NOUS</Button>
                         </Stack>
                     </Col>
 
