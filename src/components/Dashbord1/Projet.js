@@ -176,7 +176,7 @@ const Projets = () => {
         console.log('New module created:', response.data);
         // Close the modal and fetch updated projects
         handleModalClose();
-        fetchData();
+        // fetchData();
       })
       .catch(error => {
         console.error('Error creating module:', error);

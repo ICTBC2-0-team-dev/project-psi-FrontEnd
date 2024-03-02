@@ -446,7 +446,7 @@ const DetailProduit = () => {
           <TabPanel value="1">
             <div className="row d-flex justify-content-center">
               {imagerie.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((image) => {
-                if (image.state !== "Rejette" || image.state !== "EnAttente" && state === "Valide") {
+                if (image.state !== "Rejette" || image.state !== "EnAttente" && image.state === "Valide") {
                   return (
                     <div className="col-4">
                       {/** modal from imagerie */}
@@ -686,7 +686,7 @@ const DetailProduit = () => {
           <TabPanel value="2">
             <div className="row d-flex justify-content-center">
               {gps.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((donneeGps) => {
-                if (donneeGps.state !== "Rejette" || donneeGps.state !== "EnAttente" && state === "Valide") {
+                if (donneeGps.state !== "Rejette" || donneeGps.state !== "EnAttente" && donneeGps.state === "Valide") {
                   return (
                     <div className="col-4">
                       <Card sx={{ maxWidth: 345 }}>
@@ -908,7 +908,7 @@ const DetailProduit = () => {
           <TabPanel value="3">
             <div className="row d-flex justify-content-center">
               {metheorologique.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((metheo) => {
-                if (metheo.state !== "Rejette" || metheo.state !== "EnAttente" && state === "Valide") {
+                if (metheo.state !== "Rejette" || metheo.state !== "EnAttente" && metheo.state === "Valide") {
                   return (
                     <div className="col-4">
                       <Card sx={{ maxWidth: 345 }}>

@@ -123,7 +123,7 @@ const Header = () => {
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
-                  >MEDIAS
+                  >Media
                     {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                   </Nav.Link>
                   <Menu
@@ -141,7 +141,7 @@ const Header = () => {
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link eventKey="Contact_us" href="/Contact_us">contact us</Nav.Link>
+                  <Nav.Link eventKey="Contact_us" href="/Contact_us">Contact us</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>

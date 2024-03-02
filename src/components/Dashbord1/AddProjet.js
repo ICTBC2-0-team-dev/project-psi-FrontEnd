@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import TextField from "@mui/material/TextField";
 import Footer from './Footer.js'
 import axios from "../../axios.js"
 import { useDispatch } from 'react-redux';
@@ -431,7 +432,7 @@ const AddProjets = () => {
                   <div className='col-6'>
                     <FormControl fullWidth sx={{ m: 1, }} variant="outlined">
                       <FormHelperText id="outlined-projet-helper-text">Date D’expiration</FormHelperText>
-                      <LocalizationProvider dateAdapter={AdapterDayjs} value={delay} onChange={(e) => setDelay(e.target.value)}>
+                      <LocalizationProvider dateAdapter={AdapterDayjs} value={delay} onChange={(e) => selectedDelay(e.target.value)}>
                         <DatePicker
                           value={selectedDelay}
                           onChange={handleDateChanges}

@@ -7,11 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Typography from '@mui/material/Typography';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import Homme from '../../img/homme.jpg';
-import { styled } from "@mui/material/styles"; import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import InputAdornment from "@mui/material/InputAdornment";
+
 import './about.css'
 
 // const useStyles = styled((theme) => ({
@@ -254,7 +251,7 @@ const Index = () => {
                 </Row>
             </Container>
 
-            <Container className='mt-5' fluid
+            {/* <Container className='mt-5' fluid
                 style={{
                     height: '250px',
                     backgroundColor: '#f2f3f6',
@@ -287,7 +284,7 @@ const Index = () => {
                     />
                 </Container>
 
-            </Container>
+            </Container> */}
 
             <Footer />
         </>

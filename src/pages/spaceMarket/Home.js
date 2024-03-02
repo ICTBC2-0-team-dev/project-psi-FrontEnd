@@ -30,7 +30,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 // import CarrouselProfil from "./Carrousel";
 import "aos/dist/aos.css";
 // import { useNavigate } from 'react-router-dom';
-// import axios from '../axios'
+import AOS from "aos";
 // import { useDispatch } from 'react-redux';
 // import { setProjetId } from '../features/projetsSlice'
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -65,6 +65,9 @@ const style = {
 };
 
 const Home = () => {
+  React.useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   const buttonStyles = {
     backgroundColor: "#413DEE1A",
     border: "none",
