@@ -1,27 +1,21 @@
-import React from "react";
-import "./Header.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Logo from '../img/logopsi2.png';
-import Form from 'react-bootstrap/Form';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useTheme } from '@mui/material/styles';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Row from 'react-bootstrap/Row';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../img/logopsi2.png';
+import "./Header.css";
 
 
 const Header = () => {
@@ -77,6 +71,10 @@ const Header = () => {
   };
   const handleGoToEvene = () => {
     navigate("/evenement");
+  };
+
+  const handleGoToMarcherSpace = () => {
+    navigate("/MarcherSpace");
   };
   return (
     <>
@@ -137,11 +135,12 @@ const Header = () => {
                   >
                     <MenuItem  onClick={handleGoToactualite}>Actualites</MenuItem>
                     <MenuItem onClick={handleGoToEvene}>Evenement</MenuItem>
+                    <MenuItem onClick={handleGoToMarcherSpace}>Historique du marcher spatial</MenuItem>
                   </Menu>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link eventKey="Contact_us" href="/Contact_us">contact us</Nav.Link>
+                  <Nav.Link eventKey="Contact_us" href="/Contact_us">Contactez-nous</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>

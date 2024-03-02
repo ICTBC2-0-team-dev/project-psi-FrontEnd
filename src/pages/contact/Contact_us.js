@@ -1,30 +1,21 @@
-import React from 'react'
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Typography from '@mui/material/Typography';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
-import Homme from '../../img/homme.jpg';
-import { styled } from "@mui/material/styles";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import InputAdornment from "@mui/material/InputAdornment";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import CallIcon from '@mui/icons-material/Call';
-import UnsubscribeIcon from '@mui/icons-material/Unsubscribe';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import UnsubscribeIcon from '@mui/icons-material/Unsubscribe';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 //import XIcon from '@mui/icons-material/X';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { TextareaAutosize } from '@mui/material';
@@ -60,11 +51,8 @@ const Contact_us = () => {
           <Grid className='mt-5 mt-sm-0'>
             <Grid className='my-5 my-sm-0'>
               <Box>
-                <Typography className='text-white mb-2 fs-3'>
-                  Acceuil - MEDIAS
-                </Typography>
                 <Typography className='text-white  mb-5 fs-1 fw-normal fs-sm-5'>
-                  Nos Actualites.
+                  Contactez-nous
                 </Typography>
               </Box>
             </Grid>
@@ -73,7 +61,7 @@ const Contact_us = () => {
         </Grid>
       </Grid>
 
-      <Container style={{ marginTop: '-3%' }}>
+      <Container style={{ marginTop: '-3%', marginBottom: '6%' }}>
         <Card sx={{ minWidth: 275 }}>
           <Row>
             <Col className='p-5' style={{ backgroundColor: '#f1f7fa', width: '20%' }}>

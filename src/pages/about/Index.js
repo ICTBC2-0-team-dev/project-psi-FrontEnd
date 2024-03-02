@@ -1,18 +1,17 @@
-import React from 'react'
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Typography from '@mui/material/Typography';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 import Homme from '../../img/homme.jpg';
-import { styled } from "@mui/material/styles"; import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import InputAdornment from "@mui/material/InputAdornment";
-import './about.css'
+import './about.css';
 
 // const useStyles = styled((theme) => ({
 //     container: {
@@ -84,7 +83,37 @@ const Index = () => {
                     <Col>
                         <h1>Get your projects off the ground​</h1>
                         <Typography className='mt-5'>
-                            Privately owned and fully independent, we provide first-class strategic consulting, develop comprehensive market intelligence products, organize executive-level annual summits and training programs for the satellite industry. We have forty years of experience accompanying private companies and government entities in strategic decision making. A reference for high quality market knowledge worldwide, we use our deep industry knowledge and analytical rigor to help our clients understand their business environment and provide them with the tools they need to make informed decisions and develop their business.
+                            À la Commission économique des Nations unies pour l'Afrique, en décembre 2019, lors de la 8e Conférence des dirigeants africains sur
+                            les sciences et technologies spatiales au service du développement durable, une faction de dirigeants a proposé le concept d'industrie spatiale panafricaine.
+                            industrie spatiale panafricaine.  Cette proposition s'explique par le consensus unanime sur le fait que l'Afrique a besoin d'une stratégie de développement à long terme et transformatrice pour exploiter ses capacités et ses ressources.
+                            à long terme pour exploiter ses capacités, en particulier dans le domaine des sciences et des technologies spatiales.
+                            Reconnaissant le rôle crucial du développement du capital humain, de la plateforme régionale pour les capacités d'emploi et des compétences des jeunes, le changement de paradigme s'est traduit par la création d'une industrie spatiale panafricaine.
+                            les compétences des jeunes, le changement de paradigme vers des technologies de pointe exige une main-d'œuvre qualifiée.  Le besoin
+                            de données spatiales pour atteindre les objectifs de développement durable (ODD) est devenu évident, ce qui a incité l'Afrique à investir dans le développement des satellites.
+                            dans le développement des satellites.
+                            L'histoire a pris un tournant important en mai 2020 lors de la conférence Africa Need Space, qui a mis en évidence les lacunes de l'entreprenariat spatial et souligné la nécessité d'un investissement africain dans le développement de satellites.
+                            dans l'entrepreneuriat spatial et a souligné la nécessité pour les industries de s'aligner sur les cadres juridiques existants.
+                            En 2021, lors du quatrième atelier sur la génération spatiale africaine, des étudiants et de jeunes professionnels se sont réunis pour façonner l'avenir de l'Afrique.
+                            ont convergé pour façonner l'avenir des efforts spatiaux de l'Afrique.  Lors de cet atelier, l'idée d'une industrie spatiale panafricaine a été solidement définie.
+                            panafricaine a été solidement définie, ce qui a également marqué la définition des objectifs stratégiques et de la vision.  Les principales
+                            Les principales étapes et l'établissement du champ d'application se sont poursuivis lors d'une réunion à la Semaine mondiale des affaires spatiales et au Sommet sur le financement des satellites qui se tiendra à Paris en 2022.
+                            Satellite Finance Summit à Paris en 2022.
+                            Le crescendo a été atteint en mai 2023 lorsque l'industrie spatiale panafricaine a vu le jour.  Avec un objectif ambitieux
+                            de créer un écosystème robuste de l'industrie spatiale africaine, l'organisation s'est engagée à fournir des solutions d'ingénierie pour un développement durable perturbateur.
+                            des solutions d'ingénierie pour un développement durable innovant.  En février 2024, l'industrie spatiale panafricaine
+                            a lancé des services tels que la plateforme de freelance, le marché de l'espace et les services de conseil.
+                            - La rubrique "Qui sommes-nous ?
+                            "
+                            vous permet d'accéder à une nouvelle page :  Cette page devrait afficher -
+                            Brève description/résumé de ce que nous faisons L'industrie spatiale panafricaine (PSI) est une organisation à but non lucratif.
+                            L'industrie spatiale panafricaine (PSI) est une initiative de collaboration dédiée à l'avancement des capacités et de l'impact du secteur spatial africain.
+                            et l'impact du secteur spatial africain.  L'ISP représente un collectif d'organisations visionnaires,
+                            visionnaires, unies dans leur engagement à propulser l'Afrique à l'avant-garde des technologies, services et
+                            services et de la consultance dans le domaine spatial.  Grâce à ces partenariats stratégiques, nous visons à façonner l'avenir des technologies liées à l'espace, des opportunités commerciales et de l'environnement socio-économique.
+                            l'espace, des opportunités commerciales et du développement socio-économique dans toute l'Afrique grâce à l'innovation.
+                            l'innovation.
+
+                            Traduit avec DeepL.com (version gratuite)
                         </Typography>
                     </Col>
                 </Row>
@@ -106,7 +135,14 @@ const Index = () => {
                         <Container style={{ padding: '10%' }}>
                             <h2 className='text-center' >Notre mission​</h2>
                             <Typography className='text-center'>
-                                The uniqueness of our business model is based on synergies created by the complementarity of our four activities. Each activity increases our market knowledge and expertise and extends our network of key decision makers while at the same time maintaining a respect for client confidentiality
+                                Fournir des produits et des services spatiaux innovants adaptés aux besoins de l'Afrique, en favorisant les avancées technologiques et le développement durable.
+                                les avancées technologiques et le développement durable.  Par le biais de partenariats stratégiques,
+                                promouvoir l'intégration et la diversité dans l'industrie spatiale africaine, en encourageant les talents et en donnant des moyens d'action aux groupes sous-représentés.
+                                talents et en donnant des moyens d'action aux groupes sous-représentés.  Pionnier des systèmes satellitaires indigènes, établir un marché numérique et donner la priorité à l'innovation technologique.
+                                marché numérique et donner la priorité à la gestion de l'environnement pour un avenir spatial durable et responsable en Afrique.
+                                durable et responsable en Afrique.
+
+                                Traduit avec DeepL.com (version gratuite)
                             </Typography>
                         </Container>
                     </Col>
@@ -118,18 +154,56 @@ const Index = () => {
                         <Container style={{ padding: '10%' }}>
                             <h2 className='text-center text-white' >Notre vision​</h2>
                             <Typography className='text-center text-white'>
-                                The uniqueness of our business model is based on synergies created by the complementarity of our four activities. Each activity increases our market knowledge and expertise and extends our network of key decision makers while at the same time maintaining a respect for client confidentiality
+                                Être le principal catalyseur du développement et de l'avancement de l'industrie spatiale panafricaine.
+                                panafricaine, en renforçant la participation de l'Afrique aux applications, technologies et services spatiaux mondiaux.
+                                services spatiaux.
                             </Typography>
                         </Container>
                     </Col>
                 </Row>
 
-                <Container style={{ padding: '10%', height: 'auto', backgroundColor: '#00134d', marginTop: '2%' }}>
+                {/* <Container style={{ padding: '10%', height: 'auto', backgroundColor: '#00134d', marginTop: '2%' }}>
                     <h2 className='text-center text-white' >Nos valeurs​</h2>
                     <Typography className='text-center text-white'>
                         The uniqueness of our business model is based on synergies created by the complementarity of our four activities. Each activity increases our market knowledge and expertise and extends our network of key decision makers while at the same time maintaining a respect for client confidentiality
                     </Typography>
-                </Container>
+                </Container> */}
+                {/* <Grid sx={{ display: 'flex', alignItems: 'center',backgroundColor: '#00134d', justifyContent: 'space-around' }} >
+                    <Grid item xs={4}>
+                        <Typography className='text-white mb-2 fs-2 fw-normal fs-sm-5'>
+                            Valeurs Fondamentales
+                        </Typography>
+                        <Typography className='mb-3 fw-ligh lh-sm ' paragraph>
+                            Qui nous sommes et qui nous aspirons à être
+                        </Typography>
+
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Typography variant="h5" className='text-white  fs-5 fw-bold  fs-sm-5' >
+                            ethique
+                        </Typography>
+                        <Typography variant="h5" className='text-white  fs-5 fw-bold  fs-sm-5 my-3' >
+                            Valeurs
+                        </Typography>
+                        <Typography variant="h5" className='text-white  fs-5 fw-bold  fs-sm-5' >
+                            Integrite
+                        </Typography>
+
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Typography variant="h5" className='text-white  fs-5 fw-bold  fs-sm-5'>
+                            Flexibilite
+                        </Typography>
+                        <Typography variant="h5" className='text-white  fs-5 fw-bold  fs-sm-5 my-3'>
+                            Independance
+                        </Typography>
+                        <Typography variant="h5" className='text-white  fs-5 fw-bold  fs-sm-5'>
+                            Excellence
+                        </Typography>
+
+                    </Grid>
+                </Grid> */}
+
             </Container>
 
             <Grid fluid component="main" className='mt-5'>
@@ -148,31 +222,31 @@ const Index = () => {
                     <Container className='mt-5'>
                         <Row>
                             <Col>
-                                <h2>Core values​</h2>
+                                <h2>Valeurs Fondamentales​</h2>
                                 <Typography>
                                     Who we are and who we aspire to be
                                 </Typography>
                             </Col>
                             <Col className='text-center'>
                                 <h4>
-                                    Independence
+                                    ethique
                                 </h4>
                                 <h4>
-                                    Integrity
+                                    Valeurs
                                 </h4>
                                 <h4>
-                                    Flexibility
+                                    Integrite
                                 </h4>
                             </Col>
                             <Col className='text-center'>
                                 <h4>
+                                    Flexibilite
+                                </h4>
+                                <h4>
+                                    Independance
+                                </h4>
+                                <h4>
                                     Excellence
-                                </h4>
-                                <h4>
-                                    Diligence
-                                </h4>
-                                <h4>
-                                    Ethicality
                                 </h4>
                             </Col>
                         </Row>
@@ -258,12 +332,7 @@ const Index = () => {
                 style={{
                     height: '250px',
                     backgroundColor: '#f2f3f6',
-                    padding: {
-                        xs: '5px',
-                        sm: '20px',
-                        md: '90px'
-                    },
-                    margin: 'auto',
+                    marginBottom: '4%'
                 }}>
                 <Container className="text-center p-5"  >
                     <Typography variant="h4" component="h2">

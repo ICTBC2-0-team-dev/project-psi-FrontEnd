@@ -1,20 +1,19 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
+import { CardActionArea, CssBaseline, Divider, Paper } from '@mui/material';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import { CardActionArea, Divider, Paper } from '@mui/material';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
-import Header from '../components/Header';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Footer from '../components/Footer';
-import {
-    CssBaseline
+import Header from '../components/Header';
 
-} from '@mui/material';
 
 const linksArray = ["Accueil", "Services", "À propos de nous", "Actualités", "Contact"];
 
@@ -291,8 +290,8 @@ const Home = () => {
                                 </Typography>
 
                                 <Link href="/responsiveAppBar" underline="none" className='mt-5'>
-                                            {' En savoir plus'}
-                                        </Link>
+                                    {' En savoir plus'}
+                                </Link>
 
                             </Box>
                         </Grid>
@@ -333,12 +332,10 @@ const Home = () => {
                                 <CardActionArea>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            Cabinet de conseil et intelligence d’affaires spatiale
+                                            business Intelligence & Data Mining
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            aidant les
-                                            industries et les start-ups, les gouvernements, les investisseurs, les ONG universitaires, etc. à faire bon usage des sciences, des
-                                            applications et des technologies
+                                            Unlock insigts, drive decision
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
@@ -359,13 +356,10 @@ const Home = () => {
                                 <CardActionArea>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            Centre d’analyse de données spatiales virtuelles
+                                            Consultancy Services:
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            exploiter et
-                                            analyser les centres de données existants des agences spatiales et
-                                            les aider dans le développement du capital humain pour atteindre le
-                                            plein potentiel.
+                                            Strategic guidance, problem
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
@@ -544,6 +538,47 @@ const Home = () => {
                     </Grid> */}
                 </Grid>
             </Grid>
+
+            <Container className='mt-5' >
+                <Row>
+                    <Col style={{
+                        height: '400px',
+                        backgroundColor: '#ccd0db',
+                        padding: {
+                            xs: '5px',
+                            sm: '20px',
+                            md: '90px'
+                        },
+                        margin: 'auto',
+                    }} >
+                        <Container style={{ padding: '10%' }}>
+                            <h2 className='text-center' >Notre mission​</h2>
+                            <Typography className='text-center'>
+                                The uniqueness of our business model is based on synergies created by the complementarity of our four activities. Each activity increases our market knowledge and expertise and extends our network of key decision makers while at the same time maintaining a respect for client confidentiality
+                            </Typography>
+                        </Container>
+                    </Col>
+                    <Col style={{
+                        height: 'auto',
+                        backgroundColor: '#00134d',
+                        marginLeft: '2%'
+                    }} >
+                        <Container style={{ padding: '10%' }}>
+                            <h2 className='text-center text-white' >Notre vision​</h2>
+                            <Typography className='text-center text-white'>
+                                The uniqueness of our business model is based on synergies created by the complementarity of our four activities. Each activity increases our market knowledge and expertise and extends our network of key decision makers while at the same time maintaining a respect for client confidentiality
+                            </Typography>
+                        </Container>
+                    </Col>
+                </Row>
+
+                <Container style={{ padding: '10%', height: 'auto', backgroundColor: '#00134d', marginTop: '2%', marginBottom: '3%' }}>
+                    <h2 className='text-center text-white' >Nos valeurs​</h2>
+                    <Typography className='text-center text-white'>
+                        The uniqueness of our business model is based on synergies created by the complementarity of our four activities. Each activity increases our market knowledge and expertise and extends our network of key decision makers while at the same time maintaining a respect for client confidentiality
+                    </Typography>
+                </Container>
+            </Container>
 
             <Footer />
 
