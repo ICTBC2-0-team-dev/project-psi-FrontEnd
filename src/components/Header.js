@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Logo from '../img/logopsi2.png';
+import Logo from '../components/full-logo-wide-.svg';
 import Form from 'react-bootstrap/Form';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';

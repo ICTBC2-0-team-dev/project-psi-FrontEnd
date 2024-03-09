@@ -13,10 +13,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {
-    CssBaseline
-
-} from '@mui/material';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
@@ -197,7 +197,7 @@ const Home = () => {
                     }}>
 
                         <Grid sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }} >
-                            <Grid item xs={4}>
+                            <Grid item xs={12} md={4}>
                                 <Typography className='text-darkblue mb-2 fs-2 fw-normal fs-sm-5'>
                                     Valeurs Fondamentales
                                 </Typography>
@@ -206,27 +206,69 @@ const Home = () => {
                                 </Link>
 
                             </Grid>
-                            <Grid item xs={4}>
-                                <Typography variant="h5" className='text-dark  fs-5 fw-bold  fs-sm-5' >
-                                    Excellence
-                                </Typography>
-                                <Typography variant="h5" className='text-dark  fs-5 fw-bold  fs-sm-5 my-3' >
-
-                                    Diversité
-                                </Typography>
+                            <Grid item xs={12} md={1}></Grid>
+                            <Grid item xs={12} md={4}>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ArrowDropDownIcon  />}
+                                        aria-controls="panel1-content"
+                                        id="panel1-header"
+                                    >
+                                        <Typography>Excellence</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            description de l'excellence pour PSI
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ArrowDropDownIcon />}
+                                        aria-controls="panel2-content"
+                                        id="panel2-header"
+                                    >
+                                        <Typography>Diversité</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                         description de la Diversité
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ArrowDropDownIcon />}
+                                        aria-controls="panel2-content"
+                                        id="panel2-header"
+                                    >
+                                        <Typography>Intégrité</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                         description de la Intégrité par PSI dire ce que sa represente
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ArrowDropDownIcon />}
+                                        aria-controls="panel2-content"
+                                        id="panel2-header"
+                                    >
+                                        <Typography>Responsabilité</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                         description de la Responsabilité
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
 
                             </Grid>
                             <Grid item xs={4}>
-                                <Typography variant="h5" className='text-dark  fs-5 fw-bold  fs-sm-5'>
-
-                                    Diversité
-                                </Typography>
-                                <Typography variant="h5" className='text-dark  fs-5 fw-bold  fs-sm-5 my-3'>
-                                    Responsabilité
-                                </Typography>
 
                             </Grid>
-
 
                         </Grid>
 
@@ -234,14 +276,14 @@ const Home = () => {
                     <Container sx={{ borderRadius: 3 }}>
                         <Row >
                             <Col className='text-center activiter'>
-                                <h2 className='my-3'>vision</h2>
+                                <h2 className='my-3 text-darkblue'>vision</h2>
                                 <Typography className='my-2'>
                                     Être le principal catalyseur du développement et de l’avancement de l’industrie spatiale panafricaine,
                                     en renforçant la participation de l’Afrique aux applications, technologies et services spatiaux mondiaux.
                                 </Typography>
                             </Col>
                             <Col className='text-center activiter'>
-                                <h2 className='my-3'>Mission</h2>
+                                <h2 className='my-3 text-darkblue'>Mission</h2>
                                 <Typography className='my-2'>
                                     Fournir des produits et services spatiaux innovants adaptés aux besoins africains, favorisant les
                                     progrès technologiques et le développement durable. Grâce à des partenariats stratégiques,
@@ -257,7 +299,7 @@ const Home = () => {
             </Container>
 
             {/* section a propos*/}
-            <Container >
+            {/* <Container >
                 <Grid sx={{ marginBlock: '100px' }}>
                     <Grid>
 
@@ -277,10 +319,7 @@ const Home = () => {
                                     backgroundPosition: 'center',
                                 }}
                             > 
-                                {/* <Box sx={{
-                                    height: '460px',
-                                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                                }} /> */}
+                               
                             </Grid>
                             <Grid item xs={12} sm={8} md={6} component={Paper} square>
 
@@ -315,7 +354,7 @@ const Home = () => {
 
                     </Grid>
                 </Grid>
-            </Container>
+            </Container> */}
 
             {/* section entreprise */}
             <Grid fluid sx={{ marginTop: '100px' }}>
@@ -389,8 +428,8 @@ const Home = () => {
                 </Grid>
             </Grid>
 
-           {/* section service */}
-           <Container>
+            {/* section service */}
+            <Container>
                 <Grid sx={{
                     marginBlock: '100px'
                 }}>
@@ -574,8 +613,8 @@ const Home = () => {
             </Container>
 
 
-             {/* Section actualite */}
-             <Container>
+            {/* Section actualite */}
+            <Container>
                 <Grid sx={{
                     marginBlock: '100px'
                 }}>
@@ -586,7 +625,7 @@ const Home = () => {
                             </Typography>
 
                         </Box>
-                        <Button variant="outlined" sx={{ height: '35px', borderRadius: '20px' }}>Tout voir</Button>
+                        <Button variant="outlined" sx={{ height: '35px', borderRadius: '20px' }} component={Link} >Tout voir</Button>
                     </Grid>
                     <Grid>
                         <ImageList sx={{ height: 450 }}>
@@ -619,6 +658,9 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </Container>
+            
+
+            {/* Section partenaire */} 
 
             <Footer />
 
@@ -630,42 +672,42 @@ export default Home
 
 const itemData = [
     {
-      img: 'https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg',
-      title: 'Breakfast',
-      author: '@bkristastucchio',
-      rows: 2,
-      cols: 2,
-      featured: true,
+        img: 'https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg',
+        title: 'Breakfast',
+        author: '@bkristastucchio',
+        rows: 2,
+        cols: 2,
+        featured: true,
     },
     {
-      img: 'https://www.rheagroup.com/wp-content/uploads/2023/11/blue-transparent-people-graphics-space-4x3-1-768x576.jpg',
-      title: 'Burger',
-      author: '@rollelflex_graphy726',
+        img: 'https://www.rheagroup.com/wp-content/uploads/2023/11/blue-transparent-people-graphics-space-4x3-1-768x576.jpg',
+        title: 'Burger',
+        author: '@rollelflex_graphy726',
     },
     {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      title: 'Camera',
-      author: '@helloimnik',
+        img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+        title: 'Camera',
+        author: '@helloimnik',
     },
     {
-      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-      title: 'Alastair Pidgeon, architecte de solutions senior au sein de RHEA Royaume-Uni, explique : « Notre segment sol BEROE est conçu pour assurer des opérations efficaces et hautement automatisées au sein d’une constellation de divers engins spatiaux en orbite terrestre basse qui peuvent utiliser différents protocoles de communication espace-sol pour se connecter à la nouvelle génération de stations terrestres du ministère de la Défense britannique. BEROE permettra d’exploiter les satellites en s’appuyant sur un « concept d’opérations » commun, offrant ainsi aux opérateurs et aux gestionnaires une appréciation globale de la situation de l’ensemble de la constellation et de chaque engin spatial ».',
-      author: '@nolanissac',
-      cols: 3,
+        img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+        title: 'Alastair Pidgeon, architecte de solutions senior au sein de RHEA Royaume-Uni, explique : « Notre segment sol BEROE est conçu pour assurer des opérations efficaces et hautement automatisées au sein d’une constellation de divers engins spatiaux en orbite terrestre basse qui peuvent utiliser différents protocoles de communication espace-sol pour se connecter à la nouvelle génération de stations terrestres du ministère de la Défense britannique. BEROE permettra d’exploiter les satellites en s’appuyant sur un « concept d’opérations » commun, offrant ainsi aux opérateurs et aux gestionnaires une appréciation globale de la situation de l’ensemble de la constellation et de chaque engin spatial ».',
+        author: '@nolanissac',
+        cols: 3,
     },
     {
-      img: 'https://www.rheagroup.com/wp-content/uploads/2024/02/ground-station-antennas-blue-sky-with-clouds.jpg',
-      title: 'Hats',
-      author: '@hjrc33',
-      cols: 2,
+        img: 'https://www.rheagroup.com/wp-content/uploads/2024/02/ground-station-antennas-blue-sky-with-clouds.jpg',
+        title: 'Hats',
+        author: '@hjrc33',
+        cols: 2,
     },
     {
-      img: 'https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg',
-      title: 'Honey',
-      author: '@arwinneil',
-      rows: 2,
-      cols: 2,
-      featured: true,
+        img: 'https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg',
+        title: 'Honey',
+        author: '@arwinneil',
+        rows: 2,
+        cols: 2,
+        featured: true,
     },
 
 ];
