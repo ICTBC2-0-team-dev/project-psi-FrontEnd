@@ -625,7 +625,7 @@ const Home = () => {
                             </Typography>
 
                         </Box>
-                        <Button variant="outlined" sx={{ height: '35px', borderRadius: '20px' }} component={Link} >Tout voir</Button>
+                        <Button variant="outlined" sx={{ height: '35px', borderRadius: '20px' }} component={Link} to='/actualite'>Tout voir</Button>
                     </Grid>
                     <Grid>
                         <ImageList sx={{ height: 450 }}>
