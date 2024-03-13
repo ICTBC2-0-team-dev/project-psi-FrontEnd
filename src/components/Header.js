@@ -43,6 +43,16 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+  //open from marcher spacial
+  const [anchorElS, setAnchorElS] = React.useState(null);
+  const openMarket = Boolean(anchorElS);
+  const handleClickMarket = (event) => {
+    setAnchorElS(event.currentTarget);
+  };
+  const handleCloseS = () => {
+    setAnchorElS(null);
+  };
+
   // open from service
   const [anchorElSer, setAnchorElSer] = React.useState(null);
   const openSer = Boolean(anchorElSer);
@@ -71,6 +81,9 @@ const Header = () => {
   };
   const handleGoToEvene = () => {
     navigate("/evenement");
+  };
+  const handleGoToTENDANCE= () => {
+    navigate("/Tendance");
   };
 
   const handleGoToMarcherSpace = () => {
@@ -135,9 +148,33 @@ const Header = () => {
                   >
                     <MenuItem  onClick={handleGoToactualite}>Actualites</MenuItem>
                     <MenuItem onClick={handleGoToEvene}>Evenement</MenuItem>
+                  </Menu>
+                </Nav.Item>
+
+                <Nav.Item>
+                  <Nav.Link
+                    eventKey="ind"
+                    aria-controls={openMarket ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openMarket ? 'true' : undefined}
+                    onClick={handleClickMarket}
+                  >marché spatial
+                    {openMarket ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                  </Nav.Link>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorElS}
+                    open={openMarket}
+                    onClose={handleCloseS}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+                    }}
+                  >
+                    <MenuItem onClick={handleGoToTENDANCE}>Tendances du marcher</MenuItem>
                     <MenuItem onClick={handleGoToMarcherSpace}>Historique du marcher spatial</MenuItem>
                   </Menu>
                 </Nav.Item>
+
 
                 <Nav.Item>
                   <Nav.Link eventKey="Contact_us" href="/Contact_us">Contactez-nous</Nav.Link>

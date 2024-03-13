@@ -1,54 +1,27 @@
-import React, { useEffect, useState } from "react";
-import "./Home.css";
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import FormHelperText from "@mui/material/FormHelperText";
-import OutlinedInput from "@mui/material/OutlinedInput";
-// import Grid from '@mui/material/Grid';
-// import Typography from '@mui/material/Typography';
-// import TypeWriterEffect from "react-typewriter-effect";
-// import Card from '@mui/material/Card';
-// import CardMedia from '@mui/material/CardMedia';
-// import BusinessIcon from '@mui/icons-material/Business';
-// import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-// import LocationOn from "@mui/icons-material/LocationOn";
-// import { grey } from "@mui/material/colors";
-// import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-// import CardHeader from '@mui/material/CardHeader';
-// import CardContent from '@mui/material/CardContent';
-// import CardActions from '@mui/material/CardActions';
-// import Avatar from '@mui/material/Avatar';
-// import IconButton from '@mui/material/IconButton';
-// import { red ,green,blue} from '@mui/material/colors';
-// import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
-// import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded';
-// import Paper from '@mui/material/Paper';
-// import { styled } from '@mui/material/styles';
-// import CarrouselProfil from "./Carrousel";
-import "aos/dist/aos.css";
-// import { useNavigate } from 'react-router-dom';
-// import axios from '../axios'
-// import { useDispatch } from 'react-redux';
-// import { setProjetId } from '../features/projetsSlice'
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import FormControl from "@mui/material/FormControl";
+import FormHelperText from "@mui/material/FormHelperText";
 import InputAdornment from "@mui/material/InputAdornment";
 import Modal from "@mui/material/Modal";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import "aos/dist/aos.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../axios";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Image from "../../img/Rectangle 10342.png";
 import Homme from "../images/homme.jpg";
+import "./Home.css";
 
 
 const style = {
@@ -60,6 +33,19 @@ const style = {
   height: 566,
   bgcolor: "background.paper",
   borderRadius: 8,
+  boxShadow: 24,
+  p: 4,
+};
+
+const styles = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 648,
+  height: 206,
+  bgcolor: "background.paper",
+  borderRadius: 2,
   boxShadow: 24,
   p: 4,
 };
@@ -105,6 +91,16 @@ const Home = () => {
 
   /** end meilleurs produit */
 
+  /**modal pour ajouter un produit */
+  const [showModal, setShowModal] = React.useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleShow = () => {
+    setShowModal(true);
+  };
   return (
 
     <>
@@ -123,15 +119,39 @@ const Home = () => {
               >
                 Explorer La Marketplace
               </a> &nbsp; &nbsp;
-              <a
-                href="/Rapport"
-                class="btn btn-secondary btn-lg active"
-                role="button"
-                aria-pressed="true"
+              <Button variant="primary" onClick={handleShow}>
+                Publier un produit
+              </Button>
+
+              <Modal
+                open={showModal}
+                onClose={handleCloseModal}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
               >
-                Explorer Les Tendances
-              </a>
+                <Box sx={styles}>
+                  <Typography
+                    sx={{ mb: 1.5 }}
+                    color="text.dark"
+                    fontWeight="bold"
+                    className="fs-5 text-center"
+                  >
+                    Creer vous un compte employeur si vous en avez pas ou Connecter vous a votre compte employeur si vous en avez un
+                  </Typography>
+
+                  <div className="row ">
+                    <div className="col text-center">
+                      <Button variant="contained" href="/login">Se Connecter</Button>
+                    </div>
+                    <div className="col text-center">
+                      <Button variant="outlined" href="/account">S'inscrire</Button>
+                    </div>
+                  </div>
+                </Box>
+              </Modal>
+
             </div>
+
           </div>
           <div className="col-sm-6">
             <img src={Image} style={{ width: "100%" }} alt="" />
@@ -497,7 +517,7 @@ const Home = () => {
         className="container"
         style={{ background: "#0A65CC", borderRadius: "20px" }}
       >
-        <div style={{ padding: "10%", color: "white" }}>
+        <div style={{ padding: "10%", color: "white", marginBottom:'3%' }}>
           <div style={{ textAlign: "center" }}>
             <h2>S'abonner à notre newsletter</h2>
             <p>

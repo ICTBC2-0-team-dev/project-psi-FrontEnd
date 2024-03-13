@@ -81,39 +81,9 @@ const Index = () => {
 
                     </Col> */}
                     <Col>
-                        <h1>Get your projects off the ground​</h1>
+                        <h1>Faites décoller vos projets</h1>
                         <Typography className='mt-5'>
-                            À la Commission économique des Nations unies pour l'Afrique, en décembre 2019, lors de la 8e Conférence des dirigeants africains sur
-                            les sciences et technologies spatiales au service du développement durable, une faction de dirigeants a proposé le concept d'industrie spatiale panafricaine.
-                            industrie spatiale panafricaine.  Cette proposition s'explique par le consensus unanime sur le fait que l'Afrique a besoin d'une stratégie de développement à long terme et transformatrice pour exploiter ses capacités et ses ressources.
-                            à long terme pour exploiter ses capacités, en particulier dans le domaine des sciences et des technologies spatiales.
-                            Reconnaissant le rôle crucial du développement du capital humain, de la plateforme régionale pour les capacités d'emploi et des compétences des jeunes, le changement de paradigme s'est traduit par la création d'une industrie spatiale panafricaine.
-                            les compétences des jeunes, le changement de paradigme vers des technologies de pointe exige une main-d'œuvre qualifiée.  Le besoin
-                            de données spatiales pour atteindre les objectifs de développement durable (ODD) est devenu évident, ce qui a incité l'Afrique à investir dans le développement des satellites.
-                            dans le développement des satellites.
-                            L'histoire a pris un tournant important en mai 2020 lors de la conférence Africa Need Space, qui a mis en évidence les lacunes de l'entreprenariat spatial et souligné la nécessité d'un investissement africain dans le développement de satellites.
-                            dans l'entrepreneuriat spatial et a souligné la nécessité pour les industries de s'aligner sur les cadres juridiques existants.
-                            En 2021, lors du quatrième atelier sur la génération spatiale africaine, des étudiants et de jeunes professionnels se sont réunis pour façonner l'avenir de l'Afrique.
-                            ont convergé pour façonner l'avenir des efforts spatiaux de l'Afrique.  Lors de cet atelier, l'idée d'une industrie spatiale panafricaine a été solidement définie.
-                            panafricaine a été solidement définie, ce qui a également marqué la définition des objectifs stratégiques et de la vision.  Les principales
-                            Les principales étapes et l'établissement du champ d'application se sont poursuivis lors d'une réunion à la Semaine mondiale des affaires spatiales et au Sommet sur le financement des satellites qui se tiendra à Paris en 2022.
-                            Satellite Finance Summit à Paris en 2022.
-                            Le crescendo a été atteint en mai 2023 lorsque l'industrie spatiale panafricaine a vu le jour.  Avec un objectif ambitieux
-                            de créer un écosystème robuste de l'industrie spatiale africaine, l'organisation s'est engagée à fournir des solutions d'ingénierie pour un développement durable perturbateur.
-                            des solutions d'ingénierie pour un développement durable innovant.  En février 2024, l'industrie spatiale panafricaine
-                            a lancé des services tels que la plateforme de freelance, le marché de l'espace et les services de conseil.
-                            - La rubrique "Qui sommes-nous ?
-                            "
-                            vous permet d'accéder à une nouvelle page :  Cette page devrait afficher -
-                            Brève description/résumé de ce que nous faisons L'industrie spatiale panafricaine (PSI) est une organisation à but non lucratif.
-                            L'industrie spatiale panafricaine (PSI) est une initiative de collaboration dédiée à l'avancement des capacités et de l'impact du secteur spatial africain.
-                            et l'impact du secteur spatial africain.  L'ISP représente un collectif d'organisations visionnaires,
-                            visionnaires, unies dans leur engagement à propulser l'Afrique à l'avant-garde des technologies, services et
-                            services et de la consultance dans le domaine spatial.  Grâce à ces partenariats stratégiques, nous visons à façonner l'avenir des technologies liées à l'espace, des opportunités commerciales et de l'environnement socio-économique.
-                            l'espace, des opportunités commerciales et du développement socio-économique dans toute l'Afrique grâce à l'innovation.
-                            l'innovation.
-
-                            Traduit avec DeepL.com (version gratuite)
+                            L'industrie spatiale panafricaine (PSI) est une initiative de collaboration dédiée à l'avancement des capacités et de l'impact du secteur spatial africain. et l'impact du secteur spatial africain. L'ISP représente un collectif d'organisations visionnaires, visionnaires, unies dans leur engagement à propulser l'Afrique à l'avant-garde des technologies, services et services et de la consultance dans le domaine spatial. Grâce à ces partenariats stratégiques, nous visons à façonner l'avenir des technologies liées à l'espace, des opportunités commerciales et de l'environnement socio-économique. l'espace, des opportunités commerciales et du développement socio-économique dans toute l'Afrique grâce à l'innovation. l'innovation.
                         </Typography>
                     </Col>
                 </Row>
@@ -224,29 +194,24 @@ const Index = () => {
                             <Col>
                                 <h2>Valeurs Fondamentales​</h2>
                                 <Typography>
-                                    Who we are and who we aspire to be
+                                    Qui nous sommes et qui nous aspirons à être
                                 </Typography>
                             </Col>
                             <Col className='text-center'>
                                 <h4>
-                                    ethique
+                                    Excellence
                                 </h4>
                                 <h4>
-                                    Valeurs
-                                </h4>
-                                <h4>
-                                    Integrite
+                                    Diversité
                                 </h4>
                             </Col>
                             <Col className='text-center'>
                                 <h4>
-                                    Flexibilite
+                                    Responsabilité
                                 </h4>
+                                
                                 <h4>
-                                    Independance
-                                </h4>
-                                <h4>
-                                    Excellence
+                                    Integrité
                                 </h4>
                             </Col>
                         </Row>
@@ -321,8 +286,38 @@ const Index = () => {
                     </Col> */}
                     <Col>
                         <h2>Notre historique</h2>
-                        <Typography>
-                            Created in 1983, Euroconsult started life as a market intelligence firm focusing on the economic impact of innovative technologies. The firm soon started to specialize in strategic decision making in the space sector, which then extended to cover satellite-enabled vertical markets, such as connectivity, remote sensing and analytics. A truly global company, Euroconsult has opened offices around the world with the aim to provide both local and regional knowledge and services to its clients. A leader in its sector, Euroconsult enjoys a reputation for quality and is a trusted business partner of most of the major actors worldwide. The Euroconsult Group is trusted by 1,200 clients in over 60 countries. The Group is headquartered in France, with offices in the U.S., Canada, Japan, Singapore, and Australia.
+                        <Typography className='mt-5'>
+                            À la Commission économique des Nations unies pour l'Afrique, en décembre 2019, lors de la 8e Conférence des dirigeants africains sur
+                            les sciences et technologies spatiales au service du développement durable, une faction de dirigeants a proposé le concept d'industrie spatiale panafricaine.
+                            industrie spatiale panafricaine.  Cette proposition s'explique par le consensus unanime sur le fait que l'Afrique a besoin d'une stratégie de développement à long terme et transformatrice pour exploiter ses capacités et ses ressources.
+                            à long terme pour exploiter ses capacités, en particulier dans le domaine des sciences et des technologies spatiales.
+                            Reconnaissant le rôle crucial du développement du capital humain, de la plateforme régionale pour les capacités d'emploi et des compétences des jeunes, le changement de paradigme s'est traduit par la création d'une industrie spatiale panafricaine.
+                            les compétences des jeunes, le changement de paradigme vers des technologies de pointe exige une main-d'œuvre qualifiée.  Le besoin
+                            de données spatiales pour atteindre les objectifs de développement durable (ODD) est devenu évident, ce qui a incité l'Afrique à investir dans le développement des satellites.
+                            dans le développement des satellites.
+                            L'histoire a pris un tournant important en mai 2020 lors de la conférence Africa Need Space, qui a mis en évidence les lacunes de l'entreprenariat spatial et souligné la nécessité d'un investissement africain dans le développement de satellites.
+                            dans l'entrepreneuriat spatial et a souligné la nécessité pour les industries de s'aligner sur les cadres juridiques existants.
+                            En 2021, lors du quatrième atelier sur la génération spatiale africaine, des étudiants et de jeunes professionnels se sont réunis pour façonner l'avenir de l'Afrique.
+                            ont convergé pour façonner l'avenir des efforts spatiaux de l'Afrique.  Lors de cet atelier, l'idée d'une industrie spatiale panafricaine a été solidement définie.
+                            panafricaine a été solidement définie, ce qui a également marqué la définition des objectifs stratégiques et de la vision.  Les principales
+                            Les principales étapes et l'établissement du champ d'application se sont poursuivis lors d'une réunion à la Semaine mondiale des affaires spatiales et au Sommet sur le financement des satellites qui se tiendra à Paris en 2022.
+                            Satellite Finance Summit à Paris en 2022.
+                            Le crescendo a été atteint en mai 2023 lorsque l'industrie spatiale panafricaine a vu le jour.  Avec un objectif ambitieux
+                            de créer un écosystème robuste de l'industrie spatiale africaine, l'organisation s'est engagée à fournir des solutions d'ingénierie pour un développement durable perturbateur.
+                            des solutions d'ingénierie pour un développement durable innovant.  En février 2024, l'industrie spatiale panafricaine
+                            a lancé des services tels que la plateforme de freelance, le marché de l'espace et les services de conseil.
+                            - La rubrique "Qui sommes-nous ?
+                            "
+                            vous permet d'accéder à une nouvelle page :  Cette page devrait afficher -
+                            Brève description/résumé de ce que nous faisons L'industrie spatiale panafricaine (PSI) est une organisation à but non lucratif.
+                            L'industrie spatiale panafricaine (PSI) est une initiative de collaboration dédiée à l'avancement des capacités et de l'impact du secteur spatial africain.
+                            et l'impact du secteur spatial africain.  L'ISP représente un collectif d'organisations visionnaires,
+                            visionnaires, unies dans leur engagement à propulser l'Afrique à l'avant-garde des technologies, services et
+                            services et de la consultance dans le domaine spatial.  Grâce à ces partenariats stratégiques, nous visons à façonner l'avenir des technologies liées à l'espace, des opportunités commerciales et de l'environnement socio-économique.
+                            l'espace, des opportunités commerciales et du développement socio-économique dans toute l'Afrique grâce à l'innovation.
+                            l'innovation.
+
+                            Traduit avec DeepL.com (version gratuite)
                         </Typography>
                     </Col>
                 </Row>

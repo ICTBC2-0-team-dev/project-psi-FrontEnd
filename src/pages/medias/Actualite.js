@@ -1,25 +1,40 @@
-import React from 'react'
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Typography from '@mui/material/Typography';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
-import Homme from '../../img/homme.jpg';
-import { styled } from "@mui/material/styles";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import InputAdornment from "@mui/material/InputAdornment";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Grid from '@mui/material/Grid';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import React, { useEffect, useState } from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import axios from "../../axios.js";
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import './actualite.css';
 
-import './actualite.css'
 
 const Actualite = () => {
+    const [actualiter, setActualite] = useState([]);
+    console.log(actualiter);
+    useEffect(() => {
+        const fectData = async () => {
+            try {
+                const request = await axios.get(`/actualites`);
+                setActualite(request.data);
+                console.log(request.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fectData();
+    }, []);
     return (
         <>
             <Header />
@@ -63,38 +78,38 @@ const Actualite = () => {
             </Grid>
 
             <Container className="mt-5" direction="column">
-                <div className="row d-flex justify-content-center align-items-center">
-
-                    <div className="col-md-3" style={{ width: '30%' }} >
-                        <div>
-                            <div style={{ backgroundImage: 'url(https://img.freepik.com/photos-gratuite/vaisseau-spatial-brillant-orbite-autour-planete-dans-galaxie-etoilee-generee-par-ia_188544-9655.jpg)', backgroundRepeat: 'none', height: '300px', width: '70%', cursor: 'pointer' }}>
-                                <div className='p-3 title'>
-                                    <span className='p-2 text-white text-center title' style={{ background: "#008bd2", height: '100px', width: '300px', cursor: 'pointer' }}>Projet satelite</span>
-                                </div>
-                            </div>
-                            <Typography>5 février 2024</Typography>
-                            <div className='description' style={{ cursor: 'pointer' }}>
-                                Lancement du projet satelitaire du cameroun
-                            </div>
-                            <Typography className='description' style={{ cursor: 'pointer' }}>Lire plus <ArrowOutwardIcon /></Typography>
+                <div className="row-2 d-flex justify-content-center align-items-center">
+                    {actualiter.length === 0 ? (
+                        <h3>Pas d'Actualiter trouves</h3>
+                    ) : actualiter.map((actu) => (
+                        <div className="col-md-3" style={{ width: '30%' }} >
+                            <Card sx={{ maxWidth: 345 }}>
+                                <Box>
+                                    <CardMedia
+                                        sx={{ height: 200, margin: 1, borderRadius: 2 }}
+                                        image={`http://localhost:8081/${actu.image}`}
+                                    />
+                                </Box>
+                                <CardContent>
+                                    <Typography
+                                        gutterBottom
+                                        variant="h5"
+                                        component="div"
+                                        className="text-end text-primary"
+                                    >
+                                        Date de publication: <span style={{ color: "black" }}>{actu.dateCreation}</span>
+                                    </Typography>
+                                    <Typography gutterBottom variant="h4" component="div">
+                                        {actu.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {actu.description}
+                                    </Typography>
+                                </CardContent>
+                                <Typography className='description' style={{ cursor: 'pointer' }}>Lire plus <ArrowOutwardIcon /></Typography>
+                            </Card>
                         </div>
-
-                    </div>
-                    <div className="col-md-3" style={{ width: '30%' }}>
-                        <div>
-                            <div style={{ backgroundImage: 'url(https://img.freepik.com/photos-gratuite/vaisseau-spatial-brillant-orbite-autour-planete-dans-galaxie-etoilee-generee-par-ia_188544-9655.jpg)', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
-                                <div className='p-3'>
-                                    <span className='p-2 text-white text-center' style={{ background: "#008bd2", height: '100px', width: '300px' }}>Projet satelite</span>
-                                </div>
-                            </div>
-                            <Typography>5 février 2024</Typography>
-                            <div>
-                                Lancement du projet satelitaire du cameroun
-                            </div>
-                            <Typography>Lire plus <ArrowOutwardIcon /></Typography>
-                        </div>
-
-                    </div>
+                    ))}
                     <div className="col-md-3" >
                         <div className="row d-flex justify-content-center align-items-center" style={{ backgroundColor: '#f1f7fa', height: '500px' }}>
                             <div className='col-m2'>
@@ -120,7 +135,6 @@ const Actualite = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </Container>
 

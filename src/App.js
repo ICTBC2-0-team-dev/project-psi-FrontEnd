@@ -46,11 +46,9 @@ import Commande from "./components/Dashbord1/CommandeProduit";
 import Liste from "./components/Dashbord1/ListeProduit";
 
 // import dashbord admin
-
 import Accueil from "./components/Admin/Accueil";
-import AddActualite from "./components/Admin/AddActualite";
+import PostActualite from "./components/Admin/PostActualite";
 import Produit from "./components/Admin/Produit";
-import SidebarAdmin from "./components/Admin/SidebarAdmin";
 import Utilisateur from "./components/Admin/Utilisateur";
 import Index from "./pages/Home";
 
@@ -124,8 +122,7 @@ function App() {
           <Route path="/produitAdmin" element={<Produit />} />
           <Route path="/utilisateur" element={<Utilisateur />} />
           <Route path="/accuiel" element={<Accueil />} />
-          <Route path="/sidebarAdmin" element={<SidebarAdmin />} />
-          <Route path="/AddActuality" element={<AddActualite />} />
+          <Route path="/AddActuality" element={<PostActualite />} />
 
           {/* module space market */}
           <Route path="/SpaceMarket" element={<Home />} />

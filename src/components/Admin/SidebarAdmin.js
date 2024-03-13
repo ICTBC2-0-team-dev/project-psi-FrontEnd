@@ -1,22 +1,23 @@
-import * as React from 'react';
-import { styled, useTheme} from '@mui/material/styles';
+import { Home } from '@mui/icons-material';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import Box from '@mui/material/Box';
-import MuiDrawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
+import MuiDrawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { Home } from '@mui/icons-material';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-import {useNavigate} from 'react-router-dom'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import IconButton from '@mui/material/IconButton';
+import { styled, useTheme } from '@mui/material/styles';
+import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const drawerWidth = 240;
@@ -152,6 +153,27 @@ const openedMixin = (theme) => ({
                 <ListItemText primary='Produits' sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
+            <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/AddActuality")}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <NewspaperIcon /> 
+                </ListItemIcon>
+                <ListItemText primary='Actualite' sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </ListItem>
+
             <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>navigate("/")}>
               <ListItemButton
                 sx={{

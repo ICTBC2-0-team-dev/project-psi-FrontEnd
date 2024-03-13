@@ -1,21 +1,16 @@
-import React from 'react'
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Typography from '@mui/material/Typography';
-import TrackChangesIcon from '@mui/icons-material/TrackChanges';
-import Homme from '../../img/homme.jpg';
-import { styled } from "@mui/material/styles";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import InputAdornment from "@mui/material/InputAdornment";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 const Evenement = () => {
     return (
@@ -79,7 +74,7 @@ const Evenement = () => {
 
                     <div className="col-md-3" style={{ width: 'auto' }} >
                         <div>
-                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2024/01/space-comm-logo-purple-4x3-1.jpg)', backgroundRepeat: 'none', height: '300px', width: '70%', cursor: 'pointer' }}>
+                            <div style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522770179533-24471fcdba45', backgroundRepeat: 'none', height: '300px', width: '70%', cursor: 'pointer' }}>
                                 <div className='p-3 title'>
                                     <span className='p-2 text-white text-center title' style={{ background: "#008bd2", height: '100px', cursor: 'pointer' }}>Projet satelite</span>
                                 </div>
@@ -94,7 +89,7 @@ const Evenement = () => {
                     </div>
                     <div className="col-md-3" style={{ width: 'auto' }}>
                         <div>
-                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2024/01/space-comm-logo-purple-4x3-1.jpg', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
+                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
                                 <div className='p-3'>
                                     <span className='p-2 text-white text-center' style={{ background: "#008bd2", height: '100px', width: '300px' }}>Projet satelite</span>
                                 </div>
@@ -109,7 +104,7 @@ const Evenement = () => {
                     </div>
                     <div className="col-md-3" style={{ width: 'auto' }}>
                         <div>
-                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2024/01/space-comm-logo-purple-4x3-1.jpg', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
+                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2023/11/blue-transparent-people-graphics-space-4x3-1-768x576.jpg', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
                                 <div className='p-3'>
                                     <span className='p-2 text-white text-center' style={{ background: "#008bd2", height: '100px', width: '300px' }}>Projet satelite</span>
                                 </div>

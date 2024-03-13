@@ -839,6 +839,8 @@
 
 
 
+import BusinessIcon from '@mui/icons-material/Business';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import LocationOn from "@mui/icons-material/LocationOn";
 import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded';
@@ -861,7 +863,9 @@ import Row from 'react-bootstrap/Row';
 import TypeWriterEffect from "react-typewriter-effect";
 import CarrouselProfil from "./Carrousel";
 // import AddLocationAltRoundedIcon from '@mui/icons-material/AddLocationAltRounded';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { Divider } from '@mui/material';
+import CardMedia from '@mui/material/CardMedia';
 import { grey } from "@mui/material/colors";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -1048,151 +1052,150 @@ function ResponsiveAppBar() {
                 </Box>
               </Box>
             </Grid>
-            {/* <Container maxWidth="sm" className='mt-5'>
-              <Grid
+
+            <Container  maxWidth="sm" className='mt-5'>
+              <Grid 
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
                   alignContent: 'center',
                 }}
               >
-                <Box
-                  sx={{
-                    flexGrow: 1,
-                    padding: {
-                      xs: '10px',
-                      sm: '20px',
-                      md: '7px'
-                    },
-                  }}
+                <Box 
+                 sx={{ flexGrow: 1 ,
+                  padding:{xs:'10px',
+                  sm:'20px',
+                  md:'7px'},
+                 }} 
                 >
-                  <Grid container spacing={2} sx={{ padding: { xs: '10px', sm: '20px', md: '4px' } }}>
-                    <Grid item xs={false} sm={4} md={4}>
-                      <Item>
-                        <Card
+                  <Grid container spacing={2} sx={{padding:{xs:'10px',sm:'20px',md:'4px'}}}>
+                    <Grid item xs={false} sm={4} md={4} 
+                        data-aos="fade-down-right">
+                     <Item>
+                      <Card
 
-                          sx={{
-                            p: 4,
-                            boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
-                            display: 'flex',
-                            flexDirection: {
-                              xs: 'column', // mobile
-                              sm: 'row', // tablet and up
-                            },
-                          }}
-                        >
-                          <CardMedia
-                            width="50"
-                            height="50"
+                        sx={{
+                          p: 4,
+                          boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
+                          display: 'flex',
+                          flexDirection: {
+                            xs: 'column', // mobile
+                            sm: 'row', // tablet and up
+                          },
+                        }}
+                      >
+                        <CardMedia
+                          width="50"
+                          height="50"
 
                             sx={{
 
                               width: { xs: '100%', sm: 100 },
                               mr: { sm: 1 },
                               mb: { xs: 0, sm: 0 },
-                              display: 'flex',
+                              display:'flex',
                               alignItems: 'center',
-                              justifyContent: 'center'
+                              justifyContent:'center'
                             }}
-                          ><Box sx={{ background: '#E7F0FA', padding: '20px' }} className="rounded">< BusinessCenterIcon sx={{ color: '#0A65CC' }} /></Box></CardMedia>
+                          ><Box sx={{background:'#E7F0FA',padding:'20px'}} className="rounded">< BusinessCenterIcon  sx={{color: '#0A65CC'}}/></Box></CardMedia>
                           <Box>
                             <Typography fontWeight="bold" noWrap className='fs-2'>
-                              1,750,500
+                            {projetCount}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
+                            <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'> 
                               Emplois
                             </Typography>
 
                           </Box>
                         </Card>
-                      </Item>
+                        </Item>
                     </Grid>
-                    <Grid item xs={false} sm={4} md={4}>
-                      <Item>
-                        <Card
+                    <Grid item xs={false} sm={4} md={4} data-aos="fade-down">
+                     <Item>
+                      <Card
 
-                          sx={{
-                            p: 4,
-                            boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
-                            display: 'flex',
-                            flexDirection: {
-                              xs: 'column', // mobile
-                              sm: 'row', // tablet and up
-                            },
-                          }}
-                        >
-                          <CardMedia
-                            width="50"
-                            height="50"
+                        sx={{
+                          p: 4,
+                          boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
+                          display: 'flex',
+                          flexDirection: {
+                            xs: 'column', // mobile
+                            sm: 'row', // tablet and up
+                          },
+                        }}
+                      >
+                        <CardMedia
+                          width="50"
+                          height="50"
 
                             sx={{
 
                               width: { xs: '100%', sm: 100 },
                               mr: { sm: 1 },
                               mb: { xs: 0, sm: 0 },
-                              display: 'flex',
+                              display:'flex',
                               alignItems: 'center',
-                              justifyContent: 'center'
+                              justifyContent:'center'
                             }}
-                          ><Box sx={{ background: '#0A65CC', padding: '20px' }} className="rounded">< BusinessIcon sx={{ color: '#fff' }} /></Box></CardMedia>
+                          ><Box sx={{background:'#0A65CC',padding:'20px'}} className="rounded">< BusinessIcon  sx={{color: '#fff'}}/></Box></CardMedia>
                           <Box sx={{}}>
                             <Typography fontWeight="bold" noWrap className='fs-2'>
-                              1,750,500
+                              {interprisesCount}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
-                              Employeurs
+                             Employeurs
                             </Typography>
 
                           </Box>
                         </Card>
-                      </Item>
+                        </Item>
                     </Grid>
-                    <Grid item xs={false} sm={4} md={4}>
-                      <Item>
-                        <Card
+                    <Grid item xs={false} sm={4} md={4} data-aos="fade-down-left">
+                     <Item>
+                      <Card
 
-                          sx={{
-                            p: 4,
-                            boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
-                            display: 'flex',
-                            flexDirection: {
-                              xs: 'column', // mobile
-                              sm: 'row', // tablet and up
-                            },
-                          }}
-                        >
-                          <CardMedia
-                            width="50"
-                            height="50"
+                        sx={{
+                          p: 4,
+                          boxShadow: '0 1px 3px rgba(0, 127, 255, 0.1)',
+                          display: 'flex',
+                          flexDirection: {
+                            xs: 'column', // mobile
+                            sm: 'row', // tablet and up
+                          },
+                        }}
+                      >
+                        <CardMedia
+                          width="50"
+                          height="50"
 
                             sx={{
 
                               width: { xs: '100%', sm: 100 },
                               mr: { sm: 1 },
                               mb: { xs: 0, sm: 0 },
-                              display: 'flex',
+                              display:'flex',
                               alignItems: 'center',
-                              justifyContent: 'center'
+                              justifyContent:'center'
                             }}
-                          ><Box sx={{ background: '#E7F0FA', padding: '20px' }} className="rounded">< PersonOutlineOutlinedIcon sx={{ color: '#0A65CC' }} /></Box></CardMedia>
+                          ><Box sx={{background:'#E7F0FA',padding:'20px'}} className="rounded">< PersonOutlineOutlinedIcon  sx={{color: '#0A65CC'}}/></Box></CardMedia>
                           <Box>
                             <Typography fontWeight="bold" noWrap className='fs-2'>
-                              750,500
+                            {freelanceCount}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'>
+                            <Typography variant="body2" color="text.secondary" fontWeight="medium" className='fs-5'> 
                               Freelances
                             </Typography>
 
                           </Box>
                         </Card>
-                      </Item>
+                        </Item>
                     </Grid>
 
                   </Grid>
                 </Box>
 
               </Grid>
-            </Container> */}
+            </Container>            
           </Grid>
 
         </Grid>
