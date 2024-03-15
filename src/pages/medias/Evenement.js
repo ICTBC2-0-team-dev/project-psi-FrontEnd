@@ -46,7 +46,7 @@ const Evenement = () => {
                                     Acceuil - MEDIAS
                                 </Typography>
                                 <Typography className='text-white  mb-5 fs-1 fw-normal fs-sm-5'>
-                                    Nos Actualites.
+                                    Nos Événements.
                                 </Typography>
                             </Box>
                         </Grid>
@@ -63,7 +63,7 @@ const Evenement = () => {
                         </Typography>
                     </Col>
                     <Col>
-                        <Button variant="outlined" className='float-end'> Événements à venir passés</Button>
+                        <Button variant="outlined" className='float-end'> Événements passés</Button>
                     </Col>
                 </Row>
             </Container>
@@ -72,9 +72,9 @@ const Evenement = () => {
             <Container fluid>
                 <div className="row d-flex justify-content-center align-items-center">
 
-                    <div className="col-md-3" style={{ width: 'auto' }} >
+                    <div className="col-md-3" >
                         <div>
-                            <div style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522770179533-24471fcdba45', backgroundRepeat: 'none', height: '300px', width: '70%', cursor: 'pointer' }}>
+                            <div style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522770179533-24471fcdba45', backgroundRepeat: 'none', height: '300px', width: '100%', cursor: 'pointer' }}>
                                 <div className='p-3 title'>
                                     <span className='p-2 text-white text-center title' style={{ background: "#008bd2", height: '100px', cursor: 'pointer' }}>Projet satelite</span>
                                 </div>
@@ -87,9 +87,9 @@ const Evenement = () => {
                         </div>
 
                     </div>
-                    <div className="col-md-3" style={{ width: 'auto' }}>
+                    <div className="col-md-3">
                         <div>
-                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
+                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2022/08/rhea-group-astral-brochure-english-cover-crop-4x3-1-768x576.jpg', backgroundRepeat: 'none', height: '300px', width: '100%' }}>
                                 <div className='p-3'>
                                     <span className='p-2 text-white text-center' style={{ background: "#008bd2", height: '100px', width: '300px' }}>Projet satelite</span>
                                 </div>
@@ -104,7 +104,7 @@ const Evenement = () => {
                     </div>
                     <div className="col-md-3" style={{ width: 'auto' }}>
                         <div>
-                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2023/11/blue-transparent-people-graphics-space-4x3-1-768x576.jpg', backgroundRepeat: 'none', height: '300px', width: '70%' }}>
+                            <div style={{ backgroundImage: 'url(https://www.rheagroup.com/wp-content/uploads/2023/11/blue-transparent-people-graphics-space-4x3-1-768x576.jpg', backgroundRepeat: 'none', height: '300px', width: '100%' }}>
                                 <div className='p-3'>
                                     <span className='p-2 text-white text-center' style={{ background: "#008bd2", height: '100px', width: '300px' }}>Projet satelite</span>
                                 </div>

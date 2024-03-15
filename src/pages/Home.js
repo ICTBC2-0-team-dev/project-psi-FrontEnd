@@ -152,7 +152,7 @@ const Home = () => {
                                     </CardActionArea>
                                     <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
 
-                                        <Link href="/" underline="none">
+                                        <Link href="/NotFound" underline="none">
                                             {' En savoir plus'}
                                         </Link>
                                     </CardActions>
@@ -175,7 +175,7 @@ const Home = () => {
                                     </CardActionArea>
                                     <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
 
-                                        <Link href="/" underline="none">
+                                        <Link href="/NotFound" underline="none">
                                             {' En savoir plus'}
                                         </Link>
                                     </CardActions>

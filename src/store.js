@@ -1,15 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import entrepriseReducer from './features/entrepriseSlice'
-import userReducer from './features/UserSlice';
-import projetReducer from './features/projetsSlice'
-import UserElementReducer from './features/UserElement'
+import actualiterReducer from './features/ActualiterSlice';
 import moduleReducer from './features/ModuleSlice';
-import profileReducer  from './features/profileSlice'
+import UserElementReducer from './features/UserElement';
+import userReducer from './features/UserSlice';
+import entrepriseReducer from './features/entrepriseSlice';
+import profileReducer from './features/profileSlice';
+import projetReducer from './features/projetsSlice';
 
 //persit our store
-import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 
 //reducers
@@ -19,7 +20,8 @@ const reducer = combineReducers({
   projetId: projetReducer,
   userElement: UserElementReducer,
   idProjet: moduleReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  actualiteId: actualiterReducer
 });
 
 const persistConfig = {
@@ -46,4 +48,3 @@ const store = configureStore({
 //   });
 
 export default store;
-

@@ -58,28 +58,28 @@ function Footer(props) {
                     }}
                     onClick={preventDefault}
                 > <List>
-                        <Link href="#" underline="none">
+                        <Link href="/responsiveAppBar" underline="none">
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="Freelance" />
                                 </ListItemIcon>
                             </ListItemButton>
                         </Link>
-                        <Link href="#" underline="none" >
+                        <Link href="/SpaceMarket" underline="none" >
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="SpaceMarket" />
                                 </ListItemIcon>
                             </ListItemButton>
                         </Link>
-                        <Link href="#" underline="none">
+                        <Link href="/NotFound" underline="none">
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="Consulting" />
                                 </ListItemIcon>
                             </ListItemButton>
                         </Link>
-                        <Link href="#" underline="none">
+                        <Link href="/NotFound" underline="none">
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="Industrialisation" />
@@ -103,28 +103,28 @@ function Footer(props) {
                     }}
                     onClick={preventDefault}
                 > <List>
-                        <Link href="#" underline="none">
+                        <Link href="/about" underline="none">
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="A propos" />
                                 </ListItemIcon>
                             </ListItemButton>
                         </Link>
-                        <Link href="#" underline="none" >
+                        <Link href="/actualite" underline="none" >
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="Actualités" />
                                 </ListItemIcon>
                             </ListItemButton>
                         </Link>
-                        <Link href="#" underline="none">
+                        <Link href="/NotFound" underline="none">
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="Service d'assistance" />
                                 </ListItemIcon>
                             </ListItemButton>
                         </Link>
-                        <Link href="#" underline="none">
+                        <Link href="/NotFound" underline="none">
                             <ListItemButton sx={{}}>
                                 <ListItemIcon>
                                     <ListItemText primary="Politique de confidentialité" />

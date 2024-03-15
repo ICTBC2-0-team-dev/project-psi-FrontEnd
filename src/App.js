@@ -60,6 +60,7 @@ import About from './pages/about/Index';
 
 //medias
 import Actualite from "./pages/medias/Actualite";
+import ActualiteDetails from "./pages/medias/ActualiteDetails";
 import DetailMarcherSPace from "./pages/medias/DetailMarcherSPace";
 import Evenement from "./pages/medias/Evenement";
 import MarcherSpace from "./pages/medias/MarcherSpace";
@@ -145,6 +146,7 @@ function App() {
 
           {/** About */}
           <Route path="/actualite" element={<Actualite />} />
+          <Route path="/actualite-Detail" element={<ActualiteDetails />} />
           <Route path="/evenement" element={<Evenement />} />
           <Route path="/MarcherSpace" element={<MarcherSpace />} />
           <Route path="/DetailMarcherSPace" element={<DetailMarcherSPace />} />
